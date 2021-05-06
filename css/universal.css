@@ -1,0 +1,41 @@
+.logo {
+
+    height: 5em
+
+
+}
+
+#nav-top {
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+.navbar {
+
+    background-color:mintcream;
+
+}
+
+.nav{
+
+margin-top: 1em;
+}
+.nav-item{
+
+    margin-right:auto;
+}
+
+.tab-content{
+    background-color: mintcream;
+
+    margin-top: 10em;
+    text-align: center;
+}
+
+#calculator {
+    text-align: center;
+    background-color: slategray;
+    margin-top: 30vh;
+}
