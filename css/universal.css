@@ -29,13 +29,15 @@ margin-top: 1em;
 
 .tab-content{
     background-color: mintcream;
+    min-height: 30vh;
 
-    margin-top: 10em;
+    margin-top: 5vh;
     text-align: center;
 }
 
-#calculator {
+#tips {
     text-align: center;
     background-color: slategray;
-    margin-top: 30vh;
+    margin-top: 5vh;
+    min-height: 15vh;
 }
