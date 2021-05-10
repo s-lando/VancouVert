@@ -28,14 +28,25 @@ margin-top: 1em;
 }
 
 .tab-content{
-    background-color: mintcream;
-
-    margin-top: 10em;
+    background-color: #E8F7EE;
+    min-height: 30vh;
+    border: 1px solid #467740;
+    margin-top: 5vh;
     text-align: center;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
-#calculator {
+#tips {
     text-align: center;
-    background-color: slategray;
-    margin-top: 30vh;
+    background-color: #B8C4BB;
+    border: 1px solid #467740;
+    margin-top: 5vh;
+    margin-left: 1em;
+    margin-right: 1em;
+    min-height: 15vh;
+}
+
+.nav-link {
+    color:#467740;
 }
