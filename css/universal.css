@@ -33,8 +33,8 @@ margin-top: 1em;
     border: 1px solid #467740;
     margin-top: 5vh;
     text-align: center;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 3em;
+    margin-right: 3em;
 }
 
 #tips {
@@ -44,7 +44,7 @@ margin-top: 1em;
     margin-top: 5vh;
     margin-left: 1em;
     margin-right: 1em;
-    min-height: 15vh;
+    min-height: 25vh;
 }
 
 .nav-link {
