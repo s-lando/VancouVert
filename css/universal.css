@@ -1,8 +1,12 @@
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+
 .logo {
 
     height: 5em
-
-
 }
 
 #nav-top {
@@ -14,9 +18,10 @@
 
 .navbar {
 
-    background-color:mintcream;
+    background-color: mintcream;
 
 }
+<<<<<<< HEAD
 #Login{
     text-decoration: none;
 }
@@ -37,15 +42,22 @@
 }
 .nav{
 margin-top: 1em;
-}
-.nav-item{
+=======
 
-    margin-right:auto;
+.nav {
+
+    margin-top: 1em;
+>>>>>>> aeba2a923b5859dd50d90be9b9221b5b832c71d4
 }
 
-.tab-content{
+.nav-item {
+
+    margin-right: auto;
+}
+
+.tab-content {
     background-color: #E8F7EE;
-    min-height: 30vh;
+    min-height: 45vh;
     border: 1px solid #467740;
     margin-top: 5vh;
     text-align: center;
@@ -57,12 +69,13 @@ margin-top: 1em;
     text-align: center;
     background-color: #B8C4BB;
     border: 1px solid #467740;
-    margin-top: 5vh;
-    margin-left: 1em;
-    margin-right: 1em;
-    min-height: 25vh;
+    margin-top: 2vh;
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-bottom: 3em;
+    min-height: 17vh;
 }
 
 .nav-link {
-    color:#467740;
+    color: #467740;
 }
