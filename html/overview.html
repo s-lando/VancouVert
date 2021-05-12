@@ -21,91 +21,101 @@
 
 <body>
 
-    <!--Top Header-->
-    <nav class="navbar brand-custom">
-        <a id="nav-top" class="navbar-brand" href="#">
-            <img class="logo" src="/img/leafMain.svg" alt="logo not displaying properly">
-        </a>
-    </nav>
+    <div id="page-container">
+        <!--Top Header-->
+        <nav class="navbar brand-custom">
+            <a id="nav-top" class="navbar-brand" href="#">
+                <img class="logo" src="/img/leafMain.svg" alt="logo not displaying properly">
+            </a>
+        </nav>
 
-    <!--Tabs Nav Bar-->
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
-                aria-controls="overview" aria-selected="true">Overview</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="calculator-tab" data-toggle="tab" href="#calculator" role="tab"
-                aria-controls="calculator" aria-selected="false">Calculator</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="leaderboard-tab" data-toggle="tab" href="#leaderboard" role="tab"
-                aria-controls="leaderboard" aria-selected="false">Leaderboard</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history"
-                aria-selected="false">History</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="incent-tab" data-toggle="tab" href="#incent" role="tab" aria-controls="incent"
-                aria-selected="false">Incentives</a>
-        </li>
+        <!--Tabs Nav Bar-->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
+                    aria-controls="overview" aria-selected="true">Overview</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="calculator-tab" data-toggle="tab" href="#calculator" role="tab"
+                    aria-controls="calculator" aria-selected="false">Calculator</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="leaderboard-tab" data-toggle="tab" href="#leaderboard" role="tab"
+                    aria-controls="leaderboard" aria-selected="false">Leaderboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab"
+                    aria-controls="history" aria-selected="false">History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="incent-tab" data-toggle="tab" href="#incent" role="tab" aria-controls="incent"
+                    aria-selected="false">Incentives</a>
+            </li>
 
 
 
-    </ul>
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">Overview
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">Overview
+            </div>
+            <div class="tab-pane fade" id="calculator" role="tabpanel" aria-labelledby="calculator-tab">Calculate your
+                footprint
+            </div>
+            <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">Leaderboard to
+                see
+                who is
+                the most green</div>
+            <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">See how your footprint
+                has
+                improved over time</div>
+            <div class="tab-pane fade" id="incent" role="tabpanel" aria-labelledby="incent-tab">The effort you put in to
+                decrease your footprint makes a difference, however small it is.</div>
+
         </div>
-        <div class="tab-pane fade" id="calculator" role="tabpanel" aria-labelledby="calculator-tab">Calculate your
-            footprint
-        </div>
-        <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">Leaderboard to see
-            who is
-            the most green</div>
-        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">See how your footprint has
-            improved over time</div>
-        <div class="tab-pane fade" id="incent" role="tabpanel" aria-labelledby="incent-tab">The effort you put in to
-            decrease your footprint makes a difference, however small it is.</div>
 
-    </div>
+        <div id="tips">
 
-    <div id="tips">
-
-        <div>
-            <p>Tips Go here <button type="button" class="btn btn-success" data-toggle="modal"
-                    data-target="#ecoTipsFull">
-                    See More
-                </button></p>
+            <div>
+                <p>Tips Go here <button type="button" class="btn btn-success" data-toggle="modal"
+                        data-target="#ecoTipsFull">
+                        See More
+                    </button></p>
 
 
-            <!-- Modal -->
-            <div class="modal fade" id="ecoTipsFull" tabindex="-1" role="dialog" aria-labelledby="ecoTipsFull"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Full List</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            -shorter showers<br>
-                            -carpool<br>
-                            -etc
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- Modal -->
+                <div class="modal fade" id="ecoTipsFull" tabindex="-1" role="dialog" aria-labelledby="ecoTipsFull"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Full List</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                -shorter showers<br>
+                                -carpool<br>
+                                -etc
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+<!--Footer-->
+
+        <nav class="navbar sticky-bottom navbar-light brand-custom">
+            <div class="container-fluid">
+                <a id= "about-us" class="navbar-brand" href="/html/about-us.html">About Us</a>
+            </div>
+        </nav>
 
     </div>
-
 
 </body>
 
