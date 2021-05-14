@@ -14,7 +14,7 @@ function writeNewIncentives() {
         random: Math.floor(Math.random() * 1000),
         type: "energy",
         url: "https://www.bchydro.com/powersmart/residential/savings-and-rebates/current-rebates-buy-backs/home-renovation-rebates.html",
-        image: "electric.png"
+        image: "energy.jpg"
     });
     incentivesRef.add({
         desc: "Free upgrades for non-profit providers and Inidigenous communities",
@@ -22,7 +22,7 @@ function writeNewIncentives() {
         random: Math.floor(Math.random() * 1000),
         type: "energy",
         url: "https://www.bchydro.com/powersmart/residential/savings-and-rebates/savings-based-on-income/non-profit-aboriginal-housing-upgrades.html",
-        image: "electric.png"
+        image: "energy.jpg"
     }); 
     incentivesRef.add({
         desc: "Free Energy Savings Kit (includes fluorescent light bulbs, high efficiency showerhead, etc.)",
@@ -30,7 +30,7 @@ function writeNewIncentives() {
         random: Math.floor(Math.random() * 1000),
         type: "energy",
         url: "https://www.bchydro.com/powersmart/residential/savings-and-rebates/savings-based-on-income/free-energy-savings-kit.html",
-        image: "electric.png"
+        image: "energy.jpg"
     });
     incentivesRef.add({
         desc: "Various rebates are offered by cities/towns regarding home energy efficiency, heating, etc",
@@ -38,7 +38,7 @@ function writeNewIncentives() {
         random: Math.floor(Math.random() * 1000),
         type: "home",
         url: "https://betterhomesbc.ca/all-incentives/page/4/",
-        image: "electric.png"
+        image: "home.jpg"
     });
     incentivesRef.add({
         desc: "Federal government rebate up to $5000 off purchase price of a new EV",
@@ -62,7 +62,7 @@ function writeNewIncentives() {
         random: Math.floor(Math.random() * 1000),
         type: "waste",
         url: "https://www.wm.com/ca/en/location/bc/vancouver",
-        image: "waste.png"
+        image: "waste.jpg"
     });
 }
 //writeNewIncentives();
