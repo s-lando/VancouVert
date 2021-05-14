@@ -152,193 +152,69 @@
 
 
 
-    <!-- <script>
-        function displayUsers(){
-  
-          const parsedUrl = new URL(window.location.href);
-          var userID = parsedUrl.searchParams.get("id");
-          console.log("Retrieved ID " + userID);
-          
-          //modified so will take id from url 
-      db.collection("users").doc(userID).get()
-      .then(function(doc){
-              var userAddress = doc.data().address;     
-              console.log(userAddress);
-              var userName = doc.data().name; 
-              console.log(userName);
-              var userInfo = doc.data().personalDescription;
-              console.log(userInfo);
-   
-             document.getElementById("welcome").innerText = userName;
-             document.getElementById("userNameHolder").placeholder = userName;
-             document.getElementById("userAddressHolder").placeholder = userAddress;
-             document.getElementById("userInfoHolder").placeholder = userInfo;
-      
-  
-            
-  
-              // how to access the array holding favorite stores. 
-  
-              var test = doc.data().favStores;
-              console.log(test);
-  
-              //if time add something sayng you have no favorites go look around.
-              if(test.length == 0) {
-  
-                var noFavorites = document.createElement("a");
-             // storeLink.id = "forMore";
-             noFavorites.textContent = "Go search and find some favorites!";
-              noFavorites.className = "list-group-item list-group-item-action";
-                document.getElementById("favorites").appendChild(noFavorites);
-  
-              } else if(test.length <= 5) {
-  
-                for (i = 0; i < test.length; i++) {
-  
-  
-  db.collection("storesDatabase").doc(test[i])
-  .get()
-  .then(function (doc){
-  
-  
-  
-    console.log("this is a test "  + doc.data().storeInformation.name);
-    console.log("testing the idnex " + i);
-    var storeLink = document.createElement("a");
-  storeLink.textContent = doc.data().storeInformation.name;
-  storeLink.className = "list-group-item list-group-item-action";
-  storeLink.href = "storeInformation.html?search=local&storeID=" + doc.id + "&id=" +userID; //shold be test[i] but sees it as undefined.
-  
-  document.getElementById("favorites").appendChild(storeLink);
-  
-  
-  
-  });
-  
-  
-  }
-  
-              }
-  
-              else {
-  
-                for (i = 0; i < 5; i++) {
-  
-  
-  db.collection("storesDatabase").doc(test[i])
-  .get()
-  .then(function (doc){
-  
-  
-  
-    console.log("this is a test "  + doc.data().storeInformation.name);
-    console.log("testing the idnex " + i);
-    var storeLink = document.createElement("a");
-  storeLink.textContent = doc.data().storeInformation.name;
-  storeLink.className = "list-group-item list-group-item-action";
-  storeLink.href = "storeInformation.html?search=local&storeID=" + doc.id + "&id=" +userID; //shold be test[i] but sees it as undefined.
-  
-  document.getElementById("favorites").appendChild(storeLink);
-  
-  
-  
-  });
-  
-  
-  }
-  
-              }
-  
-              
-              
-  
-            // a 'more' link will appear for rest of list. 
-  
-            if(test.length > 5) {
-  
-  
-  // adding a more page for full
-  var storeLink = document.createElement("a");
-  storeLink.id = "forMore";
-  storeLink.textContent = "Click here for more!";
-  storeLink.className = "list-group-item list-group-item-action";
-  document.getElementById("favorites").appendChild(storeLink);
-  
-  
-  // modifying "more" click to pull up personal favorite page.
-  document.getElementById("forMore")
-  .addEventListener("click", function() {
-     window.location.href="favorites.html?id=" + userID;
-  });
-  
-  
-  //  break;
-  }
-             
-  
-  
-                
-  
-             // when you are udpating information
-             document.getElementById("saveButton")
-                  .addEventListener("click", function() {
-  
-  
-                    tempName = document.getElementById("userNameHolder").value;
-                    tempAddress = document.getElementById("userAddressHolder").value;
-                    tempInfo = document.getElementById("userInfoHolder").value;
-  
-                    if (tempName != "") {
-  
-                      db.collection("users").doc(userID)
-                      .update({
-                      name: tempName
+    <script>
+        function displayUsers() {
+
+            const parsedUrl = new URL(window.location.href);
+            var userID = parsedUrl.searchParams.get("id");
+            console.log("Retrieved ID " + userID);
+
+            //modified so will take id from url 
+            db.collection("users").doc(userID).get()
+                .then(function (doc) {
+                        var userAddress = doc.data().address;
+                        console.log(userAddress);
+                        var userName = doc.data().name;
+                        console.log(userName);
+                        var userInfo = doc.data().personalDescription;
+                        console.log(userInfo);
+
+                        document.getElementById("welcome").innerText = userName;
+                        document.getElementById("userNameHolder").placeholder = userName;
+                        document.getElementById("userAddressHolder").placeholder = userAddress;
+                        document.getElementById("userInfoHolder").placeholder = userInfo;
+
+
+                    // when you are udpating information
+                    document.getElementById("saveButton")
+                    .addEventListener("click", function () {
+
+
+                        tempName = document.getElementById("userNameHolder").value;
+                        tempAddress = document.getElementById("userAddressHolder").value;
+                        tempInfo = document.getElementById("userInfoHolder").value;
+
+                        if (tempName != "") {
+
+                            db.collection("users").doc(userID)
+                                .update({
+                                    name: tempName
+                                });
+
+                        }
+
+                        if (tempAddress != "") {
+
+                            db.collection("users").doc(userID)
+                                .update({
+                                    address: tempAddress
+                                });
+
+                        }
+
+                        if (tempInfo != "") {
+
+                            db.collection("users").doc(userID)
+                                .update({
+                                    personalDescription: tempInfo
+                                });
+
+                        }
                     });
-  
-                    }
-  
-                    if (tempAddress != "") {
-  
-                    db.collection("users").doc(userID)
-                    .update({
-                    address: tempAddress
-                    });
-  
-                    } 
-  
-                    if (tempInfo != "") {
-  
-                    db.collection("users").doc(userID)
-                    .update({
-                    personalDescription: tempInfo
-                    });
-  
-                    } 
-  
-  
-                    
-  
-  
-  
-                    
-  
-  
-                  });
-  
-  
-  
-                  
-          
-  
-      })
-  
-  
-  
-  
-  
-  }
-  displayUsers(); 
-      </script> -->
+                })
+        }
+        displayUsers();
+    </script>
     <script>
         document.getElementById("close")
             .addEventListener("click", function () {
