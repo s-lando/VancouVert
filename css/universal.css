@@ -67,6 +67,10 @@ footer {
     background-color: #444;
     box-shadow: 4px -15px 8px -15px rgb(0 0 0 / 20%), 10px -15px 40px -15px rgb(0 0 0 / 19%);
     border-top: 4px solid green;
+      position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 #footer-p {
