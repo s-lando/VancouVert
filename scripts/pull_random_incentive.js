@@ -22,8 +22,7 @@ const incentives = db.collection("incentives");
 pickRandomIncentive(); */
 
         $('#submit1').click (function() {
-
-            let type = "energy";
+            let type = "electric";
             console.log(type);
 
             incentives
@@ -35,17 +34,17 @@ pickRandomIncentive(); */
                     var desc = doc.data().desc;
                     var org = doc.data().org;
                     var linkURL = doc.data().url;
+                    var image = doc.data().image;
                     console.log(desc + ", " + org + ", " + linkURL);
+                    console.log(image);
 
                     $(".card-title").append(org);
                     $(".card-text").append(desc);
+                    $("#type-picture").attr("src", ("../img/" + image));
                     $("#incentive_url").attr("href", linkURL);
                 })
             })
     })
-
-
-
 
         //read a random incentives from firestore, based on the type
 });
