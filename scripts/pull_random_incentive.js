@@ -1,3 +1,5 @@
+$(document).ready(function () {
+
 const incentives = db.collection("incentives");
 
 /* function pickRandomIncentive() {
@@ -19,13 +21,12 @@ const incentives = db.collection("incentives");
 
 pickRandomIncentive(); */
 
-function getIncentiveByType() {
-    document.getElementById("submit1").addEventListener('click', function () {
-        var type = document.getElementById("submit1").value;
-        console.log(type);
+        $('#submit1').click (function() {
 
-        //read a random incentives from firestore, based on the type
-        incentives
+            let type = "energy";
+            console.log(type);
+
+            incentives
             .where("type", "==", type)
             .limit(1)
             .get()
@@ -42,7 +43,16 @@ function getIncentiveByType() {
                 })
             })
     })
-}
 
+
+
+
+
+        
+
+
+        //read a random incentives from firestore, based on the type
+});
 // .update() function to update a doc on Firebase
 // .set.merge()
+
