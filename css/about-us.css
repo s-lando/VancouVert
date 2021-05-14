@@ -1,0 +1,52 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 12px;
+    grid-row-gap: 0px;
+    margin-top: 10vh;
+    width: auto;
+    margin-right: 3em;
+    }
+    
+    #card1 { grid-area: 1 / 1 / 2 / 2; }
+    #card2 { grid-area: 1 / 2 / 2 / 3; }
+    #card3 { grid-area: 1 / 3 / 2 / 4; }
+    #card4 { grid-area: 1 / 4 / 2 / 5; }
+
+    .col {
+        max-width: 30vh;
+    }
+
+    .card {
+        height: fit-content;
+        margin-left: 3em;
+        max-height: fit-content;
+    }
+
+    .card-title{
+        font-weight: bold;
+    }
+
+    .card-text{
+        max-height: 50%;
+        width: auto;
+
+    }
+
+    .card-img-top{
+        max-width: 40%;
+        max-height: 40%;
+        border-radius: 50%;
+        margin: auto;
+        margin-top: 1em;
+    }
+    
+    .team-details{
+
+        margin: auto;
+        text-align: center;
+        margin-top: 3em;
+        margin-left: 10em;
+        margin-right: 10em;
+    }
