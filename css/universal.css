@@ -19,11 +19,18 @@ body {
     padding-bottom: 1%;
 }
 
+#seeMore{
 
+    float: right;
+}
 .navbar {
 
     background-color: mintcream;
 
+}
+
+.card {
+    background-color: inherit;
 }
 
 .nav {
@@ -63,7 +70,7 @@ margin-bottom: 0;
 
 .tab-content {
     background-color: #E8F7EE;
-    height: 45vh;
+    height: auto;
     border: 1px solid #467740;
     margin-top: 2vh;
     text-align: center;
@@ -96,6 +103,15 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+#type-picture{
+    
+    max-width: 200px;
+    max-height: 200px;
+    margin: auto;
+    margin-top: 1em;
+}
+
 
 #footer-p {
     color: #ccc;
