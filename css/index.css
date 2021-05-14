@@ -64,7 +64,7 @@
 }
 
 .info span {
-    color: green;
+    color: rgb(0, 73, 0);
 }
 
 .info {
@@ -88,21 +88,7 @@
     line-height: 2.5em;
 }
 
-footer {
-    line-height: 22px;
-    background-color: #444;
-    box-shadow: 4px -15px 8px -15px rgb(0 0 0 / 20%), 10px -15px 40px -15px rgb(0 0 0 / 19%);
-    border-top: 4px solid green;
-}
 
-#footer-p {
-    color: #ccc;
-    font-size: 12px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
-    background-color: #333;
-}
 
 @media (min-width: 600px) {
     .photo img {
