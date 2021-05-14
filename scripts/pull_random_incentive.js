@@ -20,7 +20,7 @@ const incentives = db.collection("incentives");
 pickRandomIncentive(); */
 
 function getIncentiveByType() {
-    document.getElementById("submit1").addEventListener('click', function () {
+    document.getElementById("submit1").addEventListener("click", function () {
         var type = document.getElementById("submit1").value;
         console.log(type);
 
@@ -43,6 +43,7 @@ function getIncentiveByType() {
             })
     })
 }
+
 
 // .update() function to update a doc on Firebase
 // .set.merge()
