@@ -66,3 +66,13 @@ function quotesQuery() {
             })
         })
 }
+
+
+function getProfile() {
+    document.getElementById("profile-btn").addEventListener('click', function () {
+        const parsedUrl = new URL(window.location.href);
+        var userID = parsedUrl.searchParams.get("id");
+        //console.log(store);
+        window.location.href = "profile.html?id=" + userID;
+    })
+}
