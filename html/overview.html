@@ -11,6 +11,12 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/universal.css" />
 
+    <link rel="shortcut icon" type="image/png" href="../img/PNGfavicon.png">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
     </title>
 </head>
 
@@ -18,24 +24,29 @@
 
     <!--Top Header-->
     <nav class="navbar brand-custom">
-        <a id="nav-top" class="navbar-brand" href="#">
-            <img class="logo" src="/img/leafMain.svg" alt="logo not displaying properly">
+        <a id="nav-top" class="navbar-brand" href="../html/overview.html">
+            <img class="logo" src="../img/leafMain.svg" alt="logo not displaying properly">
+        </a>
+        <a href="profile.html" type="button" class="btn btn-success">
+            Profile
         </a>
     </nav>
+
+
 
     <!--Tabs Nav Bar-->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                aria-selected="true">Overview</a>
+            <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
+                aria-controls="overview" aria-selected="true">Overview</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                aria-selected="false">Calculator</a>
+            <a class="nav-link" id="calculator-tab" data-toggle="tab" href="#calculator" role="tab"
+                aria-controls="calculator" aria-selected="false">Calculator</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                aria-selected="false">Leaderboard</a>
+            <a class="nav-link" id="leaderboard-tab" data-toggle="tab" href="#leaderboard" role="tab"
+                aria-controls="leaderboard" aria-selected="false">Leaderboard</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history"
@@ -50,28 +61,44 @@
 
     </ul>
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Overview</div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Calculate your footprint
+        <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">Overview
         </div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Leaderboard to see who is
+        <div class="tab-pane fade" id="calculator" role="tabpanel" aria-labelledby="calculator-tab">Calculate your
+            footprint
+        </div>
+        <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">Leaderboard to see
+            who is
             the most green</div>
         <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">See how your footprint has
             improved over time</div>
+        <div class="tab-pane fade" id="incent" role="tabpanel" aria-labelledby="incent-tab">
+            <div id="read-data-here" class="container">
+                <div class="card text-center">
+                    <button id="submit1">Click to generate Incentive</button>
+                    <img class="card-img-top" id="type-picture" src="../img/" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text"></p>
+                        <a href="#" class="btn btn-primary" id="incentive_url">See their Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
     <div id="tips">
 
         <div>
-            <p>Tips Go here <button type="button" class="btn btn-success" data-toggle="modal"
+            <p>Tips Go here <button type="button" id="seeMore" class="btn btn-success" data-toggle="modal"
                     data-target="#ecoTipsFull">
                     See More
                 </button></p>
 
 
             <!-- Modal -->
-            <div class="modal fade" id="ecoTipsFull" tabindex="-1" role="dialog"
-                aria-labelledby="ecoTipsFull" aria-hidden="true">
+            <div class="modal fade" id="ecoTipsFull" tabindex="-1" role="dialog" aria-labelledby="ecoTipsFull"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -92,19 +119,39 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
+    <!--Footer-->
+
+    <footer>
+        <div id="footer-p">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
+            <br>
+            © 2021 Vancouvert <a href="../html/about-us.html">About Us</a></div>
+    </footer>
 
 </body>
 
 <!--script imports-->
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+<script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-app.js"></script>
+
+<!---------------------- Firebase and FireStore libraries ------------------------->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+
+<!---------------------- Your own Firebase API key information -------------------->
+<script src="../scripts/firebase_api.js"> </script>
+
+<!----------------- jQuery and Bootstrap Bundle (includes Popper) ----------------->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="../scripts/pull_random_incentive.js"></script>
 
 </html>
