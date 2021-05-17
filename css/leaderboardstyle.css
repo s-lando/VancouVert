@@ -9,14 +9,14 @@
 }
 
 body{
-	background: #c3d0d6;
+	background: #b8c4bb;
 }
 
 .lboard_section{
 	width: 80%;
 	height: 800px;
 	margin: 100px auto 0;
-	background: #03205e;
+	background: #e8f7ee;
 	padding: 5px 40px;
 	position: relative;
 	border-radius: 15px;
@@ -27,7 +27,7 @@ body{
 	top: 15%;
 	left: 4%;
     overflow-y: scroll;
-	background: #da3dcc;
+	background: #467740;
 	width: 86%;
 	height: 70%;
 	border-radius: 15px;
