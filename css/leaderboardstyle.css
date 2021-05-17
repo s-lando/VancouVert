@@ -27,7 +27,7 @@ body{
 	top: 15%;
 	left: 4%;
     overflow-y: scroll;
-	background: #467740;
+	background: #b8c4bb;
 	width: 86%;
 	height: 70%;
 	border-radius: 15px;
@@ -48,4 +48,10 @@ body{
 .lboard_wrap .lboard_mem .name_bar{
 	margin: 0 20px;
 	width: calc(80%);
+}
+
+.navbar {
+
+    background-color: mintcream;
+
 }
