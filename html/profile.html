@@ -29,95 +29,37 @@
     </nav>
 
 
-
-    <!-- <div class="container" style="padding: 3em; margin: 0 auto; width:85%; background-color:#E8F7EE;">
-        <div class="row">
-            <div class="col-md-3">
-
-                <img id="profilePic" src="https://dummyimage.com/200x200/000/fff" class="img-thumbnail"
-                    alt="Profile Picture">
-
-
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    Select image to upload:
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Upload Image" name="submit">
-                </form>
-
-            </div>
-            <div class="col-lg-4" style="margin-Bottom:1em;">
-
-                
-                <form>
-                    <fieldset>
-                        <div class="mb-3">
-
-                           
-
-                            <label for="TextInput" class="form-label">Username </label>
-                            <input type="text" id="userNameHolder" class="form-control myText" placeholder="NA">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="TextInput" class="form-label">Address</label>
-                            <input type="text" id="userAddressHolder" class="form-control" placeholder="NA">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="TextInput" class="form-label">Tell us about yourself</label>
-                            <input type="text" id="userInfoHolder" class="form-control" placeholder="NA">
-                        </div>
-                    </fieldset>
-                </form>
-
-                <div class="d-grid gap-2">
-                    <button id="saveButton" class="btn btn-primary btn-dark" type="button" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop">save</button>
-                </div>
-
-                
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Updated</h5>
-                            </div>
-                            <div class="modal-body">
-                                Your personal information has been updated!
-                            </div>
-
-                            <div class="modal-footer">
-                                <button id="close" type="button" class="btn btn-primary btn-dark">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
-
     <div class="container">
         <div class="main">
             <div class="topbar">
+
+                <!-- <a href="">Calculator</a>
+                <a href="">Incentives</a>
+                <a href="">leaderboard</a>
+                <a href="">Overview</a> -->
                 <a href="index.html">logout</a>
+                <a href="overview.html">Home</a>
             </div>
             <div class="row">
                 <div class="col-md-4 mt-1">
                     <div class="card text-center sidebar">
-                        <div class="card-body">
-                            <img src="../img/bg.jpg" alt="image" class="rounded-circle" width="150">
-                            <div class="mt-3">
-                                <!-- <h3>Vancouvert</h3> -->
-                                <a href="overview.html">Home</a>
+                        <!-- <div class="card-body"> -->
+                            <div class="container text-center py-3">
+
+                                <img id="mypic-goes-here" src="../img/bg.jpg" width=100 height=100
+                                    style="border-radius: 50%;" />
+                                <input type="file" id="mypicfile" accept="image/*" />
+                            </div>
+                            <!-- <img src="../img/bg.jpg" alt="image" class="rounded-circle profilePic" width="150"> -->
+                            <!-- <div class="mt-3"> -->
+                            <!-- <h3>Vancouvert</h3> -->
+                            <!-- <a href="overview.html">Home</a>
                                 <a href="">Calculator</a>
                                 <a href="">Incentives</a>
                                 <a href="">leaderboard</a>
-                                <a href="">Overview</a>
-                            </div>
-                        </div>
+                                <a href="">Overview</a> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
                     </div>
                 </div>
                 <div class="col-md-8 mt-1">
@@ -144,21 +86,22 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <h5>Description</h5>
+                                    <h5>Score</h5>
                                 </div>
                                 <div class="col-md-9 text-secondary">
-                                    <input type="text" id="userInfoHolder" class="form-control" placeholder="NA">
+                                    <input type="text" id="userScoreHolder" class="form-control" placeholder="NA"
+                                        disabled>
                                 </div>
                             </div>
                             <hr>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-md-3">
                                     <h5>Address</h5>
                                 </div>
                                 <div class="col-md-9 text-secondary">
                                     <input type="text" id="userAddressHolder" class="form-control" placeholder="NA">
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="card mb-3 content">
@@ -185,7 +128,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button id="close" type="button" class="btn btn-primary btn-dark">Close</button>
+                        <button id="close" type="button" class="btn btn-primary btn-success">Close</button>
                     </div>
                 </div>
             </div>
@@ -232,17 +175,21 @@
                         .get()
                         .then(function (doc) {
                             var n = doc.data().name;
-                            var a = doc.data().address;
-                            var d = doc.data().personalDescription;
+                            // var a = doc.data().address;
+                            // var d = doc.data().personalDescription;
                             var e = doc.data().email;
+                            var s = doc.data().score;
+                            // var p = doc.data().image;
                             console.log(n);
-                            console.log(a);
-                            console.log(d);
+                            console.log(e);
+                            console.log(s);
                             //using jquery
                             $('#userNameHolder').attr('placeholder', n);
-                            $('#userAddressHolder').attr('placeholder', a);
-                            $('#userInfoHolder').attr('placeholder', d);
+                            // $('#userAddressHolder').attr('placeholder', a);
+                            // $('#userInfoHolder').attr('placeholder', d);
                             $('#userEmailHolder').attr('placeholder', e);
+                            $('#userScoreHolder').attr('placeholder', s);
+                            // $('.profilePic').attr('src', p);
                             //using vanilla javascript
                             //document.getElementById("username").innerText = n;
 
@@ -254,10 +201,12 @@
 
 
                                     tempName = document.getElementById("userNameHolder").value;
-                                    tempAddress = document.getElementById("userAddressHolder")
-                                        .value;
-                                    tempInfo = document.getElementById("userInfoHolder").value;
+                                    // tempAddress = document.getElementById("userAddressHolder")
+                                    //     .value;
+                                    // tempInfo = document.getElementById("userInfoHolder").value;
                                     tempEmail = document.getElementById("userEmailHolder").value;
+                                    // tempScore = document.getElementById("userScoreHolder").value;
+
 
                                     if (tempName != "") {
 
@@ -268,23 +217,20 @@
 
                                     }
 
-                                    if (tempAddress != "") {
+                                    if (tempName == "Ryan Reynolds") {
 
-                                        db.collection("users").doc(user.uid)
-                                            .update({
-                                                address: tempAddress
-                                            });
+                                        window.location.href = "ryan.html";
 
                                     }
 
-                                    if (tempInfo != "") {
+                                    // if (tempInfo != "") {
 
-                                        db.collection("users").doc(user.uid)
-                                            .update({
-                                                personalDescription: tempInfo
-                                            });
+                                    //     db.collection("users").doc(user.uid)
+                                    //         .update({
+                                    //             personalDescription: tempInfo
+                                    //         });
 
-                                    }
+                                    // }
                                     if (tempEmail != "") {
 
                                         db.collection("users").doc(user.uid)
@@ -293,6 +239,14 @@
                                             });
 
                                     }
+                                    // if (tempScore != 0) {
+
+                                    //     db.collection("users").doc(user.uid)
+                                    //         .update({
+                                    //             address: tempScore
+                                    //         });
+
+                                    // }
                                 });
 
 
@@ -304,72 +258,130 @@
             });
         }
         sayHello();
+
+
+        function showUploadedPicture() {
+            const fileInput = document.getElementById("mypic-input"); // pointer #1
+            const image = document.getElementById("mypic-goes-here"); // pointer #2
+            fileInput.addEventListener('change', function (e) { //event listener
+                var blob = URL.createObjectURL(e.target.files[0]);
+                image.src = blob; //change DOM image
+            })
+        }
+        showUploadedPicture();
+
+
+        fileButton.addEventListener('change', function (e) { //event listener
+            const pickedfile = e.target.files[0]; // file that user picked
+            image.src = URL.createObjectURL(pickedfile); //event handler
+        })
+
+
+
+        function uploadUserProfilePic() {
+            // Let's assume my storage is only enabled for authenticated users 
+            // This is set in your firebase console storage "rules" tab
+
+            firebase.auth().onAuthStateChanged(function (user) {
+                var fileInput = document.getElementById("mypic-input"); // pointer #1
+                const image = document.getElementById("mypic-goes-here"); // pointer #2
+
+                // listen for file selection
+                fileInput.addEventListener('change', function (e) {
+                    var file = e.target.files[0];
+                    var blob = URL.createObjectURL(file);
+                    image.src = blob; // display this image
+
+                    //store using this name
+                    var storageRef = storage.ref("images/" + user.uid + ".jpg");
+
+                    //upload the picked file
+                    storageRef.put(file)
+                        .then(function () {
+                            console.log('Uploaded to Cloud Storage.');
+                        })
+
+                    //get the URL of stored file
+                    storageRef.getDownloadURL()
+                        .then(function (url) { // Get URL of the uploaded file
+                            console.log(url); // Save the URL into users collection
+                            db.collection("users").doc(user.uid).update({
+                                    "profilePic": url
+                                })
+                                .then(function () {
+                                    console.log('Added Profile Pic URL to Firestore.');
+                                })
+                        })
+                })
+            })
+        }
+        uploadUserProfilePic();
     </script>
 
 
 
 
     <script>
-        function displayUsers() {
+        // function displayUsers() {
 
-            const parsedUrl = new URL(window.location.href);
-            var userID = parsedUrl.searchParams.get("id");
-            console.log("Retrieved ID " + userID);
+        //     const parsedUrl = new URL(window.location.href);
+        //     var userID = parsedUrl.searchParams.get("id");
+        //     console.log("Retrieved ID " + userID);
 
-            //modified so will take id from url 
-            db.collection("users").doc(userID).get()
-                .then(function (doc) {
-                    var userAddress = doc.data().address;
-                    console.log(userAddress);
-                    var userName = doc.data().name;
-                    console.log(userName);
-                    var userInfo = doc.data().personalDescription;
-                    console.log(userInfo);
+        //     //modified so will take id from url 
+        //     db.collection("users").doc(userID).get()
+        //         .then(function (doc) {
+        //             var userAddress = doc.data().address;
+        //             console.log(userAddress);
+        //             var userName = doc.data().name;
+        //             console.log(userName);
+        //             var userInfo = doc.data().personalDescription;
+        //             console.log(userInfo);
 
-                    document.getElementById("welcome").innerText = userName;
-                    document.getElementById("userNameHolder").placeholder = userName;
-                    document.getElementById("userAddressHolder").placeholder = userAddress;
-                    document.getElementById("userInfoHolder").placeholder = userInfo;
-
-
-                    // when you are udpating information
-                    document.getElementById("saveButton")
-                        .addEventListener("click", function () {
+        //             document.getElementById("welcome").innerText = userName;
+        //             document.getElementById("userNameHolder").placeholder = userName;
+        //             document.getElementById("userAddressHolder").placeholder = userAddress;
+        //             document.getElementById("userInfoHolder").placeholder = userInfo;
 
 
-                            tempName = document.getElementById("userNameHolder").value;
-                            tempAddress = document.getElementById("userAddressHolder").value;
-                            tempInfo = document.getElementById("userInfoHolder").value;
+        //             // when you are udpating information
+        //             document.getElementById("saveButton")
+        //                 .addEventListener("click", function () {
 
-                            if (tempName != "") {
 
-                                db.collection("users").doc(userID)
-                                    .update({
-                                        name: tempName
-                                    });
+        //                     tempName = document.getElementById("userNameHolder").value;
+        //                     tempAddress = document.getElementById("userAddressHolder").value;
+        //                     tempInfo = document.getElementById("userInfoHolder").value;
 
-                            }
+        //                     if (tempName != "") {
 
-                            if (tempAddress != "") {
+        //                         db.collection("users").doc(userID)
+        //                             .update({
+        //                                 name: tempName
+        //                             });
 
-                                db.collection("users").doc(userID)
-                                    .update({
-                                        address: tempAddress
-                                    });
+        //                     }
 
-                            }
+        //                     if (tempAddress != "") {
 
-                            if (tempInfo != "") {
+        //                         db.collection("users").doc(userID)
+        //                             .update({
+        //                                 address: tempAddress
+        //                             });
 
-                                db.collection("users").doc(userID)
-                                    .update({
-                                        personalDescription: tempInfo
-                                    });
+        //                     }
 
-                            }
-                        });
-                })
-        }
+        //                     if (tempInfo != "") {
+
+        //                         db.collection("users").doc(userID)
+        //                             .update({
+        //                                 personalDescription: tempInfo
+        //                             });
+
+        //                     }
+        //                 });
+        //         })
+        // }
         // displayUsers();
     </script>
     <script>

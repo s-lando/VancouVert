@@ -44,6 +44,7 @@ body{
 
 @media (max-width: 770px) {
     .sidebar{
-        display: none;
+        /* display: none; */
+        height: 30vh;
     }
 }
