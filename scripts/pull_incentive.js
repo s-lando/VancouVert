@@ -50,7 +50,7 @@ $(document).ready(function () {
 
     const users = db.collection("users");
 
-    firebase.auth().onAuthStateChanged ((user) => {
+    firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             console.log(user.uid);
         }
@@ -59,22 +59,39 @@ $(document).ready(function () {
 
         function grabUserWorstCategory() {
             var worst;
-            users.doc(userId).get().then(function(doc) {
+            users.doc(userId).get().then(function (doc) {
                 worst = doc.data().worstCategory;
                 console.log(worst);
-            })
-            return worst;
-        }
-        
-        var worstCat = grabUserWorstCategory();
-        console.log(worstCat);
+            }).then(incentives.where("type", "==", worst)
+                .limit(1)
+                .get().then(function (snap) {
+                    snap.forEach(function (doc) {
+                        var desc = doc.data().desc;
+                        var org = doc.data().org;
+                        var linkURL = doc.data().url;
+                        var image = doc.data().image;
+                        console.log(desc + ", " + org + ", " + linkURL);
+                        console.log(image);
 
-        incentives.where("type", "==", grabUserWorstCategory)
-        .limit(1)
-        .get()
-        .then(function(snap) {
-            snap.forEach(function(doc) {
-                var desc = doc.data().desc;
+                        $(".card-title").append(org);
+                        $(".card-text").append(desc);
+                        $("#type-picture").attr("src", ("../img/" + image));
+                        $("#incentive_url").attr("href", linkURL);
+                    })
+                }))
+        }
+
+        grabUserWorstCategory();
+
+        /* function getIncentiveForUser() {
+            let worstCategory = grabUserWorstCategory();
+            console.log(worstCategory);
+            incentives.where("type", "==", worstCategory)
+            .limit(1)
+            .get()
+            .then(function (snap) {
+                snap.forEach(function (doc) {
+                    var desc = doc.data().desc;
                     var org = doc.data().org;
                     var linkURL = doc.data().url;
                     var image = doc.data().image;
@@ -85,9 +102,8 @@ $(document).ready(function () {
                     $(".card-text").append(desc);
                     $("#type-picture").attr("src", ("../img/" + image));
                     $("#incentive_url").attr("href", linkURL);
+                })
             })
-        })
+        } */
     })
 });
-// .update() function to update a doc on Firebase
-// .set.merge()
