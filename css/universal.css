@@ -122,3 +122,21 @@ footer {
     background-color: #333;
     color: white;
 }
+
+
+.btn-outline-info {
+    margin-top: 2em;
+}
+
+#foodButton {
+    margin-bottom: 2em;
+}
+
+#calculator {
+    background-color: rgb(255, 255, 255);
+}
+
+/* #food-follow-up{
+
+    display: none;
+} */
