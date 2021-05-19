@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    const incentives = db.collection("incentives");
-
     /* this function was when we wanted to pick a random incentive --!> 
      function pickRandomIncentive() {
         // look for documents where the 'random' attribute is greater than the number specified here, and get ONE document
@@ -51,13 +49,72 @@ $(document).ready(function () {
     const users = db.collection("users");
 
     firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
+        users
+        .doc(user.uid)
+        .get()
+        .then(function(doc) {
+            let worst = doc.data().worstCategory;
+            console.log(worst);
+            genIncentiveByWorstCat(worst);
+        })
+    })
+})
+
+function genIncentiveByWorstCat(category) {
+    console.log(category);
+    const incentives = db.collection("incentives");
+
+    incentives
+    .where("type", "==", category)
+    .limit(1)
+    .get()
+    .then(function (snap) {
+        snap.forEach(function (doc) {
+            var desc = doc.data().desc;
+            var org = doc.data().org;
+            var linkURL = doc.data().url;
+            var image = doc.data().image;
+            console.log(desc + ", " + org + ", " + linkURL);
+            console.log(image);
+
+            $(".card-title").append(org);
+            $(".card-text").append(desc);
+            $("#type-picture").attr("src", ("../img/" + image));
+            $("#incentive_url").attr("href", linkURL);
+        })
+    })
+}
+        /* if (user) {
             console.log(user.uid);
         }
 
         let userId = user.uid;
 
         function grabUserWorstCategory() {
+            
+            incentives.where("type", "==", users.doc(userId).get()
+            .then(function (doc) {
+                worst = doc.data().worstCategory;
+                console.log(worst);
+            }).limit(1).get()
+            .then(function(snap) {
+                snap.forEach(function (doc) {
+                    var desc = doc.data().desc;
+                    var org = doc.data().org;
+                    var linkURL = doc.data().url;
+                    var image = doc.data().image;
+                    console.log(desc + ", " + org + ", " + linkURL);
+                    console.log(image);
+
+                    $(".card-title").append(org);
+                    $(".card-text").append(desc);
+                    $("#type-picture").attr("src", ("../img/" + image));
+                    $("#incentive_url").attr("href", linkURL);
+                })
+            }))
+        } */
+
+        /* function grabUserWorstCategory() {
             var worst;
             users.doc(userId).get().then(function (doc) {
                 worst = doc.data().worstCategory;
@@ -79,9 +136,8 @@ $(document).ready(function () {
                         $("#incentive_url").attr("href", linkURL);
                     })
                 }))
-        }
+        } */
 
-        grabUserWorstCategory();
 
         /* function getIncentiveForUser() {
             let worstCategory = grabUserWorstCategory();
@@ -104,6 +160,5 @@ $(document).ready(function () {
                     $("#incentive_url").attr("href", linkURL);
                 })
             })
-        } */
-    })
-});
+        } 
+    }) */

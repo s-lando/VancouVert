@@ -55,8 +55,11 @@
     font-size: 2rem;
 }
 
-.ryan-text p {
+.card-body p {
     margin: 0 auto;
-    padding: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     text-align: center;
 }
+
+.card-body a {}
