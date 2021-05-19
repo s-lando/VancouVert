@@ -8,11 +8,13 @@
         Name : <input id="userName" type="text"></input> <br><br>
         userID : <input id="userID" type="text"></input> <br><br>
         day : <input id="day" type="text"></input> <br><br>
+        group : <input id="group" type="text"></input> <br><br>
         month : <input id="month" type="text"></input> <br><br>
         year : <input id="year" type="text"></input> <br><br>
         emission : <input id="emission" type="text"></input> <br><br>
 
         <button id="fetch">Fetch</button>
+        <button id="push">Add to DB</button>
 
         <!--Firebase Libraries-->
         <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
@@ -41,6 +43,7 @@
                     document.getElementById('userName').value = doc.data().userName;
                     document.getElementById('userID').value = doc.data().userID;
                     document.getElementById('day').value = doc.data().day;
+                    document.getElementById('group').value = doc.data().group;
                     document.getElementById('month').value = doc.data().month;
                     document.getElementById('year').value = doc.data().year;
                     document.getElementById('emission').value = doc.data().emission;
@@ -55,6 +58,22 @@
                 })
             });
             console.log(scores);
+        }
+
+        document.getElementById('push').onclick=function(){
+            db.collection('carbon_data').add({
+                userName : document.getElementById('userName').value,
+                userID : document.getElementById('userID').value,
+                day : document.getElementById('day').value,
+                month : document.getElementById('month').value,
+                year : document.getElementById('year').value,
+                emission : document.getElementById('emission').value,
+                group : document.getElementById('group').value,
+            }).then(function(docRef){
+                console.log("Added to the Records")
+            }).catch(function(error){
+                console.log("Cannot Add");
+            })
         }
     </script>
     
