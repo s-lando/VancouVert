@@ -35,6 +35,7 @@
         db.settings({ timestampsInSnapshots: true});
 
         document.getElementById('fetch').onclick=function(){
+            let scores = [];
             db.collection('carbon_data').get().then((snapshot) => {
                 snapshot.docs.forEach(doc => {
                     document.getElementById('userName').value = doc.data().userName;
@@ -44,8 +45,16 @@
                     document.getElementById('year').value = doc.data().year;
                     document.getElementById('emission').value = doc.data().emission;
                     console.log("Got The Values");
+
+                    scores.push({userName : doc.data().userName,
+                        userID : doc.data().userID,
+                        day : doc.data().day,
+                        month : doc.data().month,
+                        year : doc.data().year,
+                        emission : doc.data().emission});
                 })
             });
+            console.log(scores);
         }
     </script>
     
