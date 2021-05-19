@@ -1,2 +1,8 @@
 # Vancouvert-app
-created a dev branch
+Making Vancouverites more eco-concious.
+
+Currently in development.
+
+Code Reuses:
+
+
