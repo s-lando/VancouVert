@@ -1,3 +1,33 @@
+// function will keep track of user's UID on any page they are in.
+function sayHi() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            // User is signed in.
+            // Do something for the user here. 
+            console.log(user.uid);
+            db.collection("users").doc(user.uid)
+                .get()
+                .then(function (doc) {
+                    var n = doc.data().name;
+                    console.log(n);
+
+
+                })
+
+            document.getElementById("profile-btn")
+                .addEventListener("click", function () {
+                    window.location.href = "profile.html?id=" + user.uid;
+                });
+
+
+        } else {
+            // No user is signed in.
+        }
+    });
+}
+sayHi();
+
+
 //Animate
 $('#Login').on('click', function () {
     const images = $('#images').position().top;
@@ -62,17 +92,7 @@ function quotesQuery() {
 
                 var neww = '<p><i> "' + q + '"</i><p>';
                 $("#quotes-go-here").html(neww);
-                
+
             })
         })
-}
-
-
-function getProfile() {
-    document.getElementById("profile-btn").addEventListener('click', function () {
-        const parsedUrl = new URL(window.location.href);
-        var userID = parsedUrl.searchParams.get("id");
-        //console.log(store);
-        window.location.href = "profile.html?id=" + userID;
-    })
 }
