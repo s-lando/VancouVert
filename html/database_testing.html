@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>
+            Testing Databse
+        </title>
+    </head>
+    <body>
+        Name : <input id="userName" type="text"></input> <br><br>
+        userID : <input id="userID" type="text"></input> <br><br>
+        day : <input id="day" type="text"></input> <br><br>
+        month : <input id="month" type="text"></input> <br><br>
+        year : <input id="year" type="text"></input> <br><br>
+        emission : <input id="emission" type="text"></input> <br><br>
+
+        <button id="fetch">Fetch</button>
+
+        <!--Firebase Libraries-->
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    </body>
+
+    <script id ="mainscript">
+        var firebaseConfig = {
+            apiKey: "AIzaSyD5GLLJGTSl7Cj2c-Y4sR0RR731rHX4yQc",
+            authDomain: "vancouvert-dce8f.firebaseapp.com",
+            projectId: "vancouvert-dce8f",
+            storageBucket: "vancouvert-dce8f.appspot.com",
+            messagingSenderId: "546507154756",
+            appId: "1:546507154756:web:ff09f3b43494ac1bfc6311"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true});
+
+        document.getElementById('fetch').onclick=function(){
+            db.collection('carbon_data').get().then((snapshot) => {
+                snapshot.docs.forEach(doc => {
+                    document.getElementById('userName').value = doc.data().userName;
+                    document.getElementById('userID').value = doc.data().userID;
+                    document.getElementById('day').value = doc.data().day;
+                    document.getElementById('month').value = doc.data().month;
+                    document.getElementById('year').value = doc.data().year;
+                    document.getElementById('emission').value = doc.data().emission;
+                    console.log("Got The Values");
+                })
+            });
+        }
+    </script>
+    
+</html>
