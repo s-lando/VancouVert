@@ -47,10 +47,10 @@ function updateLeaderboardView() {
 
 updateLeaderboardView();
 function randomize() {
+    // This is a function that is written just to check the JS code without connection to  database.
     for(var i=0; i<scores.length; i++) {
         scores[i].score = Math.floor(Math.random() * (600 - 300 + 1)) + 300;
     }
-    console.log("Here")
-    // when your data changes, call updateLeaderboardView
+    // update the leaderboard HTML page.
     updateLeaderboardView();
 }
