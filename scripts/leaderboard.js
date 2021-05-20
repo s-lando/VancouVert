@@ -156,8 +156,44 @@ function updateLeaderboardViewGroup() {
     });
 }
 
+function report(groupName){
+    let usersInGroup = [];
+    db.collection('groups/'+usersInGroup).get().then((snapshot) => {
+        
 
-updateLeaderboardView();
+        var select = document.getElementById("groups");
+        for(var i = 0; i<groups.length; i++){
+            var option = document.createElement('option');
+            option.text = option.value = groups[i];
+            select.add(option, 0);
+        }
+    });
+}
+
+function addList(){
+    let groups = [];
+    db.collection('groups').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+           groups.push(doc.data().name);
+        })
+
+        var select = document.getElementById("groups");
+        for(var i = 0; i<groups.length; i++){
+            var option = document.createElement('option');
+            option.text = option.value = groups[i];
+            select.add(option, 0);
+        }
+    });
+    // var select = document.getElementById("year");
+    // for(var i = 2011; i >= 1900; --i) {
+    //     var option = document.createElement('option');
+    //     option.text = option.value = i;
+    //     select.add(option, 0);
+    // }
+}
+
+// addList();
+// updateLeaderboardView();
 function randomize() {
     // This is a function that is written just to check the JS code without connection to  database.
     for(var i=0; i<scores.length; i++) {
