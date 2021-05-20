@@ -1,6 +1,6 @@
 // function will keep track of user's UID on any page they are in.
 function sayHi() {
-    firebase.auth().onAuthStateChanged(function (user) {
+     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
             // Do something for the user here. 

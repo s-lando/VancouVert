@@ -19,10 +19,11 @@ body {
     padding-bottom: 1%;
 }
 
-#seeMore{
+#seeMore {
 
     float: right;
 }
+
 .navbar {
 
     background-color: mintcream;
@@ -55,12 +56,14 @@ body {
     color: #333;
     transition: background 500ms ease;
 }
-.login-btn:hover{
-    background:chartreuse;
+
+.login-btn:hover {
+    background: chartreuse;
 }
-.nav{
-margin-top: 1em;
-margin-bottom: 0;
+
+.nav {
+    margin-top: 1em;
+    margin-bottom: 0;
 }
 
 .nav-item {
@@ -94,18 +97,20 @@ margin-bottom: 0;
 }
 
 footer {
+    position: absolute;
+    bottom: 0;
     line-height: 22px;
     background-color: #444;
     box-shadow: 4px -15px 8px -15px rgb(0 0 0 / 20%), 10px -15px 40px -15px rgb(0 0 0 / 19%);
     border-top: 4px solid green;
-      /* position: fixed;
+    /* position: fixed;
   left: 0;
   bottom: 0; */
-  width: 100%;
+    width: 100%;
 }
 
-#type-picture{
-    
+#type-picture {
+
     max-width: 200px;
     max-height: 200px;
     margin: auto;
