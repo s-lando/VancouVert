@@ -113,7 +113,7 @@ function makeGraphs() {
         var barList = [];
         var timeList = [];
         db.collection("users").doc(user.uid).collection("calculations")
-            // .orderBy("timestamp", "desc")
+            .orderBy("time", "asc")
             .get()
             .then(function (snap) {
                 snap.forEach(function (doc) {
