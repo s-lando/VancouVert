@@ -127,7 +127,7 @@ function makeGraphs() {
                 console.log(timeList[0]);
                 var chart = new CanvasJS.Chart("chartContainer", {
                     animationEnabled: true,
-                    backgroundColor: "#eee",
+                    backgroundColor: "transparent",
                     theme: "light2", // "light1", "light2", "dark1", "dark2"
                     title: {
                         text: "Progress"
@@ -169,4 +169,9 @@ function makeGraphs() {
     });
 
 }
-makeGraphs();
+//loads on click of tab, then off
+$('#history-tab').on("click",function() {
+    makeGraphs();
+    $('#history-tab').off(); 
+});
+

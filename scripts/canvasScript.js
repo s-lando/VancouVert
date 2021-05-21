@@ -1,8 +1,14 @@
-window.onload = function() {
+$(document).ready(function () {
+
+    // let userDoc = firebase.auth().currentUser.uid;
+        
+    // let docRef = db.collection("users").doc(userDoc).collection("calculations")
+    // .orderBy("time", "desc").limit(1);
+    
 
     var chart = new CanvasJS.Chart("userChart", {
         theme: "light2", // "light1", "light2", "dark1", "dark2"
-        exportEnabled: true,
+        exportEnabled: false,
         animationEnabled: true,
         backgroundColor: "transparent",
         title: {
@@ -25,4 +31,4 @@ window.onload = function() {
         }]
     });
     chart.render();
-}    
+});
