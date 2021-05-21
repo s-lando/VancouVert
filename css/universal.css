@@ -19,10 +19,11 @@ body {
     padding-bottom: 1%;
 }
 
-#seeMore{
+#seeMore {
 
     float: right;
 }
+
 .navbar {
 
     background-color: mintcream;
@@ -57,12 +58,14 @@ body {
     min-height: 60px;
     background-color: #46774000;
 }
-#profile-btn:hover{
-    color: #439139;
+
+.login-btn:hover {
+    background: chartreuse;
 }
-.nav{
-margin-top: 1em;
-margin-bottom: 0;
+
+.nav {
+    margin-top: 1em;
+    margin-bottom: 0;
 }
 
 .nav-item {
@@ -98,18 +101,20 @@ margin-bottom: 0;
 }
 
 footer {
+    position: absolute;
+    bottom: 0;
     line-height: 22px;
     background-color: #444;
     box-shadow: 4px -15px 8px -15px rgb(0 0 0 / 20%), 10px -15px 40px -15px rgb(0 0 0 / 19%);
-      /* position: fixed;
+    border-top: 4px solid green;
+    /* position: fixed;
   left: 0;
   bottom: 0; */
-  width: 100%;
-
+    width: 100%;
 }
 
-#type-picture{
-    
+#type-picture {
+
     max-width: 200px;
     max-height: 200px;
     margin: auto;
@@ -129,7 +134,7 @@ footer {
     bottom: 0;
     width: 100%;
     border-top: #488d3f 5px solid;
-    
+
 }
 
 
@@ -149,14 +154,13 @@ footer {
 } */
 
 
-#userChart{
+#userChart {
 
-text-align: center;
-height: 30vh;
+    text-align: center;
+    height: 30vh;
 }
 
 .btn-outline-info {
     margin-left: 3px;
     margin-right: 3px;
 }
-

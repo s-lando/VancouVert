@@ -36,8 +36,6 @@
         </a>
     </nav>
 
-
-
     <!--Tabs Nav Bar-->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
@@ -60,8 +58,6 @@
             <a class="nav-link" id="incent-tab" data-toggle="tab" href="#incent" role="tab" aria-controls="incent"
                 aria-selected="false">Incentives</a>
         </li>
-
-
 
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -111,18 +107,98 @@
               </svg>
             </button>
 
-
-
-
-
-
         </div>
 
         <!-- Leaderboard Tab -->
-        <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">Leaderboard to see
-            who is
-            the most green</div>
+        <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">
 
+            <!---------------Select type of Leaderboard user wants to view ------------------>
+            <div class="form-floating">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <option selected id="type-selected"></option>
+                    <option value="1" id="indiv-board">Individual</option>
+                    <option value="2" id="your-team-board">Within Your Team</option>
+                    <option value="3" id="all-teams-board">Team-based Leaderboard</option>
+                </select>
+
+                <!------------------------------ Button to Join Group -------------------------------->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    Join Group
+                </button>
+
+                <!---------------------------- Button to Delete Group --------------------------------->
+                <button type="button" class="btn btn-primary" id="delete-group" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    Delete Group
+                </button>
+
+                <!-------------------------------------- Modal for joining ----------------------------->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Join a Group</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                        <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+                                      </svg>
+                                </button>
+                            </div>
+
+                            <!---------- Input name of new group here -------------->
+                            <div class="modal-body">
+                                
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="Type here...">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                
+                                <button type="button" class="btn btn-primary" id="join-group">JOIN</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-------------------------------------- Modal for Deleting ----------------------------->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete a Group</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                        <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+                                      </svg>
+                                </button>
+                            </div>
+
+                            <!---------- User types name of group they want to delete -------------->
+                            <div class="modal-body">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput2" placeholder="Type here...">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                
+                                <button type="button" class="btn btn-primary" id="delete-group-btn">DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="leaderboard-container">
+
+                <div id="add-leaderboard-here">
+
+                </div>
+
+            </div>
+
+        </div>
 
         <!-- Progress tab -->
         <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">See how your footprint has
@@ -140,17 +216,15 @@
                 <div class="card text-center">
                     <img class="card-img-top" id="type-picture" src="../img/" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
+                        <h5 class="card-title" id="incentive-card-title"></h5>
+                        <p class="card-text" id="incentive-card-text"></p>
                         <a href="#" class="btn btn-primary" id="incentive_url">See their Website</a>
                     </div>
                 </div>
             </div>
         </div>
 
-    </div>
-
-    <!-- <div id="tips">
+        <!--  <div id="tips">
 
         <div>
             <p>Tips Go here <button type="button" id="seeMore" class="btn btn-success" data-toggle="modal"
@@ -158,11 +232,11 @@
                     See More
                 </button></p> -->
 
-
-            <!-- Modals -->
-            <!-- Modals -->
-            <!-- Modals -->
-            <div class="modal fade" id="ecoTipsFull" tabindex="-1" role="dialog" aria-labelledby="ecoTipsFull"
+ -->
+        <!-- Modals -->
+        <!-- Modals -->
+        <!-- Modals -->
+        <!--            <div class="modal fade" id="ecoTipsFull" tabindex="-1" role="dialog" aria-labelledby="ecoTipsFull"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -252,7 +326,6 @@
             </div>
             </div>
         </div>
-    </div>
 
     <!-- Transport Form -->
 
@@ -400,13 +473,13 @@
     </div>
     </div>
 
-    <!--Footer-->
+        <!--Footer-->
 
-    <footer>
-        <div id="footer-p">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
-            <br>
-            © 2021 Vancouvert <a href="../html/about-us.html">About Us</a></div>
-    </footer>
+        <footer>
+            <div id="footer-p">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
+                <br>
+                © 2021 Vancouvert <a href="../html/about-us.html">About Us</a></div>
+        </footer>
 
 </body>
 
@@ -430,22 +503,13 @@
     integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
 </script>
 
-<!--React-->
-
-<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-
-
-<script type="text/javascript" src="canvasjs.min.js"></script>
-
-<!-- custom scripts -->
+<!-- Our scripts -->
 <script src="../scripts/pull_incentive.js"></script>
-<script src="../scripts/canvasScript.js"></script>
-
-
-<script src="../scripts/pull_random_incentive.js"></script>
 <script src="../scripts/calculator_scripts.js"></script>
 <script src="../scripts/functions-madhav.js"></script>
+<script src="../scripts/leaderboard_team_JR.js"></script>
+
+<!-- 
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js" charset="UTF-8"></script>
 
