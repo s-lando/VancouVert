@@ -1,4 +1,65 @@
-.ryan{
-    width: 40%;
-    height: 30%;
+@font-face {
+    font-family: "Rogue Hero";
+    src: url(../css/font-Roguehero/roguehero-webfont.woff);
+    src: url(../css/font-Roguehero/roguehero-webfont.woff2);
+
 }
+
+#main-card {
+    height: 85vh;
+    background-color: rgb(223, 243, 187);
+}
+
+.logo-custom {
+    background-color: #95f788;
+    height: 20vh;
+}
+
+#ryan {
+    margin: 0 auto;
+}
+
+#ryan img {
+    size: 50%;
+}
+
+.card-body {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.ryan-title {
+    color: black;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#deadpool {
+    font-family: "Rogue Hero";
+    color: #8d0d0d;
+    font-size: 2.5rem;
+}
+
+#mint {
+    font-family: 'KoHo', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1ee9bd;
+}
+
+#mobile {
+    font-family: 'KoHo', sans-serif;
+    font-size: 2rem;
+}
+
+.card-body p {
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.card-body a {}

@@ -1,9 +1,9 @@
 // function will keep track of user's UID on any page they are in.
 function sayHi() {
-    firebase.auth().onAuthStateChanged(function (user) {
+     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            // User is signed in.
-            // Do something for the user here. 
+
+            //changes go here
             console.log(user.uid);
             db.collection("users").doc(user.uid)
                 .get()
@@ -24,9 +24,16 @@ function sayHi() {
             // No user is signed in.
         }
     });
-}
-sayHi();
+};
 
+
+
+
+window.addEventListener('load', function() {
+sayHi();
+});
+
+var user = firebase.auth().currentUser;
 
 //Animate
 $('#Login').on('click', function () {
@@ -96,3 +103,71 @@ function quotesQuery() {
             })
         })
 }
+
+
+
+//Funtction for making the progress graph
+
+function makeGraphs() {
+    firebase.auth().onAuthStateChanged((user) => {
+        var barList = [];
+        var timeList = [];
+        db.collection("users").doc(user.uid).collection("calculations")
+            .orderBy("time", "asc")
+            .get()
+            .then(function (snap) {
+                snap.forEach(function (doc) {
+
+                    barList[barList.length] = doc.data().totalFootprint;
+                    timeList[timeList.length] = doc.data().time;
+
+                })
+
+                console.log(barList[0]);
+                console.log(timeList[0]);
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    backgroundColor: "#eee",
+                    backgroundColor: "transparent",
+                    theme: "light2", // "light1", "light2", "dark1", "dark2"
+                    title: {
+                        text: "Progress"
+                    },
+                    axisY: {
+                        title: "Carbon Footprint (in tonnes )",
+                        suffix: ""
+                    },
+                    axisX: {
+                        title: "Date"
+                    },
+                    data: [{
+                        type: "column",
+                        yValueFormatString: "#,##0.0#",
+                        dataPoints: [{
+                                label: "May 18",
+                                y: barList[0]
+                            },
+                            {
+                                label: "May 19",
+                                y: barList[1]
+                            },
+                            {
+                                label: "May 20",
+                                y: barList[2]
+                            },
+                            // { label: "Australia", y: 2.50 },	
+                            // { label: "Mexico", y: 2.30 },
+                            // { label: "UK", y: 1.80 },
+                            // { label: "United States", y: 1.60 },
+                            // { label: "Japan", y: 1.60 }
+
+                        ]
+                    }]
+                });
+                chart.render();
+
+            })
+    });
+
+}
+makeGraphs();

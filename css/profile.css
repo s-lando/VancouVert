@@ -1,17 +1,20 @@
-body{
+body {
     margin-top: 20px;
-    background-color:mintcream;
+    background-color: mintcream;
 
 }
-.main{
+
+.main {
     padding: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.topbar{
+
+.topbar {
     background-color: green;
     overflow: hidden;
 }
-.topbar a{
+
+.topbar a {
     float: right;
     color: whitesmoke;
     text-align: center;
@@ -20,12 +23,14 @@ body{
     font-size: 26px;
 
 }
-.sidebar{
+
+.sidebar {
     background-color: #333;
     color: white;
     height: 100%;
 }
-.sidebar a{
+
+.sidebar a {
     margin-left: 10px;
     display: block;
     color: white;
@@ -33,17 +38,19 @@ body{
     font-size: 30px;
     text-decoration: none;
 }
-.card{
+
+.card {
     position: relative;
     display: flex;
     flex-direction: column;
 }
-.content{
+
+.content {
     background-color: #E8F7EE;
 }
 
 @media (max-width: 770px) {
-    .sidebar{
+    .sidebar {
         /* display: none; */
         height: 30vh;
     }

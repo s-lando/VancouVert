@@ -56,14 +56,20 @@
 
         var uiConfig = {
             callbacks: {
+
+                
                 signInSuccessWithAuthResult: function (authResult, redirectUrl) {
                     var user = authResult.user;
                     if (authResult.additionalUserInfo.isNewUser) {
                         db.collection("users").doc(user.uid).set({
                                 name: user.displayName,
                                 email: user.email,
-                                score: 100,
+                                currentFootprint: 0,
+                                worstCategory: "null"
+                                // groups: null,
                             }).then(function () {
+
+
                                 console.log("New user added to firestore");
                                 console.log(user.uid)
                                 window.location.href = "overview.html?id=" + user.uid;

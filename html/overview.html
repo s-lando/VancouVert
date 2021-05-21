@@ -6,16 +6,20 @@
     </title>
     <meta charset="UTF-8">
 
-    <!--Bootstrap & CSS Imports-->
+    <!-----------------------------------Bootstrap & CSS Imports---------------------------------------->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!--------------------------------------- Our CSS pages -------------------------------------------->
     <link rel="stylesheet" href="../css/universal.css" />
+    <link rel="stylesheet" type="text/css" href="../css/progress.css" />
 
     <link rel="shortcut icon" type="image/png" href="../img/PNGfavicon.png">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap" rel="stylesheet">
 
     </title>
 </head>
@@ -27,12 +31,15 @@
         <a id="nav-top" class="navbar-brand" href="../html/overview.html">
             <img class="logo" src="../img/leafMain.svg" alt="logo not displaying properly">
         </a>
-        <a href="#" type="button" class="btn btn-success" id="profile-btn">
-            Profile
+        <a href="#" type="button" class="btn btn-success btn-lg" id="profile-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </svg>
         </a>
     </nav>
-
-
 
     <!--Tabs Nav Bar-->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -57,55 +64,167 @@
                 aria-selected="false">Incentives</a>
         </li>
 
-
-
     </ul>
     <div class="tab-content" id="myTabContent">
         <!-- overview tab -->
-        <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">Overview
+        <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+            <div id="userChart">
+
+            </div>
+
         </div>
+
+
+
 
         <!-- calculator tab -->
         <div class="tab-pane fade" id="calculator" role="tabpanel" aria-labelledby="calculator-tab">
 
-            <button type="button" id="homeButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
-                data-target="#home">Home <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-                    <path
-                        d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
-                </svg> </button>
+            <div class="btn-group" role="group" aria-label="Basic example">
+
+                <button type="button" id="homeButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
+                    data-target="#home">Home <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+                    </svg> </button>
+
+                <button type="button" id="transportButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
+                    data-target="#transport">Transport <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-signpost-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
+                    </svg></button>
+
+
+
+                <button type="button" id="foodButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
+                    data-target="#food">Food <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
+                        <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        <path
+                            d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z" />
+                    </svg></button>
+            </div>
             <br>
-            <button type="button" id="transportButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
-                data-target="#transport">Transport <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-signpost-fill" viewBox="0 0 16 16">
+            <button type="button" id="calculateButton" class="btn btn-outline-info btn-lg" aria-selected="false"
+                data-toggle="tab" href="#overview" role="tab"> Calculate <svg xmlns="http://www.w3.org/2000/svg"
+                    width="16" height="16" fill="currentColor" class="bi bi-calculator-fill" viewBox="0 0 16 16">
                     <path
-                        d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
-                </svg></button>
-            <br>
-            <button type="button" id="foodButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
-                data-target="#food">Food <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
-                    <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                    <path
-                        d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z" />
-                </svg></button>
-
-
-
-
-
+                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5zm0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z" />
+                </svg>
+            </button>
 
         </div>
 
         <!-- Leaderboard Tab -->
-        <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">Leaderboard to see
-            who is
-            the most green</div>
+        <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">
 
+            <!---------------Select type of Leaderboard user wants to view ------------------>
+            <div class="form-floating">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <option selected id="type-selected"></option>
+                    <option value="1" id="indiv-board">Individual</option>
+                    <option value="2" id="your-team-board">Within Your Team</option>
+                    <option value="3" id="all-teams-board">Team-based Leaderboard</option>
+                </select>
+
+                <div id="lead-btn-container">
+                    <!------------------------------ Button to Join Group -------------------------------->
+                    <button type="button" class="btn btn-primary" id="lead-btn" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal1">
+                        Join Group
+                    </button>
+
+                    <!---------------------------- Button to Delete Group --------------------------------->
+                    <button type="button" class="btn btn-danger" id="delete-group" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal2">
+                        Delete Group
+                    </button>
+                </div>
+
+
+                <!-------------------------------------- Modal for joining ----------------------------->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Join a Group</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-x-lg" viewBox="0 0 16 16">
+                                        <path
+                                            d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!---------- Input name of new group here -------------->
+                            <div class="modal-body">
+
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput"
+                                        placeholder="Type here...">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-primary" id="join-group">JOIN</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-------------------------------------- Modal for Deleting ----------------------------->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete a Group</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-x-lg" viewBox="0 0 16 16">
+                                        <path
+                                            d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!---------- User types name of group they want to delete -------------->
+                            <div class="modal-body">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput2"
+                                        placeholder="Type here...">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-primary" id="delete-group-btn">DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="leaderboard-container">
+
+                <div id="add-leaderboard-here">
+
+                </div>
+
+            </div>
+
+        </div>
 
         <!-- Progress tab -->
         <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">See how your footprint has
-            improved over time</div>
+            improved over time
+            <div id="chartContainer" style="height: 370px; width: 80%;"></div>
+            <br/>
+        </div>
 
 
 
@@ -113,33 +232,33 @@
         <!-- incentive tab -->
         <div class="tab-pane fade" id="incent" role="tabpanel" aria-labelledby="incent-tab">
             <div id="read-data-here" class="container">
-                <div class="card text-center">
-                    <button id="submit1">Click to generate Incentive</button>
-                    <img class="card-img-top" id="type-picture" src="../img/" alt="Card image cap">
+                <div class="card text-center" id="incent-card-container">
+                    <div id="incent-img-cont">
+                        <img class="card-img-top" id="type-picture" src="../img/" alt="Card image cap">
+                    </div>
+                    
                     <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
+                        <h5 class="card-title" id="incentive-card-title"></h5>
+                        <p class="card-text" id="incentive-card-text"></p>
                         <a href="#" class="btn btn-primary" id="incentive_url">See their Website</a>
                     </div>
                 </div>
             </div>
         </div>
 
-    </div>
-
-    <div id="tips">
+        <!--  <div id="tips">
 
         <div>
             <p>Tips Go here <button type="button" id="seeMore" class="btn btn-success" data-toggle="modal"
                     data-target="#ecoTipsFull">
                     See More
-                </button></p>
+                </button></p> -->
 
 
-            <!-- Modals -->
-            <!-- Modals -->
-            <!-- Modals -->
-            <div class="modal fade" id="ecoTipsFull" tabindex="-1" role="dialog" aria-labelledby="ecoTipsFull"
+        <!-- Modals -->
+        <!-- Modals -->
+        <!-- Modals -->
+        <!--            <div class="modal fade" id="ecoTipsFull" tabindex="-1" role="dialog" aria-labelledby="ecoTipsFull"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -164,198 +283,233 @@
     </div>
 
 
-    <!-- Home Form -->
+    <!- Home Form -->
 
-    <div class="modal fade" id="home" tabindex="-1" role="dialog" aria-labelledby="home" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLongTitle">Home <svg xmlns="http://www.w3.org/2000/svg"
-                            width="16" height="16" fill="currentColor" class="bi bi-house-door-fill"
-                            viewBox="0 0 16 16">
-                            <path
-                                d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
-                        </svg></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
+        <div class="modal fade" id="home" tabindex="-1" role="dialog" aria-labelledby="home" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLongTitle">Home <svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-house-door-fill"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+                            </svg></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
 
-                    <form>
-                        <div class="form-group">
-                            <label for="question">Select which best describes your household:</label>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="detached-home" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="detached-home">Detached Family Home </label>
+                        <form id="homeForm">
+                            <div class="form-group" id="houseValue">
+                                <label for="question">Select which best describes your household:</label>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="detached-home" name="houseType" value="detachedHome"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="detached-home">Detached Family Home
+                                    </label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="appartment-condo" name="houseType" value="appartmentCondo"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="appartment-condo">Appartment/Condo </label>
+                                </div>
                             </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="appartment-condo" name="customRadio"
-                                    class="custom-control-input">
-                                <label class="custom-control-label" for="appartment-condo">Appartment/Condo </label>
+                            <div class="form-group">
+                                <label for="numberPeople">How many people live in your household?</label>
+                                <input type="number" class="form-control" name="householdNum" id="numberPeople"
+                                    placeholder="Enter a whole number greater than 0">
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="numberPeople">How many people live in your household?</label>
-                            <input type="number" class="form-control" id="numberPeople"
-                                placeholder="Enter a whole number greater than 0">
-                        </div>
-                        <div class="form-group">
-                            <label for="numGarbage">How many full 20L garbage bags does your household fill every week?
-                                <p style="font-size: smaller;">A full garbage bin holds on average 8 bags</p></label>
-                            <input type="number" class="form-control" id="numGarbage"
-                                placeholder="Enter a positive whole number">
-                        </div>
-                        <div class="form-group">
-                            <label for="question">Select which best describes the energy source that heats your
-                                household:</label>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="electric" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="electric">Electric</label> </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="gas" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="gas">Natural Gas</label>
+                            <div class="form-group">
+                                <label for="numGarbage">How many full 20L garbage bags does your household fill every
+                                    week?
+                                    <p style="font-size: smaller;">A full garbage bin holds on average 8 bags</p>
+                                </label>
+                                <input type="number" class="form-control" name="garbageNum" id="numGarbage"
+                                    placeholder="Enter a positive whole number">
                             </div>
-                        </div>
-                    </form>
+                            <div class="form-group">
+                                <label for="question">Select which best describes the energy source that heats your
+                                    household:</label>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="electric" name="energyType" value="electric"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="electric">Electric</label> </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="gas" name="energyType" value="gas"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="gas">Natural Gas</label>
+                                </div>
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success submit"
+                                    data-dismiss="modal">Submit</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+            </div>
+
+            <!-- Transport Form -->
+
+            <div class="modal fade" id="transport" tabindex="-1" role="dialog" aria-labelledby="transport"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLongTitle">Transport <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-signpost-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
+                                </svg></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form id="transportForm">
+                                <div class="form-group" id="transportForm">
+                                    <label for="question">Select which best describes your regular mode of
+                                        transportation:</label>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="gas-car" name="vehicleType" value="gasCar"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="gas-car">Gas Car</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="gas-truck" name="vehicleType" value="gasTruck"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="gas-truck">Gas Truck/Van</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="electric-vehicle" name="vehicleType" value="ev"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="electric-vehicle">Electric
+                                            Vehicle</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="transit" name="vehicleType" value="publicTransit"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="transit">Public Transit</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="non-motor" name="vehicleType" value="nonMotor"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="non-motor">Non-Motor Vehicle (e.g.
+                                            Bike)</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="flightNum">Approximately how many hours have you spent flying in the
+                                        past
+                                        year?</label>
+                                    <input type="number" class="form-control" id="FlightNum" name="flightNum"
+                                        placeholder="Enter a whole number">
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-success submit"
+                                        data-dismiss="modal">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Food Form -->
+
+        <div class="modal fade" id="food" tabindex="-1" role="dialog" aria-labelledby="food" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLongTitle">Food <svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
+                                <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                <path
+                                    d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z" />
+                            </svg></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form id="foodForm">
+                            <div class="form-group">
+                                <label for="question">Are you a vegetarian or vegan?</label>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="yes-veg" name="veg-question" value="yes"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="yes-veg">Yes</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="no-veg" name="veg-question" value="no"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="no-veg">No</label>
+                                </div>
+                            </div>
+                            <span id="food-follow-up">
+                                <div class="form-group">
+                                    <label for="beef-lamb">How often do you eat beef and/or lamb?</label>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="daily-lamb" name="beefFreq" value="daily"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="daily-lamb">Daily</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="sometimes-lamb" name="beefFreq" value="sometimes"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="sometimes-lamb">Sometimes</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="never-lamb" name="beefFreq" value="never"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="never-lamb">Rarely/Never</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="beef-lamb">How often do you eat poultry, pork, or fish?</label>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="daily-2" name="frequency2" value="daily"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="daily-2">Daily</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="sometimes-2" name="frequency2" value="sometimes"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="sometimes-2">Sometimes</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="never-2" name="frequency2" value="never"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="never-2">Rarely/Never</label>
+                                    </div>
+                                </div>
+                            </span>
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success submit"
+                                    data-dismiss="modal">Submit</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Transport Form -->
-
-    <div class="modal fade" id="transport" tabindex="-1" role="dialog" aria-labelledby="transport" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLongTitle">Transport <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" class="bi bi-signpost-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
-                    </svg></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form>
-                        <div class="form-group">
-                            <label for="question">Select which best describes your regular mode of transportation:</label>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="gas-car" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="gas-car">Gas Car</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="gas-truck" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="gas-truck">Gas Truck/Van</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="electric-vehicle" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="electric-vehicle">Electric Vehicle</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="transit" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="transit">Public Transit</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="non-motor" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="non-motor">Non-Motor Vehicle (e.g. Bike)</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="flightNum">Approximately how many hours have you spent flying in the past year?</label>
-                            <input type="number" class="form-control" id="FlightNum"
-                                placeholder="Enter a whole number">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Food Form -->
-
-    <div class="modal fade" id="food" tabindex="-1" role="dialog" aria-labelledby="food" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLongTitle">Food <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
-                        <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                        <path
-                            d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z" />
-                    </svg></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form id="food-form">
-                        <div class="form-group">
-                            <label for="question">Are you a vegetarian or vegan?</label>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="yes-veg" name="veg-question" value="yes" class="custom-control-input">
-                                <label class="custom-control-label" for="yes-veg">Yes</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="no-veg" name="veg-question" value="no" class="custom-control-input">
-                                <label class="custom-control-label" for="no-veg">No</label>
-                            </div>
-                        </div>
-                        <span id="food-follow-up">
-                        <div class="form-group">
-                            <label for="beef-lamb">How often do you eat beef and/or lamb?</label>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="daily-lamb" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="daily-lamb">Daily</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="sometimes-lamb" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="sometimes-lamb">Sometimes</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="never-lamb" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="never-lamb">Rarely/Never</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="beef-lamb">How often do you eat poultry, pork, or fish?</label>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="daily-2" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="daily-2">Daily</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="sometimes-2" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="sometimes-2">Sometimes</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="never-2" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="never-2">Rarely/Never</label>
-                            </div>
-                        </div>
-                        </span>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     <!--Footer-->
 
     <footer>
@@ -385,15 +539,17 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
 </script>
-<script src="../scripts/pull_incentive.js"></script>
 
-<!-- <script>getProfile();</script> -->
-<script src="../scripts/pull_random_incentive.js"></script>
+<!-- Our scripts -->
+<script src="../scripts/pull_incentive.js"></script>
 <script src="../scripts/calculator_scripts.js"></script>
 <script src="../scripts/functions-madhav.js"></script>
+<script src="../scripts/leaderboard_team_JR.js"></script>
+<script src="../scripts/canvasScript.js"></script>
 
-<script>
-    getProfile();
-</script>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js" charset="UTF-8"></script>
+
+
 
 </html>

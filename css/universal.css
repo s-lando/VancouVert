@@ -19,13 +19,15 @@ body {
     padding-bottom: 1%;
 }
 
-#seeMore{
+#seeMore {
 
     float: right;
 }
+
 .navbar {
 
     background-color: mintcream;
+    border-bottom: #488d3f 2px solid;
 
 }
 
@@ -43,24 +45,27 @@ body {
     margin-right: auto;
 }
 
-.profile-btn {
-    background-color: greenyellow;
+#profile-btn {
     float: right;
-    padding: 0.5rem 2rem;
-    border: 1px #ccc solid;
+    border: 1px rgba(204, 204, 204, 0) solid;
     display: inline-block;
-    margin: 2rem 0 0;
-    border-radius: 50px;
+    margin-bottom: .5em;
+    margin-right: .5em;
+    margin-top: 1em;
     text-decoration: none;
     color: #333;
-    transition: background 500ms ease;
+    transition: 500ms ease;
+    min-height: 60px;
+    background-color: #46774000;
 }
-.login-btn:hover{
-    background:chartreuse;
+
+.login-btn:hover {
+    background: chartreuse;
 }
-.nav{
-margin-top: 1em;
-margin-bottom: 0;
+
+.nav {
+    margin-top: 1em;
+    margin-bottom: 0;
 }
 
 .nav-item {
@@ -71,11 +76,13 @@ margin-bottom: 0;
 .tab-content {
     background-color: #E8F7EE;
     height: auto;
-    border: 1px solid #467740;
-    margin-top: 2vh;
+    border: #488d3f 2px solid;
     text-align: center;
+    margin-top: 9vh;
     margin-left: 3em;
     margin-right: 3em;
+    border-radius: 5%;
+    min-height: 40vh;
 }
 
 #tips {
@@ -94,18 +101,20 @@ margin-bottom: 0;
 }
 
 footer {
+    position: absolute;
+    bottom: 0;
     line-height: 22px;
     background-color: #444;
     box-shadow: 4px -15px 8px -15px rgb(0 0 0 / 20%), 10px -15px 40px -15px rgb(0 0 0 / 19%);
     border-top: 4px solid green;
-      /* position: fixed;
+    /* position: fixed;
   left: 0;
   bottom: 0; */
-  width: 100%;
+    width: 100%;
 }
 
-#type-picture{
-    
+#type-picture {
+
     max-width: 200px;
     max-height: 200px;
     margin: auto;
@@ -121,22 +130,97 @@ footer {
     text-align: center;
     background-color: #333;
     color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: #488d3f 5px solid;
+
 }
 
 
 .btn-outline-info {
+    margin-top: 4em;
+}
+
+
+#calculateButton {
+
     margin-top: 2em;
-}
-
-#foodButton {
-    margin-bottom: 2em;
-}
-
-#calculator {
-    background-color: rgb(255, 255, 255);
 }
 
 /* #food-follow-up{
 
     display: none;
 } */
+
+
+#userChart {
+
+    text-align: center;
+    height: 30vh;
+}
+
+.btn-outline-info {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+/*------------------------------------- LEADERBOARD Styling-----------------------------------------*/
+#leaderboard {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.5rem;
+}
+
+#lead-btn {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+#delete-group {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.btn-close {
+    float: right;
+    width: 6.7%;
+    height: 30px;
+    background-color: #bbf881;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+.btn-close svg {
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+}
+
+#lead-btn-container {
+    font-size: 15ft;
+}
+
+/* CSS to fix image in Incentives */
+#incent-card-container {
+    border: none;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card-img-top {
+    object-fit: fill;
+    width: 100%;
+
+}
+
+#incent-img-cont {
+    width: 300px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
