@@ -2,8 +2,8 @@
 function sayHi() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            // User is signed in.
-            // Do something for the user here. 
+
+            //changes go here
             console.log(user.uid);
             db.collection("users").doc(user.uid)
                 .get()
@@ -24,9 +24,16 @@ function sayHi() {
             // No user is signed in.
         }
     });
-}
-sayHi();
+};
 
+
+
+
+window.addEventListener('load', function() {
+sayHi();
+});
+
+var user = firebase.auth().currentUser;
 
 //Animate
 $('#Login').on('click', function () {

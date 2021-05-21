@@ -26,6 +26,7 @@ body {
 .navbar {
 
     background-color: mintcream;
+    border-bottom: #488d3f 2px solid;
 
 }
 
@@ -43,20 +44,21 @@ body {
     margin-right: auto;
 }
 
-.profile-btn {
-    background-color: greenyellow;
+#profile-btn {
     float: right;
-    padding: 0.5rem 2rem;
-    border: 1px #ccc solid;
+    border: 1px rgba(204, 204, 204, 0) solid;
     display: inline-block;
-    margin: 2rem 0 0;
-    border-radius: 50px;
+    margin-bottom: .5em;
+    margin-right: .5em;
+    margin-top: 1em;
     text-decoration: none;
     color: #333;
-    transition: background 500ms ease;
+    transition: 500ms ease;
+    min-height: 60px;
+    background-color: #46774000;
 }
-.login-btn:hover{
-    background:chartreuse;
+#profile-btn:hover{
+    color: #439139;
 }
 .nav{
 margin-top: 1em;
@@ -71,11 +73,13 @@ margin-bottom: 0;
 .tab-content {
     background-color: #E8F7EE;
     height: auto;
-    border: 1px solid #467740;
-    margin-top: 2vh;
+    border: #488d3f 2px solid;
     text-align: center;
+    margin-top: 9vh;
     margin-left: 3em;
     margin-right: 3em;
+    border-radius: 5%;
+    min-height: 40vh;
 }
 
 #tips {
@@ -97,11 +101,11 @@ footer {
     line-height: 22px;
     background-color: #444;
     box-shadow: 4px -15px 8px -15px rgb(0 0 0 / 20%), 10px -15px 40px -15px rgb(0 0 0 / 19%);
-    border-top: 4px solid green;
       /* position: fixed;
   left: 0;
   bottom: 0; */
   width: 100%;
+
 }
 
 #type-picture{
@@ -121,22 +125,38 @@ footer {
     text-align: center;
     background-color: #333;
     color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: #488d3f 5px solid;
+    
 }
 
 
 .btn-outline-info {
+    margin-top: 4em;
+}
+
+
+#calculateButton {
+
     margin-top: 2em;
-}
-
-#foodButton {
-    margin-bottom: 2em;
-}
-
-#calculator {
-    background-color: rgb(255, 255, 255);
 }
 
 /* #food-follow-up{
 
     display: none;
 } */
+
+
+#userChart{
+
+text-align: center;
+height: 30vh;
+}
+
+.btn-outline-info {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
