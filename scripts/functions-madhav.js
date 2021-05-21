@@ -128,20 +128,21 @@ function makeGraphs() {
                 var chart = new CanvasJS.Chart("chartContainer", {
                     animationEnabled: true,
                     backgroundColor: "#eee",
+                    backgroundColor: "transparent",
                     theme: "light2", // "light1", "light2", "dark1", "dark2"
                     title: {
                         text: "Progress"
                     },
                     axisY: {
-                        title: "Carbon Footprint (in %)",
-                        suffix: "%"
+                        title: "Carbon Footprint (in tonnes )",
+                        suffix: ""
                     },
                     axisX: {
                         title: "Date"
                     },
                     data: [{
                         type: "column",
-                        yValueFormatString: "#,##0.0#\"%\"",
+                        yValueFormatString: "#,##0.0#",
                         dataPoints: [{
                                 label: "May 18",
                                 y: barList[0]
