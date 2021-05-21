@@ -1,16 +1,16 @@
 
-var firebaseConfig = {
-    apiKey: "AIzaSyD5GLLJGTSl7Cj2c-Y4sR0RR731rHX4yQc",
-    authDomain: "vancouvert-dce8f.firebaseapp.com",
-    projectId: "vancouvert-dce8f",
-    storageBucket: "vancouvert-dce8f.appspot.com",
-    messagingSenderId: "546507154756",
-    appId: "1:546507154756:web:ff09f3b43494ac1bfc6311"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-db.settings({ timestampsInSnapshots: true});
+// var firebaseConfig = {
+//     apiKey: "AIzaSyD5GLLJGTSl7Cj2c-Y4sR0RR731rHX4yQc",
+//     authDomain: "vancouvert-dce8f.firebaseapp.com",
+//     projectId: "vancouvert-dce8f",
+//     storageBucket: "vancouvert-dce8f.appspot.com",
+//     messagingSenderId: "546507154756",
+//     appId: "1:546507154756:web:ff09f3b43494ac1bfc6311"
+// };
+// // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+// const db = firebase.firestore();
+// db.settings({ timestampsInSnapshots: true});
 
 let scores = [{userName : "harleen1", userID : "1", group: "abcd", day : "1", month : "1", year:"2020", emission:"20"},
                     {userName : "harleen1", userID : "1", group: "abcd", day : "1", month : "1", year:"2020", emission:"20"},
@@ -29,10 +29,9 @@ function updateLeaderboardView() {
     let records = [];
     // Get the values from database
     
-    
     db.collection('users').get().then((snapshot) => {
         snapshot.docs.forEach(doc => {
-            console.log(doc.data())
+            // console.log(doc.data())
             records.push({userName : doc.data().name,
                         userID : doc.id,
                         emission : doc.data().currentFootprint});
@@ -311,7 +310,7 @@ function addList(){
     // }
 }
 
-// addList();
+addList();
 // updateLeaderboardView();
 function randomize() {
     // This is a function that is written just to check the JS code without connection to  database.
