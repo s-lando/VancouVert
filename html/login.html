@@ -56,6 +56,8 @@
 
         var uiConfig = {
             callbacks: {
+
+                
                 signInSuccessWithAuthResult: function (authResult, redirectUrl) {
                     var user = authResult.user;
                     if (authResult.additionalUserInfo.isNewUser) {
