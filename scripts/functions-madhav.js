@@ -122,6 +122,9 @@ function makeGraphs() {
                     timeList[timeList.length] = doc.data().time;
 
                 })
+
+                console.log(barList[0]);
+                console.log(timeList[0]);
                 var chart = new CanvasJS.Chart("chartContainer", {
                     animationEnabled: true,
                     backgroundColor: "#eee",
