@@ -23,6 +23,8 @@ let scores = [{userName : "harleen1", userID : "1", group: "abcd", day : "1", mo
                     {userName : "harleensdf", userID : "5", group: "abcd", day : "1", month : "1", year:"2020", emission:"20"},
                     {userName : "harleensdf", userID : "5", group: "abcd", day : "1", month : "1", year:"2020", emission:"20"},];
 
+let usersInGroup = [];
+
 function updateLeaderboardView() {
     let records = [];
     // Get the values from database
@@ -158,17 +160,31 @@ function updateLeaderboardViewGroup() {
 
 function report(groupName){
     let usersInGroup = [];
-    db.collection('groups/'+usersInGroup).get().then((snapshot) => {
-        
-
-        var select = document.getElementById("groups");
-        for(var i = 0; i<groups.length; i++){
-            var option = document.createElement('option');
-            option.text = option.value = groups[i];
-            select.add(option, 0);
-        }
+    db.collection('groups/').get().then((snapshot) => {
+        // console.log("Entered : ", snapshot.docs.doc);
+        snapshot.docs.forEach(doc => {
+            if(doc.data().name == groupName){
+                let M = doc.data().groups
+                // console.log(M)
+                getUserData(M);
+                M.forEach(getUserData);
+            }
+        })
     });
 }
+
+function getUserData(userID){
+    console.log(userID)
+    db.collection('users/'+userID+'/calculations').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+            console.log(doc.data())
+        })
+
+    })
+}
+
+
+// test()
 
 function addList(){
     let groups = [];
