@@ -26,29 +26,29 @@ let scores = [{userName : "harleen1", userID : "1", group: "abcd", day : "1", mo
 let usersInGroup = [];
 
 function updateLeaderboardView() {
-    let records = [];
-    // Get the values from database
+    // let records = [];
+    // // Get the values from database
     
     
-    db.collection('carbon_data').get().then((snapshot) => {
-        snapshot.docs.forEach(doc => {
-            console.log(doc.data())
-            records.push({userName : doc.data().userName,
-                        userID : doc.data().userID,
-                        day : doc.data().day,
-                        month : doc.data().month,
-                        year : doc.data().year,
-                        emission : doc.data().emission});
-        })
+    // db.collection('carbon_data').get().then((snapshot) => {
+    //     snapshot.docs.forEach(doc => {
+    //         console.log(doc.data())
+    //         records.push({userName : doc.data().userName,
+    //                     userID : doc.data().userID,
+    //                     day : doc.data().day,
+    //                     month : doc.data().month,
+    //                     year : doc.data().year,
+    //                     emission : doc.data().emission});
+    //     })
     
-        
+    records = userIDToEmission;
         // Process the data to be in the form of {name: "name", emission: "234"}.
         let uniqueIndivisuals = new Map();
         for(let i=0; i<records.length ;i++){
-            console.log(records[i]);
+            // console.log(records[i]);
             if(uniqueIndivisuals.has(records[i].userID)){
                 uniqueIndivisuals.set(records[i].userID, 
-                                        [records[i].userName, 
+                                        [records[i].userID, 
                                             parseInt(records[i].emission) + 
                                             parseInt(uniqueIndivisuals.get(records[i].userID)[1])]);
             }else{
@@ -65,7 +65,7 @@ function updateLeaderboardView() {
             });
         });
 
-        console.log(scores)
+        // console.log(scores)
         let leaderboard = document.getElementById("leaderboard");
         leaderboard.innerHTML = "";
 
@@ -88,34 +88,35 @@ function updateLeaderboardView() {
             elements.push(scoreRow);
 
         }
-    });
+    // });
 }
 
 function updateLeaderboardViewGroup() {
-    let records = [];
-    // Get the values from database
+    // let records = [];
+    // // Get the values from database
     
     
-    db.collection('carbon_data').get().then((snapshot) => {
-        snapshot.docs.forEach(doc => {
-            console.log(doc.data())
-            records.push({userName : doc.data().group,
-                        userID : doc.data().group,
-                        // group : doc.data().group,
-                        day : doc.data().day,
-                        month : doc.data().month,
-                        year : doc.data().year,
-                        emission : doc.data().emission});
-        })
+    // db.collection('carbon_data').get().then((snapshot) => {
+    //     snapshot.docs.forEach(doc => {
+    //         console.log(doc.data())
+    //         records.push({userName : doc.data().group,
+    //                     userID : doc.data().group,
+    //                     // group : doc.data().group,
+    //                     day : doc.data().day,
+    //                     month : doc.data().month,
+    //                     year : doc.data().year,
+    //                     emission : doc.data().emission});
+    //     })
     
-        
+        console.log(userIDToEmission);
+        records = userIDToEmission;
         // Process the data to be in the form of {name: "name", emission: "234"}.
         let uniqueIndivisuals = new Map();
         for(let i=0; i<records.length ;i++){
-            console.log(records[i]);
+            // console.log(records[i]);
             if(uniqueIndivisuals.has(records[i].userID)){
                 uniqueIndivisuals.set(records[i].userID, 
-                                        [records[i].userName, 
+                                        [records[i].userID, 
                                             parseInt(records[i].emission) + 
                                             parseInt(uniqueIndivisuals.get(records[i].userID)[1])]);
             }else{
@@ -132,7 +133,7 @@ function updateLeaderboardViewGroup() {
             });
         });
 
-        console.log(scores)
+        // console.log(scores)
         let leaderboard = document.getElementById("leaderboard");
         leaderboard.innerHTML = "";
 
@@ -155,34 +156,33 @@ function updateLeaderboardViewGroup() {
             elements.push(scoreRow);
 
         }
-    });
 }
 
 function report(groupName){
     let usersInGroup = [];
     db.collection('groups/').get().then((snapshot) => {
-        // console.log("Entered : ", snapshot.docs.doc);
         snapshot.docs.forEach(doc => {
             if(doc.data().name == groupName){
                 let M = doc.data().groups
-                // console.log(M)
                 getUserData(M);
                 M.forEach(getUserData);
             }
         })
     });
 }
-
-function getUserData(userID){
-    console.log(userID)
-    db.collection('users/'+userID+'/calculations').get().then((snapshot) => {
+let userIDToEmission = [];
+function getUserData(userID_indivisual){
+    // console.log(userID_indivisual)
+    db.collection('users/'+userID_indivisual+'/calculations').get().then((snapshot) => {
         snapshot.docs.forEach(doc => {
-            console.log(doc.data())
+            userIDToEmission.push({
+                userID : userID_indivisual,
+                emission : doc.data().food + doc.data().transport + doc.data().home
+            })
         })
-
+        updateLeaderboardViewGroup();
     })
 }
-
 
 // test()
 
@@ -200,6 +200,7 @@ function addList(){
             select.add(option, 0);
         }
     });
+    // updateLeaderboardViewGroup();
     // var select = document.getElementById("year");
     // for(var i = 2011; i >= 1900; --i) {
     //     var option = document.createElement('option');
