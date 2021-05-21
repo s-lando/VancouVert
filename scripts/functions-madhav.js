@@ -1,6 +1,6 @@
 // function will keep track of user's UID on any page they are in.
 function sayHi() {
-    firebase.auth().onAuthStateChanged(function (user) {
+     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
 
             //changes go here
@@ -133,15 +133,15 @@ function makeGraphs() {
                         text: "Progress"
                     },
                     axisY: {
-                        title: "Carbon Footprint (in %)",
-                        suffix: "%"
+                        title: "Carbon Footprint (in tonnes )",
+                        suffix: ""
                     },
                     axisX: {
                         title: "Date"
                     },
                     data: [{
                         type: "column",
-                        yValueFormatString: "#,##0.0#\"%\"",
+                        yValueFormatString: "#,##0.0#",
                         dataPoints: [{
                                 label: "May 18",
                                 y: barList[0]
