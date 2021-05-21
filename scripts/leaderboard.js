@@ -25,67 +25,63 @@ let scores = [{userName : "harleen1", userID : "1", group: "abcd", day : "1", mo
 
 // let usersInGroup = [];
 
-function updateLeaderboardView(records) {
-    // let records = [];
-    // // Get the values from database
+function updateLeaderboardView() {
+    let records = [];
+    // Get the values from database
     
     
-    // db.collection('carbon_data').get().then((snapshot) => {
-    //     snapshot.docs.forEach(doc => {
-    //         console.log(doc.data())
-    //         records.push({userName : doc.data().userName,
-    //                     userID : doc.data().userID,
-    //                     day : doc.data().day,
-    //                     month : doc.data().month,
-    //                     year : doc.data().year,
-    //                     emission : doc.data().emission});
-    //     })
+    db.collection('users').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+            console.log(doc.data())
+            records.push({userName : doc.data().name,
+                        userID : doc.id,
+                        emission : doc.data().currentFootprint});
+        })
     
-    // records = userIDToEmission;
-    // records = scores;
     // Process the data to be in the form of {name: "name", emission: "234"}.
-    // let uniqueIndivisuals = new Map();
-    // for(let i=0; i<records.length ;i++){
-    //     // console.log(records[i]);
-    //     if(uniqueIndivisuals.has(records[i].userID)){
-    //         uniqueIndivisuals.set(records[i].userID, 
-    //                                 [records[i].userName, 
-    //                                     parseInt(records[i].emission) + 
-    //                                     parseInt(uniqueIndivisuals.get(records[i].userID)[1])]);
-    //     }else{
-    //         uniqueIndivisuals.set(records[i].userID, 
-    //             [records[i].userName, parseInt(records[i].emission)]);
-    //     }
-    // }
+    let uniqueIndivisuals = new Map();
+    for(let i=0; i<records.length ;i++){
+        // console.log(records[i]);
+        if(uniqueIndivisuals.has(records[i].userID)){
+            uniqueIndivisuals.set(records[i].userID, 
+                                    [records[i].userName, 
+                                        parseInt(records[i].emission) + 
+                                        parseInt(uniqueIndivisuals.get(records[i].userID)[1])]);
+        }else{
+            uniqueIndivisuals.set(records[i].userID, 
+                [records[i].userName, parseInt(records[i].emission)]);
+        }
+    }
 
-    // let scores = [];
-    // uniqueIndivisuals.forEach((values, key) => {
-    //     scores.push({
-    //         name : values[0],
-    //         score : values[1],
-    //     });
-    // });
+    let scores = [];
+    uniqueIndivisuals.forEach((values, key) => {
+        scores.push({
+            name : values[0],
+            score : values[1],
+        });
+    });
 
-    // // console.log(scores)
-    // let leaderboard = document.getElementById("leaderboard");
-    // leaderboard.innerHTML = "";
+    // console.log(scores)
+    let leaderboard = document.getElementById("leaderboard");
+    leaderboard.innerHTML = "";
 
-    // scores.sort(function(a, b){ return b.score - a.score  });
-    // let elements = []; // we'll need created elements to update colors later on
-    // // create elements for each player
-    // for(let i=0; i<scores.length; i++) {
-    //     let name = document.createElement("div");
-    //     let score = document.createElement("div");
-    //     name.className = "name_bar";
-    //     name.innerText = i+1 + ". " + scores[i].name;
-    //     score.innerText = scores[i].score;
-    //     let scoreRow = document.createElement("div");
-    //     scoreRow.classList.add("lboard_mem");
-    //     scoreRow.appendChild(name);
-    //     scoreRow.appendChild(score);
-    //     leaderboard.appendChild(scoreRow);
-    //     elements.push(scoreRow);
-    // }
+    scores.sort(function(a, b){ return - b.score + a.score  });
+    let elements = []; // we'll need created elements to update colors later on
+    // create elements for each player
+    for(let i=0; i<scores.length; i++) {
+        let name = document.createElement("div");
+        let score = document.createElement("div");
+        name.className = "name_bar";
+        name.innerText = i+1 + ". " + scores[i].name;
+        score.innerText = scores[i].score;
+        let scoreRow = document.createElement("div");
+        scoreRow.classList.add("lboard_mem");
+        scoreRow.appendChild(name);
+        scoreRow.appendChild(score);
+        leaderboard.appendChild(scoreRow);
+        elements.push(scoreRow);
+    }
+    })
 }
 
 let uniqueIndivisuals = new Map();
@@ -176,7 +172,7 @@ function updateLeaderboardViewGroup(records_1) {
     let leaderboard = document.getElementById("leaderboard");
     leaderboard.innerHTML = "";
 
-    scores.sort(function(a, b){ return b.score - a.score  });
+    scores.sort(function(a, b){ return  - b.score + a.score  });
     let elements = []; // we'll need created elements to update colors later on
     // create elements for each player
     for(let i=0; i<scores.length; i++) {
@@ -233,6 +229,10 @@ function report1(groupName){
 }
 
 function report(groupName){
+    if(groupName == "All Users"){
+        updateLeaderboardView();
+        return
+    }
     let usersInGroup = [];
     db.collection('users/').get().then((snapshot) => {
         snapshot.docs.forEach(doc => {
@@ -293,13 +293,16 @@ function addList(){
         })
 
         var select = document.getElementById("groups");
+        var option = document.createElement('option');
+        option.text = option.value = "All Users";
+        select.add(option, 0);
         for(var i = 0; i<groups.length; i++){
             var option = document.createElement('option');
             option.text = option.value = groups[i];
-            select.add(option, 0);
+            select.add(option, 1);
         }
+        updateLeaderboardView();
     });
-    // updateLeaderboardViewGroup();
     // var select = document.getElementById("year");
     // for(var i = 2011; i >= 1900; --i) {
     //     var option = document.createElement('option');
