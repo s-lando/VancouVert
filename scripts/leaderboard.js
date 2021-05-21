@@ -23,30 +23,32 @@ let scores = [{userName : "harleen1", userID : "1", group: "abcd", day : "1", mo
                     {userName : "harleensdf", userID : "5", group: "abcd", day : "1", month : "1", year:"2020", emission:"20"},
                     {userName : "harleensdf", userID : "5", group: "abcd", day : "1", month : "1", year:"2020", emission:"20"},];
 
+let usersInGroup = [];
+
 function updateLeaderboardView() {
-    let records = [];
-    // Get the values from database
+    // let records = [];
+    // // Get the values from database
     
     
-    db.collection('carbon_data').get().then((snapshot) => {
-        snapshot.docs.forEach(doc => {
-            console.log(doc.data())
-            records.push({userName : doc.data().userName,
-                        userID : doc.data().userID,
-                        day : doc.data().day,
-                        month : doc.data().month,
-                        year : doc.data().year,
-                        emission : doc.data().emission});
-        })
+    // db.collection('carbon_data').get().then((snapshot) => {
+    //     snapshot.docs.forEach(doc => {
+    //         console.log(doc.data())
+    //         records.push({userName : doc.data().userName,
+    //                     userID : doc.data().userID,
+    //                     day : doc.data().day,
+    //                     month : doc.data().month,
+    //                     year : doc.data().year,
+    //                     emission : doc.data().emission});
+    //     })
     
-        
+    records = userIDToEmission;
         // Process the data to be in the form of {name: "name", emission: "234"}.
         let uniqueIndivisuals = new Map();
         for(let i=0; i<records.length ;i++){
-            console.log(records[i]);
+            // console.log(records[i]);
             if(uniqueIndivisuals.has(records[i].userID)){
                 uniqueIndivisuals.set(records[i].userID, 
-                                        [records[i].userName, 
+                                        [records[i].userID, 
                                             parseInt(records[i].emission) + 
                                             parseInt(uniqueIndivisuals.get(records[i].userID)[1])]);
             }else{
@@ -63,7 +65,7 @@ function updateLeaderboardView() {
             });
         });
 
-        console.log(scores)
+        // console.log(scores)
         let leaderboard = document.getElementById("leaderboard");
         leaderboard.innerHTML = "";
 
@@ -86,34 +88,35 @@ function updateLeaderboardView() {
             elements.push(scoreRow);
 
         }
-    });
+    // });
 }
 
 function updateLeaderboardViewGroup() {
-    let records = [];
-    // Get the values from database
+    // let records = [];
+    // // Get the values from database
     
     
-    db.collection('carbon_data').get().then((snapshot) => {
-        snapshot.docs.forEach(doc => {
-            console.log(doc.data())
-            records.push({userName : doc.data().group,
-                        userID : doc.data().group,
-                        // group : doc.data().group,
-                        day : doc.data().day,
-                        month : doc.data().month,
-                        year : doc.data().year,
-                        emission : doc.data().emission});
-        })
+    // db.collection('carbon_data').get().then((snapshot) => {
+    //     snapshot.docs.forEach(doc => {
+    //         console.log(doc.data())
+    //         records.push({userName : doc.data().group,
+    //                     userID : doc.data().group,
+    //                     // group : doc.data().group,
+    //                     day : doc.data().day,
+    //                     month : doc.data().month,
+    //                     year : doc.data().year,
+    //                     emission : doc.data().emission});
+    //     })
     
-        
+        console.log(userIDToEmission);
+        records = userIDToEmission;
         // Process the data to be in the form of {name: "name", emission: "234"}.
         let uniqueIndivisuals = new Map();
         for(let i=0; i<records.length ;i++){
-            console.log(records[i]);
+            // console.log(records[i]);
             if(uniqueIndivisuals.has(records[i].userID)){
                 uniqueIndivisuals.set(records[i].userID, 
-                                        [records[i].userName, 
+                                        [records[i].userID, 
                                             parseInt(records[i].emission) + 
                                             parseInt(uniqueIndivisuals.get(records[i].userID)[1])]);
             }else{
@@ -130,7 +133,7 @@ function updateLeaderboardViewGroup() {
             });
         });
 
-        console.log(scores)
+        // console.log(scores)
         let leaderboard = document.getElementById("leaderboard");
         leaderboard.innerHTML = "";
 
@@ -153,11 +156,61 @@ function updateLeaderboardViewGroup() {
             elements.push(scoreRow);
 
         }
-    });
 }
 
+function report(groupName){
+    let usersInGroup = [];
+    db.collection('groups/').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+            if(doc.data().name == groupName){
+                let M = doc.data().groups
+                getUserData(M);
+                M.forEach(getUserData);
+            }
+        })
+    });
+}
+let userIDToEmission = [];
+function getUserData(userID_indivisual){
+    // console.log(userID_indivisual)
+    db.collection('users/'+userID_indivisual+'/calculations').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+            userIDToEmission.push({
+                userID : userID_indivisual,
+                emission : doc.data().food + doc.data().transport + doc.data().home
+            })
+        })
+        updateLeaderboardViewGroup();
+    })
+}
 
-updateLeaderboardView();
+// test()
+
+function addList(){
+    let groups = [];
+    db.collection('groups').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+           groups.push(doc.data().name);
+        })
+
+        var select = document.getElementById("groups");
+        for(var i = 0; i<groups.length; i++){
+            var option = document.createElement('option');
+            option.text = option.value = groups[i];
+            select.add(option, 0);
+        }
+    });
+    // updateLeaderboardViewGroup();
+    // var select = document.getElementById("year");
+    // for(var i = 2011; i >= 1900; --i) {
+    //     var option = document.createElement('option');
+    //     option.text = option.value = i;
+    //     select.add(option, 0);
+    // }
+}
+
+// addList();
+// updateLeaderboardView();
 function randomize() {
     // This is a function that is written just to check the JS code without connection to  database.
     for(var i=0; i<scores.length; i++) {

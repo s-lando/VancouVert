@@ -11,7 +11,7 @@
     <link rel="shortcut icon" type="image/png" href="../img/PNGfavicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body onload="addList()">
     <nav class="navbar brand-custom">
         <a id="nav-top" class="navbar-brand" href="#">
             <img class="logo" src="../img/leafMain.svg" alt="logo not displaying properly">
@@ -47,10 +47,11 @@
 	Share to FaceBook
 </button>
 <font color="white">
-<input type="radio" id="indivisual" name="sortby" value="indivisual" onclick="updateLeaderboardView()" checked="checked">
+<!-- <input type="radio" id="indivisual" name="sortby" value="indivisual" onclick="updateLeaderboardView()" checked="checked">
 <label for="male">Indivisual</label>
 <input type="radio" id="group" name="sortby" value="group" onclick="updateLeaderboardViewGroup()">
-<label for="female">Group</label><br>
+<label for="female">Group</label><br> -->
+<select id="groups" name="groups" onchange="report(this.value)"></select>
 </font>
 <!-- <button onClick="randomize()">Randomize</button> -->
 <!-- <footer>
