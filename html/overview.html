@@ -280,147 +280,142 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 
 
     <!- Home Form -->
+    </div>
+    <div class="modal fade" id="home" tabindex="-1" role="dialog" aria-labelledby="home" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLongTitle">Home <svg xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" class="bi bi-house-door-fill"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+                        </svg></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
-        <div class="modal fade" id="home" tabindex="-1" role="dialog" aria-labelledby="home" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLongTitle">Home <svg xmlns="http://www.w3.org/2000/svg"
-                                width="16" height="16" fill="currentColor" class="bi bi-house-door-fill"
-                                viewBox="0 0 16 16">
-                                <path
-                                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
-                            </svg></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                        <form id="homeForm">
-                            <div class="form-group" id="houseValue">
-                                <label for="question">Select which best describes your household:</label>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="detached-home" name="houseType" value="detachedHome"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="detached-home">Detached Family Home
-                                    </label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="appartment-condo" name="houseType" value="appartmentCondo"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="appartment-condo">Appartment/Condo </label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="numberPeople">How many people live in your household?</label>
-                                <input type="number" class="form-control" name="householdNum" id="numberPeople"
-                                    placeholder="Enter a whole number greater than 0">
-                            </div>
-                            <div class="form-group">
-                                <label for="numGarbage">How many full 20L garbage bags does your household fill every
-                                    week?
-                                    <p style="font-size: smaller;">A full garbage bin holds on average 8 bags</p>
+                    <form id="homeForm">
+                        <div class="form-group" id="houseValue">
+                            <label for="question">Select which best describes your household:</label>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="detached-home" name="houseType" value="detachedHome"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="detached-home">Detached Family Home
                                 </label>
-                                <input type="number" class="form-control" name="garbageNum" id="numGarbage"
-                                    placeholder="Enter a positive whole number">
                             </div>
-                            <div class="form-group">
-                                <label for="question">Select which best describes the energy source that heats your
-                                    household:</label>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="electric" name="energyType" value="electric"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="electric">Electric</label> </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="gas" name="energyType" value="gas"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="gas">Natural Gas</label>
-                                </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="appartment-condo" name="houseType" value="appartmentCondo"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="appartment-condo">Appartment/Condo </label>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="numberPeople">How many people live in your household?</label>
+                            <input type="number" class="form-control" name="householdNum" id="numberPeople"
+                                placeholder="Enter a whole number greater than 0">
+                        </div>
+                        <div class="form-group">
+                            <label for="numGarbage">How many full 20L garbage bags does your household fill every
+                                week?
+                                <p style="font-size: smaller;">A full garbage bin holds on average 8 bags</p>
+                            </label>
+                            <input type="number" class="form-control" name="garbageNum" id="numGarbage"
+                                placeholder="Enter a positive whole number">
+                        </div>
+                        <div class="form-group">
+                            <label for="question">Select which best describes the energy source that heats your
+                                household:</label>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="electric" name="energyType" value="electric"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="electric">Electric</label> </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="gas" name="energyType" value="gas" class="custom-control-input">
+                                <label class="custom-control-label" for="gas">Natural Gas</label>
+                            </div>
+                        </div>
 
 
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success submit"
-                                    data-dismiss="modal">Submit</button>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success submit" data-dismiss="modal">Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Transport Form -->
+    <!-- Transport Form -->
 
-        <div class="modal fade" id="transport" tabindex="-1" role="dialog" aria-labelledby="transport"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLongTitle">Transport <svg
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-signpost-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
-                            </svg></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
+    <div class="modal fade" id="transport" tabindex="-1" role="dialog" aria-labelledby="transport" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLongTitle">Transport <svg xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" class="bi bi-signpost-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
+                        </svg></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
-                        <form id="transportForm">
-                            <div class="form-group" id="transportForm">
-                                <label for="question">Select which best describes your regular mode of
-                                    transportation:</label>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="gas-car" name="vehicleType" value="gasCar"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="gas-car">Gas Car</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="gas-truck" name="vehicleType" value="gasTruck"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="gas-truck">Gas Truck/Van</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="electric-vehicle" name="vehicleType" value="ev"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="electric-vehicle">Electric
-                                        Vehicle</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="transit" name="vehicleType" value="publicTransit"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="transit">Public Transit</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="non-motor" name="vehicleType" value="nonMotor"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="non-motor">Non-Motor Vehicle (e.g.
-                                        Bike)</label>
-                                </div>
+                    <form id="transportForm">
+                        <div class="form-group" id="transportForm">
+                            <label for="question">Select which best describes your regular mode of
+                                transportation:</label>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="gas-car" name="vehicleType" value="gasCar"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="gas-car">Gas Car</label>
                             </div>
-                            <div class="form-group">
-                                <label for="flightNum">Approximately how many hours have you spent flying in the
-                                    past
-                                    year?</label>
-                                <input type="number" class="form-control" id="FlightNum" name="flightNum"
-                                    placeholder="Enter a whole number">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="gas-truck" name="vehicleType" value="gasTruck"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="gas-truck">Gas Truck/Van</label>
                             </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="electric-vehicle" name="vehicleType" value="ev"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="electric-vehicle">Electric
+                                    Vehicle</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="transit" name="vehicleType" value="publicTransit"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="transit">Public Transit</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="non-motor" name="vehicleType" value="nonMotor"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="non-motor">Non-Motor Vehicle (e.g.
+                                    Bike)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="flightNum">Approximately how many hours have you spent flying in the
+                                past
+                                year?</label>
+                            <input type="number" class="form-control" id="FlightNum" name="flightNum"
+                                placeholder="Enter a whole number">
+                        </div>
 
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success submit"
-                                    data-dismiss="modal">Submit</button>
-                        </form>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success submit" data-dismiss="modal">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- Food Form -->
@@ -504,8 +499,17 @@
     </div>
     </div>
 
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <!--Footer-->
 
+    <!-- <a href="help.html" type="button" class="btn btn-success btn-lg" id="help-btn"></a> -->
     <footer>
         <div id="footer-p">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
             <br>
