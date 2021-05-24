@@ -1,6 +1,6 @@
 // function will keep track of user's UID on any page they are in.
 function sayHi() {
-     firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
 
             //changes go here
@@ -29,8 +29,8 @@ function sayHi() {
 
 
 
-window.addEventListener('load', function() {
-sayHi();
+window.addEventListener('load', function () {
+    sayHi();
 });
 
 var user = firebase.auth().currentUser;
@@ -113,7 +113,7 @@ function makeGraphs() {
         var barList = [];
         var timeList = [];
         db.collection("users").doc(user.uid).collection("calculations")
-            .orderBy("time", "asc")
+            .orderBy("time", "desc")
             .get()
             .then(function (snap) {
                 snap.forEach(function (doc) {
@@ -127,7 +127,6 @@ function makeGraphs() {
                 console.log(timeList[0]);
                 var chart = new CanvasJS.Chart("chartContainer", {
                     animationEnabled: true,
-                    backgroundColor: "#eee",
                     backgroundColor: "transparent",
                     theme: "light2", // "light1", "light2", "dark1", "dark2"
                     title: {
@@ -145,7 +144,7 @@ function makeGraphs() {
                         yValueFormatString: "#,##0.0#",
                         dataPoints: [{
                                 label: "May 18",
-                                y: barList[0]
+                                y: barList[2]
                             },
                             {
                                 label: "May 19",
@@ -153,10 +152,16 @@ function makeGraphs() {
                             },
                             {
                                 label: "May 20",
-                                y: barList[2]
+                                y: barList[0]
                             },
-                            // { label: "Australia", y: 2.50 },	
-                            // { label: "Mexico", y: 2.30 },
+                            // {
+                            //     label: "Australia",
+                            //     y: 2.50
+                            // },
+                            // {
+                            //     label: "Mexico",
+                            //     y: 2.30
+                            // }
                             // { label: "UK", y: 1.80 },
                             // { label: "United States", y: 1.60 },
                             // { label: "Japan", y: 1.60 }
@@ -170,4 +175,8 @@ function makeGraphs() {
     });
 
 }
-makeGraphs();
+//loads on click of tab, then off
+$('#history-tab').on("click", function () {
+    makeGraphs();
+    $('#history-tab').off();
+});
