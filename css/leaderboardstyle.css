@@ -1,40 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
-
+/* 
 *{
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	box-sizing: border-box;
 	font-family: 'Montserrat', sans-serif;
-}
+} */
 
-body{
-	/* background: #b8c4bb; */
-	background-image: url("../img/assets_harleen/green_leafs.png");
-}
-
-.lboard_section{
-	width: 80%;
-	height: 800px;
-	margin: 100px auto 0;
-	background: #112519;
-	
-	padding: 5px 40px;
-	position: relative;
-	border-radius: 15px;
-}
-
-.lboard_wrap{
-	position: absolute;
-	top: 15%;
-	left: 4%;
-    overflow-y: scroll;
-	background: #b8c4bb;
-	background-image: url("../img/assets_harleen/carbon.jpg");
-	width: 86%;
-	height: 70%;
-	border-radius: 15px;
-}
 
 .lboard_wrap .lboard_mem{
 	display: flex;
@@ -55,8 +28,6 @@ body{
 	width: calc(80%);
 }
 
-.navbar {
-
-    background-color: rgb(3, 14, 8);
-
+.leaderboard-container .add-leaderboard-here{
+	background: #01290b;
 }
