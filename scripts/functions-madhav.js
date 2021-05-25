@@ -117,60 +117,74 @@ function makeGraphs() {
             .get()
             .then(function (snap) {
                 snap.forEach(function (doc) {
-
                     barList[barList.length] = doc.data().totalFootprint;
                     timeList[timeList.length] = doc.data().time;
-
                 })
-
-                console.log(barList[0]);
+                console.log(barList[barList.length - 1]);
                 console.log(timeList[0]);
+
+
                 var chart = new CanvasJS.Chart("chartContainer", {
-                    animationEnabled: true,
-                    backgroundColor: "transparent",
-                    theme: "light2", // "light1", "light2", "dark1", "dark2"
+
                     title: {
-                        text: "Progress"
-                    },
-                    axisY: {
-                        title: "Carbon Footprint (in tonnes )",
-                        suffix: ""
-                    },
-                    axisX: {
-                        title: "Date"
+                        text: "Total footprint progress"
                     },
                     data: [{
-                        type: "column",
-                        yValueFormatString: "#,##0.0#",
+                        type: "line",
+
                         dataPoints: [{
-                                label: "May 18",
+                                x: new Date(2021, 05, 1),
+                                y: barList[barList.length - 1]
+                            },
+                            {
+                                x: new Date(2021, 05, 10),
+                                y: barList[3]
+                            },
+                            {
+                                x: new Date(2021, 05, 17),
                                 y: barList[2]
                             },
                             {
-                                label: "May 19",
+                                x: new Date(2021, 05, 22),
                                 y: barList[1]
                             },
                             {
-                                label: "May 20",
+                                x: new Date(2021, 05, 26),
                                 y: barList[0]
                             },
                             // {
-                            //     label: "Australia",
-                            //     y: 2.50
+                            //     x: new Date(2012, 05, 1),
+                            //     y: 500
                             // },
                             // {
-                            //     label: "Mexico",
-                            //     y: 2.30
+                            //     x: new Date(2012, 06, 1),
+                            //     y: 480
+                            // },
+                            // {
+                            //     x: new Date(2012, 07, 1),
+                            //     y: 480
+                            // },
+                            // {
+                            //     x: new Date(2012, 08, 1),
+                            //     y: 410
+                            // },
+                            // {
+                            //     x: new Date(2012, 09, 1),
+                            //     y: 500
+                            // },
+                            // {
+                            //     x: new Date(2012, 10, 1),
+                            //     y: 480
+                            // },
+                            // {
+                            //     x: new Date(2012, 11, 1),
+                            //     y: 510
                             // }
-                            // { label: "UK", y: 1.80 },
-                            // { label: "United States", y: 1.60 },
-                            // { label: "Japan", y: 1.60 }
-
                         ]
                     }]
                 });
-                chart.render();
 
+                chart.render();
             })
     });
 
