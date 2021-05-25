@@ -125,7 +125,8 @@ function makeGraphs() {
 
 
                 var chart = new CanvasJS.Chart("chartContainer", {
-
+                    animationEnabled: true,
+                    backgroundColor: "transparent",
                     title: {
                         text: "Total footprint progress"
                     },
