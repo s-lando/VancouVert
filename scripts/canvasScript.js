@@ -19,10 +19,6 @@ $(document).ready(function () {
             type: "pie",
             startAngle: 25,
             toolTipContent: "<b>{label}</b>: {y}%",
-            showInLegend: "true",
-            legendText: "{label}",
-            indexLabelFontSize: 16,
-            indexLabel: "{label} - {y}%",
             dataPoints: [
                 { y: 55.08, label: "Transport" },
                 { y: 30.02, label: "Home" },
