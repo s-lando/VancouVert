@@ -8,7 +8,7 @@
 	font-family: 'Montserrat', sans-serif;
 } */
 
-
+/* 
 .lboard_wrap .lboard_mem{
 	display: flex;
 	align-items: center;
@@ -18,16 +18,16 @@
 	font-size: large;
 }
 
-.lboard_wrap .lboard_item{
+.lboard_item{
 	padding: 25px;
 }
 
 
-.lboard_wrap .lboard_mem .name_bar{
+.lboard_mem .name_bar{
 	margin: 0 20px;
 	width: calc(80%);
 }
 
 .leaderboard-container .add-leaderboard-here{
 	background: #01290b;
-}
+} */
