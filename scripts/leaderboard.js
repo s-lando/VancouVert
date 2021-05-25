@@ -61,8 +61,8 @@ function updateLeaderboardView() {
     });
 
     // console.log(scores)
-    let leaderboard = document.getElementById("leaderboard");
-    leaderboard.innerHTML = "";
+    let leaderboard = document.getElementById("leaderboard_ranks");
+    // leaderboard.innerHTML = "";
 
     scores.sort(function(a, b){ return - b.score + a.score  });
     let elements = []; // we'll need created elements to update colors later on
@@ -71,12 +71,13 @@ function updateLeaderboardView() {
         let name = document.createElement("div");
         let score = document.createElement("div");
         name.className = "name_bar";
-        name.innerText = i+1 + ". " + scores[i].name;
+        // name.innerText = i+1 + ". " + scores[i].name;
+        name.innerText = i+1 + ". " + scores[i].name + " " + scores[i].score;
         score.innerText = scores[i].score;
         let scoreRow = document.createElement("div");
         scoreRow.classList.add("lboard_mem");
         scoreRow.appendChild(name);
-        scoreRow.appendChild(score);
+        // scoreRow.appendChild(score);
         leaderboard.appendChild(scoreRow);
         elements.push(scoreRow);
     }
@@ -168,8 +169,8 @@ function updateLeaderboardViewGroup(records_1) {
     console.log(scores);
 
     //     // console.log(scores)
-    let leaderboard = document.getElementById("leaderboard");
-    leaderboard.innerHTML = "";
+    let leaderboard = document.getElementById("leaderboard_ranks");
+    // leaderboard.innerHTML = "";
 
     scores.sort(function(a, b){ return  - b.score + a.score  });
     let elements = []; // we'll need created elements to update colors later on
@@ -178,12 +179,12 @@ function updateLeaderboardViewGroup(records_1) {
         let name = document.createElement("div");
         let score = document.createElement("div");
         name.className = "name_bar";
-        name.innerText = i+1 + ". " + scores[i].name;
+        name.innerText = i+1 + ". " + scores[i].name + " " + scores[i].score;
         score.innerText = scores[i].score;
         let scoreRow = document.createElement("div");
         scoreRow.classList.add("lboard_mem");
         scoreRow.appendChild(name);
-        scoreRow.appendChild(score);
+        // scoreRow.appendChild(score);
         leaderboard.appendChild(scoreRow);
         elements.push(scoreRow);
     }
@@ -228,6 +229,7 @@ function report1(groupName){
 }
 
 function report(groupName){
+    $("#leaderboard_ranks").empty();
     if(groupName == "All Users"){
         updateLeaderboardView();
         return
