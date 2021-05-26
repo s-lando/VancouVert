@@ -55,6 +55,7 @@ $("#overview").ready(function () {
             $("#user-name2").append(name);
 
             genIncentiveByWorstCat(worst);
+            
         })
     })
 })
@@ -65,6 +66,7 @@ function genIncentiveByWorstCat(category) {
 
     incentives
     .where("type", "==", category)
+    .order("random")
     .limit(1)
     .get()
     .then(function (snap) {
@@ -76,7 +78,6 @@ function genIncentiveByWorstCat(category) {
             console.log(desc + ", " + org + ", " + linkURL);
             console.log(image);
 
-            
             $("#incentive-card-title").append(org);
             $(".card-text").append(desc);
             $("#type-picture").attr("src", ("../img/" + image));
@@ -84,3 +85,5 @@ function genIncentiveByWorstCat(category) {
         })
     })
 }
+
+location.reload(genIncentiveByWorstCat(worst));
