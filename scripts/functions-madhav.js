@@ -117,76 +117,57 @@ function makeGraphs() {
             .get()
             .then(function (snap) {
                 snap.forEach(function (doc) {
+
+                    // DateTime myDateTime = (snapshot.data.documents[index].data['timestamp']).toDate();
+
                     barList[barList.length] = doc.data().totalFootprint;
-                    timeList[timeList.length] = doc.data().time;
+                    timeList[timeList.length] = doc.data().time.toDate;
                 })
                 $("#calc-goes-here").text(barList[barList.length - 1]);
                 console.log(barList[barList.length - 1]);
                 console.log(timeList[0]);
 
+                if (barList.length == 0) {
 
-                var chart = new CanvasJS.Chart("chartContainer", {
-                    animationEnabled: true,
-                    backgroundColor: "transparent",
-                    title: {
-                        text: "Your Progress"
-                    },
-                    data: [{
-                        type: "line",
+                    $("#chartContainer").html("");
+                    $("#firstcalc").html("Please perform your first calculation in the calculation tab to see your progress!");
+                } else {
+                    var chart = new CanvasJS.Chart("chartContainer", {
+                        animationEnabled: true,
+                        backgroundColor: "transparent",
+                        title: {
+                            text: "Your Progress"
+                        },
+                        data: [{
+                            type: "line",
 
-                        dataPoints: [{
-                                x: new Date(2021, 05, 1),
-                                y: barList[4]
-                            },
-                            {
-                                x: new Date(2021, 05, 10),
-                                y: barList[3]
-                            },
-                            {
-                                x: new Date(2021, 05, 17),
-                                y: barList[2]
-                            },
-                            {
-                                x: new Date(2021, 05, 22),
-                                y: barList[1]
-                            },
-                            {
-                                x: new Date(2021, 05, 26),
-                                y: barList[0]
-                            },
-                            // {
-                            //     x: new Date(2012, 05, 1),
-                            //     y: 500
-                            // },
-                            // {
-                            //     x: new Date(2012, 06, 1),
-                            //     y: 480
-                            // },
-                            // {
-                            //     x: new Date(2012, 07, 1),
-                            //     y: 480
-                            // },
-                            // {
-                            //     x: new Date(2012, 08, 1),
-                            //     y: 410
-                            // },
-                            // {
-                            //     x: new Date(2012, 09, 1),
-                            //     y: 500
-                            // },
-                            // {
-                            //     x: new Date(2012, 10, 1),
-                            //     y: 480
-                            // },
-                            // {
-                            //     x: new Date(2012, 11, 1),
-                            //     y: 510
-                            // }
-                        ]
-                    }]
-                });
+                            dataPoints: [{
+                                    x: new Date(2021, 05, 20),
+                                    y: barList[4]
+                                },
+                                {
+                                    x: new Date(2021, 05, 10),
+                                    y: barList[3]
+                                },
+                                {
+                                    x: new Date(2021, 05, 17),
+                                    y: barList[2]
+                                },
+                                {
+                                    x: new Date(2021, 05, 12),
+                                    y: barList[1]
+                                },
+                                {
+                                    x: new Date(2021, 05, 22),
+                                    y: barList[0]
+                                },
+                               
+                            ]
+                        }]
+                    });
 
-                chart.render();
+                    chart.render();
+                }
             })
     });
 
