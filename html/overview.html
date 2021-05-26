@@ -13,8 +13,10 @@
 
     <!--------------------------------------- Our CSS pages -------------------------------------------->
     <link rel="stylesheet" href="../css/leaderboardstyle.css" />
-    <link rel="stylesheet" href="../css/universal.css" />
-    
+    <link rel="stylesheet" href="../css/colourPalette1.css" />
+    <link rel="stylesheet" href="../css/overviewTab.css">
+    <link rel="stylesheet" href="../css/calculatorTab.css">
+
     <!-- <link rel="stylesheet" type="text/css" href="../css/progress.css" /> -->
 
     <link rel="shortcut icon" type="image/png" href="../img/PNGfavicon.png">
@@ -23,6 +25,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
     </title>
 </head>
@@ -34,12 +43,13 @@
         <a id="nav-top" class="navbar-brand" href="../html/overview.html">
             <img class="logo" src="../img/leafMain.svg" alt="logo not displaying properly">
         </a>
-        
+
         <a href="help.html" id="help-btn">
-            <img src="https://img.icons8.com/ios/50/26e07f/help.png"/>
-            
+            <img src="https://img.icons8.com/ios/50/26e07f/help.png" />
+
         </a>
-        <a href="#" type="button" style="display: inline;" class="btn btn-success btn-lg" id="profile-btn">
+        <a href="../html/profile.html" type="button" style="display: inline;" class="btn btn-success btn-lg"
+            id="profile-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                 class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -48,12 +58,12 @@
             </svg>
         </a>
         <a href="../index.html" id="logout-btn">
-            <img src="https://img.icons8.com/ios/50/26e07f/logout-rounded-left.png"/>
+            <img src="https://img.icons8.com/ios/50/26e07f/logout-rounded-left.png" />
         </a>
     </nav>
 
     <!--Tabs Nav Bar-->
-    <ul class="nav nav-tabs" id="overview-tab" role="tablist">
+    <ul class="nav nav-tabs" id="tabs" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
                 aria-controls="overview" aria-selected="true">Overview</a>
@@ -70,38 +80,57 @@
             <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history"
                 aria-selected="false">Progress</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link" id="incent-tab" data-toggle="tab" href="#incent" role="tab" aria-controls="incent"
                 aria-selected="false">Incentives</a>
-        </li>
+        </li> -->
 
     </ul>
     <div class="tab-content" id="myTabContent">
+
         <!-- overview tab -->
         <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
             <div>
-            <div id="userChart">
+                <!-----------------PIE CHART ------------------------------>
+                <div id="userChart">
 
-            </div>
-            <div id="vancouverComparison">
-To Meet the 2030 Green Goal Vancouverites need to emit on average a maximum of 6.0 CO2 tonnes per year
-<p id="yourNumber"> Your current footprint: ___ per year</p>
+                </div>
+
+                <div id="vancouverComparison">
+                    <img src="../img/goal.png" alt="Target" id="target-icon">
+                    <p>Vancouverites need a maximum of <b id="co2-number">~6.0 CO2 tonnes/yr</b> to meet the 2030
+                        target</p>
+                    <p id="yourNumber"> Your footprint: <span id="currentUserNumber"></span> CO2 tonnes/yr</p>
+                </div>
+
+
+                <!-- <div id="cont1">
+
+                        <div id="incent-img-cont">
+                            <img class="card-img-top" id="type-picture" src="../img/" alt="Card image cap">
+                        </div>
+
+                        <h5 class="card-title" id="incentive-card-title"></h5>
+                    </div>
+
+                    <div id="cont2">
+                        <p class="card-text" id="incentive-card-text"></p>
+                        <a href="#" class="btn btn-success" id="incentive_url">
+                            <img src="../img/link.png" alt="another page" id="redirect-link">Visit
+                        </a>
+                    </div> -->
+
             </div>
         </div>
 
-        </div>
-
-
-
-
-        <!-- calculator tab -->
+        <!------------------------------------ calculator tab ------------------------------------------>
         <div class="tab-pane fade" id="calculator" role="tabpanel" aria-labelledby="calculator-tab">
 
             <div class="btn-group" role="group" aria-label="Basic example">
 
                 <button type="button" id="homeButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
                     data-target="#home">Home <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                        aria-pressed="false" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                         <path
                             d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
                     </svg> </button>
@@ -124,131 +153,147 @@ To Meet the 2030 Green Goal Vancouverites need to emit on average a maximum of 6
                     </svg></button>
             </div>
             <br>
-            <button type="button" id="calculateButton" class="btn btn-outline-info btn-lg" aria-selected="false"
-                data-toggle="tab" href="#overview" role="tab"> Calculate <svg xmlns="http://www.w3.org/2000/svg"
-                    width="16" height="16" fill="currentColor" class="bi bi-calculator-fill" viewBox="0 0 16 16">
+            <!--  FOR BUTTON LINK TO OVERVIEW:  data-toggle="tab" href="#overview" role="tab" -->
+            <button type="button" id="calculateButton" class="btn btn-outline-info btn-lg" aria-selected="false">
+                Calculate <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-calculator-fill" viewBox="0 0 16 16">
                     <path
                         d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5zm0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z" />
                 </svg>
             </button>
+            <p id="answerFirst">Please submit each category first before calculating.</p>
+
+            <div id="personalized-msg">
+                <h5>Here's a tip for you, <span id="user-name"></span> &#128526;</h5>
+            </div>
+
+            <!------------------INCENTIVES at bottom ------------------------->
+            <div id="incentives">
+
+                <p id="incent-desc">Your worst category was
+                    <img src="../img/arrow.png" alt="right arrow" id="right-arrow">
+                    <span id="your-worst-cat"></span>
+                </p>
+
+                <p>
+                    <span id="incentive-card-title"></span>
+                </p>
+
+                <p class="card-text" id="incentive-card-text"><span>TIP:</span> </p>
+
+                <a href="#" class="btn btn-success" id="incentive_url">
+                    <img src="../img/link.png" alt="another page" id="redirect-link">
+                </a>
+            </div>
 
         </div>
 
-        <!-- Leaderboard Tab -->
+        <!------------------------------------- Leaderboard Tab ------------------------------------------->
         <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">
-
-            <!---------------Select type of Leaderboard user wants to view ------------------>
-            <div class="form-floating">
-                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                    <option selected id="type-selected"></option>
-                    <option value="1" id="indiv-board">Individual</option>
-                    <option value="2" id="your-team-board">Within Your Team</option>
-                    <option value="3" id="all-teams-board">Team-based Leaderboard</option>
-                </select>
-
-                <div id="lead-btn-container">
-                    <!------------------------------ Button to Join Group -------------------------------->
-                    <button type="button" class="btn btn-primary" id="lead-btn" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal1">
-                        Join Group
-                    </button>
-
-                    <!---------------------------- Button to Delete Group --------------------------------->
-                    <button type="button" class="btn btn-danger" id="delete-group" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal2">
-                        Delete Group
-                    </button>
-                </div>
-
-
-                <!-------------------------------------- Modal for joining ----------------------------->
-                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Join a Group</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-x-lg" viewBox="0 0 16 16">
-                                        <path
-                                            d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <!---------- Input name of new group here -------------->
-                            <div class="modal-body">
-
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput"
-                                        placeholder="Type here...">
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-
-                                <button type="button" class="btn btn-primary" id="join-group">JOIN</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-------------------------------------- Modal for Deleting ----------------------------->
-                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Delete a Group</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-x-lg" viewBox="0 0 16 16">
-                                        <path
-                                            d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <!---------- User types name of group they want to delete -------------->
-                            <div class="modal-body">
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput2"
-                                        placeholder="Type here...">
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-
-                                <button type="button" class="btn btn-primary" id="delete-group-btn">DELETE</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
             <div id="leaderboard-container">
                 <div id="add-leaderboard-here">
-                    <iframe src="https://www.facebook.com/plugins/share_button.php?href=https://chillyfacts.com/create-facebook-share-button-for-website-webpages/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId" width="60" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-				    Want to see the your hero rank amoung your groups?
-    				<select id="groups" name="groups" onchange="report(this.value)"></select>
-                    <div class="lboard_item" id="leaderboard">
-                        <!-- <div class="lboard_mem">
-                            <div class="name_bar">
-                                <p><span>1.</span> Charles John</p>
+                    <h3 id="lead-title">Pick your leaderboard!</h3>
+                    <div id="group-feature">
+                        <!----------------------------- JOIN/LEAVE buttons and modals -------------------------->
+                        <div class="form-floating">
+
+                            <div id="lead-btn-container">
+
+                                <select id="groups" name="groups" onchange="report(this.value)"></select>
+
+                                <button type="button" class="btn btn-primary" id="lead-btn" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal1">
+                                    <img src="../img/add.png" alt="Add group" id="plus-group">
+
+                                </button>
+
+                                <button type="button" class="btn btn-danger" id="delete-group" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal2">
+                                    <img src="../img/negative.png" alt="Leave group" id="minus-group">
+
+                                </button>
                             </div>
-                            <div class="points">
-                                195 points
+
+                            <!----------------------- Modal for joining ----------------------------->
+                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Join a Group</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                        <!---------- Type name of group user wants to join here -------------->
+                                        <div class="modal-body">
+
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control" id="floatingInput"
+                                                    placeholder="Type here...">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+
+                                            <button type="button" class="btn btn-primary" id="join-group">JOIN</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div> -->
+
+                            <!------------------------------- Modal for Leaving ----------------------------->
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Leave a Group</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                        <!---------- Type name of group user wants to leave here -------------->
+                                        <div class="modal-body">
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control" id="floatingInput2"
+                                                    placeholder="Type here...">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                id="delete-group-btn">DELETE</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="lboard_item" id="leaderboard_ranks">
 
                     </div>
-                    <!-- <iframe src="https://www.facebook.com/plugins/share_button.php?href=https://chillyfacts.com/create-facebook-share-button-for-website-webpages/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId" width="60" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> -->
-				    <!-- Want to see the your hero rank amoung your groups? -->
-    				<!-- <select id="groups" name="groups" onchange="report(this.value)"></select> -->
-			        
+                </div>
 
+                <div id="share-content">
+                    <p>Congratulations <span id="user-name2"></span> ! Looks like you are currently ranked #<span
+                            id="your-rank"></span>.</p>
+
+                    <iframe
+                        src="https://www.facebook.com/plugins/share_button.php?href=https://chillyfacts.com/create-facebook-share-button-for-website-webpages/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId"
+                        scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                 </div>
 
             </div>
@@ -261,15 +306,12 @@ To Meet the 2030 Green Goal Vancouverites need to emit on average a maximum of 6
                Your First Caclulation - <span id="calc-goes-here"></span> tonnes/Year
             </div>
             <div id="chartContainer" style="height: 370px; width: 80%;"></div>
-           
+
             <br />
         </div>
 
-
-
-
         <!-- incentive tab -->
-        <div class="tab-pane fade" id="incent" role="tabpanel" aria-labelledby="incent-tab">
+        <!-- <div class="tab-pane fade" id="incent" role="tabpanel" aria-labelledby="incent-tab">
             <div id="read-data-here" class="container">
                 <div class="card text-center" id="incent-card-container">
                     <div id="incent-img-cont">
@@ -283,46 +325,14 @@ To Meet the 2030 Green Goal Vancouverites need to emit on average a maximum of 6
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!--  <div id="tips">
-
-        <div>
-            <p>Tips Go here <button type="button" id="seeMore" class="btn btn-success" data-toggle="modal"
-                    data-target="#ecoTipsFull">
-                    See More
-                </button></p> -->
+        </div> -->
 
 
-        <!-- Modals -->
-        <!-- Modals -->
-        <!-- Modals -->
-        <!--            <div class="modal fade" id="ecoTipsFull" tabindex="-1" role="dialog" aria-labelledby="ecoTipsFull"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Full List</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            -shorter showers<br>
-                            -carpool<br>
-                            -etc
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
+        <!-- Calculator Forms
+        Calculator Forms
+        Calculator Forms -->
 
-
-    <!- Home Form -->
+        <!---------------------------- Home Form -------------------------->
     </div>
     <div class="modal fade" id="home" tabindex="-1" role="dialog" aria-labelledby="home" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -357,8 +367,8 @@ To Meet the 2030 Green Goal Vancouverites need to emit on average a maximum of 6
                         </div>
                         <div class="form-group">
                             <label for="numberPeople">How many people live in your household?</label>
-                            <input type="number" class="form-control" name="householdNum" pattern="[1-9]" id="numberPeople"
-                                placeholder="Enter a whole number greater than 0">
+                            <input type="number" class="form-control" name="householdNum" id="numberPeople"
+                                placeholder="Enter a whole number greater than 0" min="1">
                         </div>
                         <div class="form-group">
                             <label for="numGarbage">How many full 20L garbage bags does your household fill every
@@ -391,7 +401,7 @@ To Meet the 2030 Green Goal Vancouverites need to emit on average a maximum of 6
         </div>
     </div>
 
-    <!-- Transport Form -->
+    <!--------------------------------- Transport Form ------------------------->
 
     <div class="modal fade" id="transport" tabindex="-1" role="dialog" aria-labelledby="transport" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -444,8 +454,8 @@ To Meet the 2030 Green Goal Vancouverites need to emit on average a maximum of 6
                             <label for="flightNum">Approximately how many hours have you spent flying in the
                                 past
                                 year?</label>
-                            <input type="number" class="form-control" id="FlightNum" name="flightNum"
-                                placeholder="Enter a whole number">
+                            <input type="number" pattern="[0-9]" title="Must be a whole, positive" class="form-control"
+                                id="FlightNum" name="flightNum" placeholder="Enter a whole number">
                         </div>
 
                         <div class="modal-footer">
@@ -457,7 +467,7 @@ To Meet the 2030 Green Goal Vancouverites need to emit on average a maximum of 6
     </div>
     </div>
 
-    <!-- Food Form -->
+    <!---------------------------------- Food Form --------------------------->
 
     <div class="modal fade" id="food" tabindex="-1" role="dialog" aria-labelledby="food" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -535,6 +545,8 @@ To Meet the 2030 Green Goal Vancouverites need to emit on average a maximum of 6
                 </div>
             </div>
         </div>
+
+
     </div>
     </div>
 
@@ -582,11 +594,10 @@ To Meet the 2030 Green Goal Vancouverites need to emit on average a maximum of 6
 <script src="../scripts/pull_incentive.js"></script>
 <script src="../scripts/calculator_scripts.js"></script>
 <script src="../scripts/functions-madhav.js"></script>
-<script src="../scripts/leaderboard_team_JR.js"></script>
+<script src="../scripts/leaderboard_groups.js"></script>
 <script src="../scripts/leaderboard.js"></script>
-<script src="../scripts/canvasScript.js"></script>
 
-
+<!---------------------------- CanvasJS ------------------------->
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js" charset="UTF-8"></script>
 
 <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>

@@ -61,6 +61,7 @@ function updateLeaderboardView() {
     });
 
     // console.log(scores)
+    //$("<div id='table-lead'></div>").appendTo("#leaderboard_ranks");
     let leaderboard = document.getElementById("leaderboard_ranks");
     // leaderboard.innerHTML = "";
 
