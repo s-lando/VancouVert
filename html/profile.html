@@ -74,17 +74,17 @@
                                     <h5>Email</h5>
                                 </div>
                                 <div class="col-md-9 text-secondary">
-                                    <input type="text" id="userEmailHolder" class="form-control" placeholder="NA" disabled>
+                                    <input type="text" id="userEmailHolder" class="form-control" placeholder="NA" disabled style="border: none; background-color: #E8F7EE;">
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <h5>Score</h5>
+                                    <h5>Current Footprint</h5>
                                 </div>
                                 <div class="col-md-9 text-secondary">
                                     <input type="text" id="userScoreHolder" class="form-control" placeholder="NA"
-                                        disabled>
+                                        disabled style="border: none; background-color: #E8F7EE;">
                                 </div>
                             </div>
                             <hr>
@@ -166,7 +166,7 @@
                     console.log(userName);
                     var userEmail = doc.data().email;
                     console.log(userEmail);
-                    var userScore = doc.data().score;
+                    var userScore = doc.data().currentFootprint;
                     console.log(userScore);
 
                     $('#userNameHolder').attr('placeholder', userName);
