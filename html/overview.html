@@ -40,13 +40,21 @@
         <a id="nav-top" class="navbar-brand" href="../html/overview.html">
             <img class="logo" src="../img/leafMain.svg" alt="logo not displaying properly">
         </a>
-        <a href="#" type="button" class="btn btn-success btn-lg" id="profile-btn">
+        
+        <a href="help.html" id="help-btn">
+            <img src="https://img.icons8.com/ios/50/26e07f/help.png"/>
+            
+        </a>
+        <a href="#" type="button" style="display: inline;" class="btn btn-success btn-lg" id="profile-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                 class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                 <path fill-rule="evenodd"
                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
             </svg>
+        </a>
+        <a href="../index.html" id="logout-btn">
+            <img src="https://img.icons8.com/ios/50/26e07f/logout-rounded-left.png"/>
         </a>
     </nav>
 
@@ -298,9 +306,13 @@
         </div>
 
         <!-- Progress tab -->
-        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">See how your footprint has
-            improved over time
+        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">Total footprint - "<span id="name-goes-here"></span>"
+            <div id="firstcalc">
+
+               Your First Caclulation - <span id="calc-goes-here"></span> tonnes/Year
+            </div>
             <div id="chartContainer" style="height: 370px; width: 80%;"></div>
+           
             <br />
         </div>
 
@@ -549,6 +561,7 @@
     <br />
     <br />
     <br />
+    <a href="https://icons8.com/icon/26215/logout-rounded-left"></a>
     <!--Footer-->
 
     <!-- <a href="help.html" type="button" class="btn btn-success btn-lg" id="help-btn"></a> -->
@@ -591,5 +604,12 @@
 <!---------------------------- CanvasJS ------------------------->
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js" charset="UTF-8"></script>
 
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+<script>
+    customName();
+    uidhelp();
+</script>
 
 </html>
