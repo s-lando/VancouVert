@@ -14,7 +14,7 @@
     })
 }) */
 
-$(document).ready( function() {
+/* $(document).ready( function() {
     $('#overview-tab').carousel({
         interval:   4000
     });
@@ -36,9 +36,9 @@ $(document).ready( function() {
         }
         clickEvent = false;
     });
-});
+}); */
 
-$("#incent-tab").ready(function () {
+$("#overview").ready(function () {
 
     const users = db.collection("users");
 
@@ -48,7 +48,12 @@ $("#incent-tab").ready(function () {
         .get()
         .then(function(doc) {
             let worst = doc.data().worstCategory;
-            console.log(worst);
+            let name = doc.data().name;
+            
+            $("#your-worst-cat").append(worst);
+            $("#user-name").append(name);
+            $("#user-name2").append(name);
+
             genIncentiveByWorstCat(worst);
         })
     })
@@ -71,8 +76,8 @@ function genIncentiveByWorstCat(category) {
             console.log(desc + ", " + org + ", " + linkURL);
             console.log(image);
 
-            var htmlContent = 
-            $(".card-title").append(org);
+            
+            $("#incentive-card-title").append(org);
             $(".card-text").append(desc);
             $("#type-picture").attr("src", ("../img/" + image));
             $("#incentive_url").attr("href", linkURL);
