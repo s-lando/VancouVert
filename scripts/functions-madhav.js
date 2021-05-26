@@ -120,6 +120,7 @@ function makeGraphs() {
                     barList[barList.length] = doc.data().totalFootprint;
                     timeList[timeList.length] = doc.data().time;
                 })
+                $("#calc-goes-here").text(barList[barList.length - 1]);
                 console.log(barList[barList.length - 1]);
                 console.log(timeList[0]);
 
@@ -128,14 +129,14 @@ function makeGraphs() {
                     animationEnabled: true,
                     backgroundColor: "transparent",
                     title: {
-                        text: "Total footprint progress"
+                        text: "Your Progress"
                     },
                     data: [{
                         type: "line",
 
                         dataPoints: [{
                                 x: new Date(2021, 05, 1),
-                                y: barList[barList.length - 1]
+                                y: barList[4]
                             },
                             {
                                 x: new Date(2021, 05, 10),
@@ -195,3 +196,49 @@ $('#history-tab').on("click", function () {
     makeGraphs();
     $('#history-tab').off();
 });
+
+
+function customName() {
+
+    firebase.auth().onAuthStateChanged(function (somebody) {
+        if (somebody) {
+            console.log(somebody.uid);
+            db.collection("users")
+                .doc(somebody.uid)
+                .get()
+                .then(function (doc) {
+                    console.log(doc.data().name);
+                    var n = doc.data().name;
+                    $("#name-goes-here").text(n);
+                })
+        }
+    })
+
+}
+
+function uidhelp() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+
+            //changes go here
+            console.log(user.uid);
+            db.collection("users").doc(user.uid)
+                .get()
+                .then(function (doc) {
+                    var n = doc.data().name;
+                    console.log(n);
+
+
+                })
+
+            document.getElementById("help-btn")
+                .addEventListener("click", function () {
+                    window.location.href = "help.html?id=" + user.uid;
+                });
+
+
+        } else {
+            // No user is signed in.
+        }
+    });
+};
