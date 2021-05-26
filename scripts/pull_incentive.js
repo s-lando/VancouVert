@@ -44,46 +44,42 @@ $("#overview").ready(function () {
 
     firebase.auth().onAuthStateChanged((user) => {
         users
-        .doc(user.uid)
-        .get()
-        .then(function(doc) {
-            let worst = doc.data().worstCategory;
-            let name = doc.data().name;
-            
-            $("#your-worst-cat").append(worst);
-            $("#user-name").append(name);
-            $("#user-name2").append(name);
+            .doc(user.uid)
+            .get()
+            .then(function (doc) {
+                let worst = doc.data().worstCategory;
+                let name = doc.data().name;
 
-            genIncentiveByWorstCat(worst);
-            
-        })
+                $("#your-worst-cat").append(worst);
+                $("#user-name").append(name);
+                $("#user-name2").append(name);
+
+                genIncentiveByWorstCat(worst);
+            })
     })
 })
 
 function genIncentiveByWorstCat(category) {
-    console.log(category);
-    const incentives = db.collection("incentives");
+
+    var incentives = db.collection("incentives").where("type", "==", category);
 
     incentives
-    .where("type", "==", category)
-    .order("random")
-    .limit(1)
-    .get()
-    .then(function (snap) {
-        snap.forEach(function (doc) {
-            var desc = doc.data().desc;
-            var org = doc.data().org;
-            var linkURL = doc.data().url;
-            var image = doc.data().image;
-            console.log(desc + ", " + org + ", " + linkURL);
-            console.log(image);
+        .where("random", ">=", Math.floor((Math.random() * 1000)))
+        .limit(1)
+        .get()
+        .then(function (snap) {
+            snap.forEach(function (doc) {
+                var desc = doc.data().desc;
+                var org = doc.data().org;
+                var linkURL = doc.data().url;
+                var image = doc.data().image;
+                console.log(desc + ", " + org + ", " + linkURL);
+                console.log(image);
 
-            $("#incentive-card-title").append(org);
-            $(".card-text").append(desc);
-            $("#type-picture").attr("src", ("../img/" + image));
-            $("#incentive_url").attr("href", linkURL);
+                $("#incentive-card-title").append(org);
+                $(".card-text").append(desc);
+                $("#type-picture").attr("src", ("../img/" + image));
+                $("#incentive_url").attr("href", linkURL);
+            })
         })
-    })
 }
-
-location.reload(genIncentiveByWorstCat(worst));
