@@ -12,7 +12,9 @@
 
     <!--------------------------------------- Our CSS pages -------------------------------------------->
     <link rel="stylesheet" href="../css/leaderboardstyle.css" />
-    <link rel="stylesheet" href="../css/universal.css" />
+    <link rel="stylesheet" href="../css/colourPalette1.css" />
+    <link rel="stylesheet" href="../css/overviewTab.css">
+    <link rel="stylesheet" href="../css/calculatorTab.css">
 
     <!-- <link rel="stylesheet" type="text/css" href="../css/progress.css" /> -->
 
@@ -40,12 +42,13 @@
         <a id="nav-top" class="navbar-brand" href="../html/overview.html">
             <img class="logo" src="../img/leafMain.svg" alt="logo not displaying properly">
         </a>
-        
+
         <a href="help.html" id="help-btn">
-            <img src="https://img.icons8.com/ios/50/26e07f/help.png"/>
-            
+            <img src="https://img.icons8.com/ios/50/26e07f/help.png" />
+
         </a>
-        <a href="#" type="button" style="display: inline;" class="btn btn-success btn-lg" id="profile-btn">
+        <a href="../html/profile.html" type="button" style="display: inline;" class="btn btn-success btn-lg"
+            id="profile-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                 class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -54,12 +57,12 @@
             </svg>
         </a>
         <a href="../index.html" id="logout-btn">
-            <img src="https://img.icons8.com/ios/50/26e07f/logout-rounded-left.png"/>
+            <img src="https://img.icons8.com/ios/50/26e07f/logout-rounded-left.png" />
         </a>
     </nav>
 
     <!--Tabs Nav Bar-->
-    <ul class="nav nav-tabs" id="overview-tab" role="tablist">
+    <ul class="nav nav-tabs" id="tabs" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
                 aria-controls="overview" aria-selected="true">Overview</a>
@@ -94,13 +97,13 @@
 
                 <div id="vancouverComparison">
                     <img src="../img/goal.png" alt="Target" id="target-icon">
-                    <p>Vancouverites need to cut down <span id="co2-number">~6.0 CO2-tonnes/yr</span> to meet the 2030
-                        target!</p>
-                    <!-- <p id="yourNumber"> Your current footprint: ___ per year</p> -->
+                    <p>Vancouverites need a maximum of <b id="co2-number">~6.0 CO2 tonnes/yr</b> to meet the 2030
+                        target</p>
+                    <p id="yourNumber"> Your footprint: <span id="currentUserNumber"></span> CO2 tonnes/yr</p>
                 </div>
 
-                
-                    <!-- <div id="cont1">
+
+                <!-- <div id="cont1">
 
                         <div id="incent-img-cont">
                             <img class="card-img-top" id="type-picture" src="../img/" alt="Card image cap">
@@ -115,7 +118,7 @@
                             <img src="../img/link.png" alt="another page" id="redirect-link">Visit
                         </a>
                     </div> -->
-                
+
             </div>
         </div>
 
@@ -126,7 +129,7 @@
 
                 <button type="button" id="homeButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
                     data-target="#home">Home <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                        aria-pressed="false" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                         <path
                             d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
                     </svg> </button>
@@ -149,13 +152,15 @@
                     </svg></button>
             </div>
             <br>
-            <button type="button" id="calculateButton" class="btn btn-outline-info btn-lg" aria-selected="false"
-                data-toggle="tab" href="#overview" role="tab"> Calculate <svg xmlns="http://www.w3.org/2000/svg"
-                    width="16" height="16" fill="currentColor" class="bi bi-calculator-fill" viewBox="0 0 16 16">
+            <!--  FOR BUTTON LINK TO OVERVIEW:  data-toggle="tab" href="#overview" role="tab" -->
+            <button type="button" id="calculateButton" class="btn btn-outline-info btn-lg" aria-selected="false">
+                Calculate <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-calculator-fill" viewBox="0 0 16 16">
                     <path
                         d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5zm0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z" />
                 </svg>
             </button>
+            <p id="answerFirst">Please submit each category first before calculating.</p>
 
             <div id="personalized-msg">
                 <h5>Here's a tip for you, <span id="user-name"></span> &#128526;</h5>
@@ -295,13 +300,14 @@
         </div>
 
         <!-- Progress tab -->
-        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">Total footprint - "<span id="name-goes-here"></span>"
+        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">Total footprint - "<span
+                id="name-goes-here"></span>"
             <div id="firstcalc">
 
-               Your First Caclulation - <span id="calc-goes-here"></span> tonnes/Year
+                Your First Caclulation - <span id="calc-goes-here"></span> tonnes/Year
             </div>
             <div id="chartContainer" style="height: 370px; width: 80%;"></div>
-           
+
             <br />
         </div>
 
@@ -323,6 +329,9 @@
         </div> -->
 
 
+        <!-- Calculator Forms
+        Calculator Forms
+        Calculator Forms -->
 
         <!---------------------------- Home Form -------------------------->
     </div>
@@ -360,7 +369,7 @@
                         <div class="form-group">
                             <label for="numberPeople">How many people live in your household?</label>
                             <input type="number" class="form-control" name="householdNum" id="numberPeople"
-                                placeholder="Enter a whole number greater than 0">
+                                placeholder="Enter a whole number greater than 0" min="1">
                         </div>
                         <div class="form-group">
                             <label for="numGarbage">How many full 20L garbage bags does your household fill every
@@ -446,8 +455,8 @@
                             <label for="flightNum">Approximately how many hours have you spent flying in the
                                 past
                                 year?</label>
-                            <input type="number" class="form-control" id="FlightNum" name="flightNum"
-                                placeholder="Enter a whole number">
+                            <input type="number" pattern="[0-9]" title="Must be a whole, positive" class="form-control"
+                                id="FlightNum" name="flightNum" placeholder="Enter a whole number">
                         </div>
 
                         <div class="modal-footer">
@@ -588,7 +597,6 @@
 <script src="../scripts/functions-madhav.js"></script>
 <script src="../scripts/leaderboard_groups.js"></script>
 <script src="../scripts/leaderboard.js"></script>
-<script src="../scripts/canvasScript.js"></script>
 
 <!---------------------------- CanvasJS ------------------------->
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js" charset="UTF-8"></script>
