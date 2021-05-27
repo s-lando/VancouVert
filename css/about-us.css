@@ -1,5 +1,5 @@
 body{
-    background-image: url(../img/vancouverSkyline.jpg);
+    background-image: url(../img/2.jpg);
 }
 
 .parent {
@@ -74,7 +74,7 @@ body{
 
     text-align: center;
     margin-bottom: 1em;
-    background-color: rgba(255, 255, 255, 0.705);
+    background-color: rgba(255, 255, 255, 0.747);
 }
 
 @media (max-width: 770px) {
