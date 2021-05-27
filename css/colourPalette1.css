@@ -87,6 +87,22 @@ a {
 #logout:hover {
     color: #309e46
 }
+#home-btn {
+    float: right;
+    border: 1px rgba(204, 204, 204, 0) solid;
+    margin-bottom: .5em;
+    margin-top: 1em;
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+    transition: 500ms ease;
+    min-height: 60px;
+    background-color: #46774000;
+
+}
+
+#home-btn:hover {
+    color: #309e46
+}
 
 .nav {
     margin-top: 1em;
