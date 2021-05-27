@@ -73,19 +73,6 @@ body {
     margin-right: auto;
 }
 
-
-
-#tips {
-    text-align: center;
-    background-color: #B8C4BB;
-    border: 1px solid #467740;
-    margin-top: 2vh;
-    margin-left: 3em;
-    margin-right: 3em;
-    margin-bottom: 1em;
-    height: 17vh;
-}
-
 .nav-link {
     color: #467740;
 }

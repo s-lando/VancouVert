@@ -11,7 +11,7 @@ body {
 
 .logo {
 
-    height: 5em;
+    height: 3em;
 }
 
 #nav-top {
@@ -29,9 +29,9 @@ body {
 
     background-color: mintcream;
     border-bottom: #309e46 4px solid;
-    background-image:url(../img/vancouverSkyline.jpg);
+    background-image: url(../img/vancouverSkyline.jpg);
     background-position: top;
-    background-size:cover;
+    background-size: cover;
 
 }
 
@@ -78,7 +78,7 @@ body {
 }
 
 .nav-tabs {
-background-color: #e2ebf75d;
+    background-color: #e2ebf75d;
 
 }
 

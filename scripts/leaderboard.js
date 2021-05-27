@@ -26,6 +26,7 @@ let scores = [{userName : "harleen1", userID : "1", group: "abcd", day : "1", mo
 // let usersInGroup = [];
 
 function updateLeaderboardView() {
+    
     let records = [];
     // Get the values from database
     
