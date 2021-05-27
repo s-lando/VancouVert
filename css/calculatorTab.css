@@ -59,8 +59,8 @@
 
 #incentive-card-title {
     margin: 0 auto;
-    font-family: 'Play', sans-serif;
-    font-size: 2rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.4rem;
     flex-grow: 1;
 }
 
@@ -70,10 +70,10 @@
 }
 
 #incentive-card-text span {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.3rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.1rem;
     font-weight: bold;
-    color: #d88846;
+    color: #31a80d;
 }
 
 #incentive_url {
