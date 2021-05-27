@@ -29,7 +29,9 @@ function makeGraphs() {
                         animationEnabled: true,
                         backgroundColor: "transparent",
                         title: {
-                            text: "Your Progress"
+                            text: "Your Progress",
+                            padding: 5,
+                            size: 8,
                         },
                         data: [{
                             type: "line",

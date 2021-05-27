@@ -1,14 +1,7 @@
-@font-face {
-	font-family: "Rogue Hero";
-	src: url(../css/font-Roguehero/roguehero-webfont.woff);
-	src: url(../css/font-Roguehero/roguehero-webfont.woff2);
-
-}
-
 #leaderboard-container {
 	display: flex;
 	flex-direction: column;
-	height: 60vh;
+	height: auto;
 
 }
 
@@ -33,9 +26,9 @@
 }
 
 #lead-title {
-	font-family: "Rogue Hero";
-	font-size: 2.5rem;
-	color: #eb2011;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 20pt;
+	color: #000000;
 	margin: 1.5rem 0 0 0;
 }
 
@@ -115,11 +108,11 @@ div.name_bar {
 }
 
 #share-content {
-	order: 2;
-	bottom: 0;
-	position: absolute;
-	bottom: 1rem;
 	word-wrap: normal;
+	height: auto;
+	text-align: center;
+	margin-top: 5px;
+	height: fit-content
 }
 
 #share-content p {
@@ -129,6 +122,6 @@ div.name_bar {
 }
 
 #share-content iframe {
-	align-self: center;
-	align-content: center;
+text-align: center;
+max-height: 1em;
 }

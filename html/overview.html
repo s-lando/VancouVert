@@ -43,23 +43,24 @@
         <a id="nav-top" class="navbar-brand" href="../html/overview.html">
             <img class="logo" src="../img/leafMain.svg" alt="logo not displaying properly">
         </a>
-
-        <a href="help.html" id="help-btn">
-            <img src="https://img.icons8.com/ios/50/26e07f/help.png" />
-
-        </a>
-        <a href="#" type="button" style="display: inline;" class="btn btn-success btn-lg"
+        <div>
+        <a href="#" type="button" style="display: inline;" class="btn btn-success btn-lg top-buttons"
             id="profile-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
                 class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                 <path fill-rule="evenodd"
                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
             </svg>
         </a>
-        <a href="../index.html" id="logout-btn">
-            <img src="https://img.icons8.com/ios/50/26e07f/logout-rounded-left.png" />
+        <a href="../index.html" type="button" style="display: inline;" class="btn btn-success btn-lg top-buttons" id="logout">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+              </svg>
         </a>
+    </div>
+
     </nav>
 
     <!--Tabs Nav Bar-->
@@ -102,7 +103,7 @@
                         target</p>
                     <p id="yourNumber"> Your footprint: <span id="currentUserNumber"></span> CO2 tonnes/yr</p>
                 </div>
-
+<!-- incentives can also go here -->
 
                 <!-- <div id="cont1">
 
@@ -167,7 +168,6 @@
                 <h5>Here's a tip for you, <span id="user-name"></span> &#128526;</h5>
             </div>
 
-            <!------------------INCENTIVES at bottom ------------------------->
             <div id="incentives">
 
                 <p id="incent-desc">Your worst category was
@@ -185,6 +185,7 @@
                     <img src="../img/link.png" alt="another page" id="redirect-link">
                 </a>
             </div>
+            <!------------------INCENTIVES at bottom ------------------------->
 
         </div>
 
@@ -214,7 +215,7 @@
 
                                 </button>
                             </div>
-
+                        
                             <!----------------------- Modal for joining ----------------------------->
                             <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
@@ -231,6 +232,7 @@
                                                 </svg>
                                             </button>
                                         </div>
+                                        
 
                                         <!---------- Type name of group user wants to join here -------------->
                                         <div class="modal-body">
@@ -285,17 +287,16 @@
                     <div class="lboard_item" id="leaderboard_ranks">
 
                     </div>
+                    <div id="share-content">
+                        <p>Congratulations <span id="user-name2"></span> ! Looks like you are currently ranked #<span
+                                id="your-rank"></span></p>
+    
+                        <iframe
+                            src="https://www.facebook.com/plugins/share_button.php?href=https://vancouvert-dce8f.web.app/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId"
+                            scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    </div>
+                    
                 </div>
-
-                <div id="share-content">
-                    <p>Congratulations <span id="user-name2"></span> ! Looks like you are currently ranked #<span
-                            id="your-rank"></span>.</p>
-
-                    <iframe
-                        src="https://www.facebook.com/plugins/share_button.php?href=https://chillyfacts.com/create-facebook-share-button-for-website-webpages/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId"
-                        scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-                </div>
-
             </div>
 
         </div>
@@ -563,9 +564,16 @@
 
     <!-- <a href="help.html" type="button" class="btn btn-success btn-lg" id="help-btn"></a> -->
     <footer>
-        <div id="footer-p">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
+        <div id="footer-p">
+        <div class="designedBy">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
             <br>
-            © 2021 Vancouvert <a href="../html/about-us.html">About Us</a></div>
+            © 2021 Vancouvert</div>
+            <div class="moreInfo"> <a href="../html/about-us.html">About Us</a>
+                <br>
+            <a href="help.html" id="help-btn">
+                Help
+            </div> 
+        </div> 
     </footer>
 
 </body>

@@ -15,15 +15,15 @@
 #userChart {
     text-align: center;
     height: 25vh;
+    margin-top: 1em;
 }
 
 #vancouverComparison {
     font-size: 0.8rem;
-    margin: 0 3rem;
-    padding-top: 2rem;
+    margin: 0 1rem;
     display: flex;
     flex-direction: row;
-    padding-top: 1rem;
+    padding-top: .5rem;
     text-align: left;
 }
 
@@ -32,8 +32,7 @@
 }
 
 #vancouverComparison p {
-    margin: 0 1.5rem;
-    margin-top: 1rem;
+    margin-top: .5em;
     align-self: center;
     font-size: 10pt;
     color: #020103;
@@ -41,6 +40,12 @@
 }
 
 #co2-number {
+    color: #36702e;
+    font-size: 12pt;
+
+}
+
+#currentUserNumber {
     color: #36702e;
     font-size: 12pt;
 
@@ -78,10 +83,8 @@
     display: flex;
     flex-direction: column;
     grid-area: incentive;
-    margin: 0.5rem 1.5rem;
-    background-color: #deff48;
-    border: 1px black solid;
-    border-radius: 4%;
+    margin: 1rem 1.5rem;
+    border-top: #309e46 2px solid;
 }
 
 #right-arrow {

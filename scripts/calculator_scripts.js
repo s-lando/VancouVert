@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    grabCurrentFootprint();
+
     // let userDoc = firebase.auth().currentUser.uid;
 
     // let docRef = db.collection("users").doc(userDoc).collection("calculations")
@@ -37,7 +39,6 @@ $(document).ready(function () {
         });
         chart.render();
     }
-
     renderPieChart();
 
     //Read user data functions:
