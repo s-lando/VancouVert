@@ -77,10 +77,10 @@ function genIncentiveByWorstCat(category) {
                 var image = doc.data().image;
                 console.log(desc + ", " + org + ", " + linkURL);
 
-                $("#incentive-card-title").append(org);
-                $(".card-text").append(desc);
+                // $("#incentive-card-title").append(org);
+                $(".card-text").append(org + " offers " + desc);
                 $("#type-picture").attr("src", ("../img/" + image));
-                $("#incentive_url").attr("href", linkURL);
+                $("#learnMore").attr("href", linkURL);
             })
         })
 }

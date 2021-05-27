@@ -44,10 +44,10 @@
         <a id="nav-top" class="navbar-brand" href="../html/overview.html">
             <img class="logo" src="../img/leafMain.svg" alt="logo not displaying properly">
         </a>
-        <div>
+        <div id="topButtons">
             <a href="#" type="button" style="display: inline;" class="btn btn-success btn-lg top-buttons"
                 id="profile-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                     class="bi bi-person-circle" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                     <path fill-rule="evenodd"
@@ -56,7 +56,7 @@
             </a>
             <a href="../index.html" type="button" style="display: inline;" class="btn btn-success btn-lg top-buttons"
                 id="logout">
-                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                     class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                         d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
@@ -71,7 +71,7 @@
     <!--Tabs Nav Bar-->
     <ul class="nav nav-tabs" id="tabs" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
+            <a class="nav-link overview active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
                 aria-controls="overview" aria-selected="true">Overview</a>
         </li>
         <li class="nav-item">
@@ -104,11 +104,27 @@
 
                 <div id="vancouverComparison">
                     <img src="../img/goal.png" alt="Target" id="target-icon">
-                    <p>2030 Goal: <b id="co2-number">~6.0 </b> CO2 tonnes/yr to meet the 2030
-                        target</p>
-                    <p id="yourNumber"> Your footprint: <span id="currentUserNumber"></span> CO2 tonnes/yr</p>
+                    <p>2030 Target: <b id="co2-number"> &#60; 6.0 </b> CO2 tonnes/yr per Vancouverite</p>
                 </div>
-                <!-- incentives can also go here -->
+
+                <div id="incentives">
+
+                    <div id="personalized-msg">
+                        <span id="user-name"></span>
+                    </div>
+                    <p id="yourNumber"> Current Footprint: <span id="currentUserNumber"></span> CO2 tonnes/yr</p>
+                    <p id="incent-desc">Worst category:
+                        <!-- <img src="../img/arrow.png" alt="right arrow" id="right-arrow"> -->
+                        <span id="your-worst-cat"></span>
+                    </p>
+
+                    <!-- <p>
+                        <span id="incentive-card-title"></span>
+                    </p> -->
+
+                    <p class="card-text" id="incentive-card-text"><span>Personalized Incentive:</span> </p>
+                    <a type="button" id="learnMore" href="#" class="btn btn-outline-success"> Learn More</a>
+                </div>
 
             </div>
         </div>
@@ -116,17 +132,17 @@
         <!------------------------------------ calculator tab ------------------------------------------>
         <div class="tab-pane fade" id="calculator" role="tabpanel" aria-labelledby="calculator-tab">
 
-            <div class="btn-group" role="group" id="calculate-btn-group" aria-label="Basic example">
+            <div class="btn-group-vertical" role="group" id="calculate-btn-group" aria-label="Basic example">
 
-                <button type="button" id="homeButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
-                    data-target="#home">Home <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                <button type="button" id="homeButton" class="btn btn-outline-dark btn-lg" data-toggle="modal"
+                    data-target="#home">Home <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
                         aria-pressed="false" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                         <path
                             d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
                     </svg> </button>
 
-                <button type="button" id="transportButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
-                    data-target="#transport">Transport <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                <button type="button" id="transportButton" class="btn btn-outline-dark btn-lg" data-toggle="modal"
+                    data-target="#transport">Transport <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
                         fill="currentColor" class="bi bi-signpost-fill" viewBox="0 0 16 16">
                         <path
                             d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
@@ -134,8 +150,8 @@
 
 
 
-                <button type="button" id="foodButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
-                    data-target="#food">Food <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                <button type="button" id="foodButton" class="btn btn-outline-dark btn-lg" data-toggle="modal"
+                    data-target="#food">Food <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
                         fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
                         <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                         <path
@@ -143,42 +159,22 @@
                     </svg></button>
             </div>
 
+
             <!--  FOR BUTTON LINK TO OVERVIEW:  data-toggle="tab" href="#overview" role="tab" -->
-            <button type="button" id="calculateButton" class="btn btn-outline-info btn-lg" aria-selected="false">
-                Calculate <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            <button type="button" id="calculateButton" class="btn btn-outline-success btn-lg" aria-selected="false">
+                Calculate <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
                     class="bi bi-calculator-fill" viewBox="0 0 16 16">
                     <path
                         d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5zm0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z" />
                 </svg>
             </button>
-            <p id="answerFirst">Please submit each category first before calculating.</p>
 
-
-
-            <div id="incentives">
-
-                <div id="personalized-msg">
-                    <span id="user-name"></span>
-                </div>
-
-                <p id="incent-desc">Your worst score:
-                    <!-- <img src="../img/arrow.png" alt="right arrow" id="right-arrow"> -->
-                    <span id="your-worst-cat"></span>
-                </p>
-
-                <p>
-                    <span id="incentive-card-title"></span>
-                </p>
-
-                <p class="card-text" id="incentive-card-text"><span>TIP:</span> </p>
-
-                <a href="#" class="btn btn-success" id="incentive_url">
-                    <img src="../img/link.png" alt="another page" id="redirect-link">
-                </a>
-            </div>
-            <!------------------INCENTIVES at bottom ------------------------->
-
+            
+            <p id="answerFirst">Please submit each category first before calculating.</p> 
         </div>
+
+
+        <!------------------INCENTIVES at bottom ------------------------->
 
         <!------------------------------------- Leaderboard Tab ------------------------------------------->
         <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">
@@ -279,8 +275,8 @@
 
                     </div>
                     <div id="share-content">
-                        <p>Congratulations <span id="user-name2"></span> ! Looks like you are currently ranked #<span
-                                id="your-rank"></span></p>
+                        <p>Congratulations <span id="user-name2"></span> ! Looks like you are currently ranked
+                            #<span id="your-rank"></span></p>
 
                         <iframe
                             src="https://www.facebook.com/plugins/share_button.php?href=https://vancouvert-dce8f.web.app/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId"
@@ -299,6 +295,7 @@
                 Your First Caclulation - <span id="calc-goes-here"></span> tonnes/Year
             </div>
             <div id="chartContainer" style="height: 370px; width: 80%;"></div>
+            
 
             <br />
         </div>
@@ -452,7 +449,9 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success submit" data-dismiss="modal">Submit</button>
+                            <button type="submit" form="transportForm" class="btn btn-success submit"
+                                data-dismiss="modal">Submit</button>
+                                </div>
                     </form>
                 </div>
             </div>

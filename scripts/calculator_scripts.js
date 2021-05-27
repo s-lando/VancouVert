@@ -1,59 +1,61 @@
 $(document).ready(function () {
 
-    $('#overview-tab').on("click", function () {
-        renderPieChart();
-        $('#overview-tab').off();
+    window.addEventListener('load', function () {
+        // renderPieChart();
+        grabCurrentFootprint();
     });
 
-    grabCurrentFootprint();
-    renderPieChart();
+    // $('#overview-tab').on("click", function () {
+    //     // renderPieChart();
+    //     $('#overview-tab').off();
+    // });
+
 
     // let userDoc = firebase.auth().currentUser.uid;
 
     // let docRef = db.collection("users").doc(userDoc).collection("calculations")
     // .orderBy("time", "desc").limit(1);
 
-    function renderPieChart() {
+    // function renderPieChart() {
 
-        var chart = new CanvasJS.Chart("userChart", {
-            theme: "light2", // "light1", "light2", "dark1", "dark2"
-            exportEnabled: false,
-            animationEnabled: true,
-            backgroundColor: "transparent",
-            title: {
-                text: "Your Footprint",
-                padding: 5,
-            },
-            data: [{
-                type: "pie",
-                startAngle: 25,
-                toolTipContent: "<b>{label}</b>: {y}%",
-                dataPoints: [{
-                        y: 55.08,
-                        label: "Transport"
-                    },
-                    {
-                        y: 30.02,
-                        label: "Home"
-                    },
-                    {
-                        y: 14.00,
-                        label: "Food"
-                    },
-                ]
-            }]
-        });
-        chart.render();
-    }
-
+    //     var chart = new CanvasJS.Chart("userChart", {
+    //         theme: "light2", // "light1", "light2", "dark1", "dark2"
+    //         exportEnabled: false,
+    //         animationEnabled: true,
+    //         backgroundColor: "transparent",
+    //         title: {
+    //             text: "Your Footprint",
+    //             padding: 5,
+    //         },
+    //         data: [{
+    //             type: "pie",
+    //             startAngle: 25,
+    //             toolTipContent: "<b>{label}</b>: {y}%",
+    //             dataPoints: [{
+    //                     y: 55.08,
+    //                     label: "Transport"
+    //                 },
+    //                 {
+    //                     y: 30.02,
+    //                     label: "Home"
+    //                 },
+    //                 {
+    //                     y: 14.00,
+    //                     label: "Food"
+    //                 },
+    //             ]
+    //         }]
+    //     });
+    //     chart.render();
+    // }
 
     //Read user data functions:
     //Read user data functions:
 
     function grabUserWorstCategory() {
         var worst;
-        let users = db.collection('users');
-        let userDoc = firebase.auth().currentUser.uid;
+        var users = db.collection('users');
+        var userDoc = firebase.auth().currentUser.uid;
         users.doc(userId).get().then(function (doc) {
             worst = doc.data().worstCategory;
             console.log(worst);
@@ -253,8 +255,7 @@ $(document).ready(function () {
 
             }).then(() => {
                 console.log("footprint updates completed");
-                let overviewTab = $("#overview-tab");
-                overviewTab.trigger('click');
+                $("#overview-tab").trigger('click');
                 grabCurrentFootprint();
                 //update charts
             });
