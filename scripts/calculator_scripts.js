@@ -1,6 +1,12 @@
 $(document).ready(function () {
 
+    $('#overview-tab').on("click", function () {
+        renderPieChart();
+        $('#overview-tab').off();
+    });
+
     grabCurrentFootprint();
+    renderPieChart();
 
     // let userDoc = firebase.auth().currentUser.uid;
 
@@ -39,7 +45,7 @@ $(document).ready(function () {
         });
         chart.render();
     }
-    renderPieChart();
+
 
     //Read user data functions:
     //Read user data functions:
