@@ -76,7 +76,6 @@ function genIncentiveByWorstCat(category) {
                 var linkURL = doc.data().url;
                 var image = doc.data().image;
                 console.log(desc + ", " + org + ", " + linkURL);
-                console.log(image);
 
                 $("#incentive-card-title").append(org);
                 $(".card-text").append(desc);

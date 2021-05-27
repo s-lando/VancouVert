@@ -4,7 +4,7 @@ function writeNewIncentives() {
         desc: "$1050 rebate for Electric Bikes",
         org: "ScrapIT BC",
         random: Math.floor(Math.random() * 1000),
-        type: "transportation",
+        type: "transport",
         url: "https://scrapit.ca/otherincentivechoices-2-2/",
         image: "electric.png"
     });
@@ -12,7 +12,7 @@ function writeNewIncentives() {
         desc: "PST Exemption for e-bike purchases.",
         org: "BC Government",
         random: Math.floor(Math.random() * 1000),
-        type: "transportation",
+        type: "transport",
         url: "https://www2.gov.bc.ca/assets/gov/taxes/sales-taxes/publications/pst-204-bicycles-tricycles.pdf?fbclid=IwAR2z15CnmoicWWlq63rWYvno3WHbP-sc_8IS_qbfkEVTAPHgFBrKuELJpaI",
         image: "electric.png"
     });
@@ -20,7 +20,7 @@ function writeNewIncentives() {
         desc: "BC Transit ECOPASS for $880 that can be used for 11 months!",
         org: "ScrapIT BC",
         random: Math.floor(Math.random() * 1000),
-        type: "transportation",
+        type: "transport",
         url: "https://scrapit.ca/otherincentivechoices-2-2/",
         image: "electric.png"
     });
@@ -28,7 +28,7 @@ function writeNewIncentives() {
         desc: "Car share Rebate with following organizations: Modo, Kootenay Carshare Co-op, Coast Car Co-op, Spark Car Share.",
         org: "Clean BC Go Electric",
         random: Math.floor(Math.random() * 1000),
-        type: "transportation",
+        type: "transport",
         url: "https://scrapit.ca/otherincentivechoices-2-2/",
         image: "electric.png"
     });
@@ -36,7 +36,7 @@ function writeNewIncentives() {
         desc: "Workplaces can apply for EV rebate up to $2000 per charger, and $14000 per workplace.",
         org: "BC Hydro",
         random: Math.floor(Math.random() * 1000),
-        type: "transportation",
+        type: "transport",
         url: "https://electricvehicles.bchydro.com/incentives/charger-rebates/workplace",
         image: "electric.png"
     });
@@ -44,7 +44,7 @@ function writeNewIncentives() {
         desc: "EV charger rebate for single-family homes: 50% of costs up to $350.",
         org: "BC Hydro",
         random: Math.floor(Math.random() * 1000),
-        type: "transportation",
+        type: "transport",
         url: "https://electricvehicles.bchydro.com/incentives/charger-rebates/home",
         image: "electric.png"
     });
@@ -112,7 +112,7 @@ function writeNewIncentives() {
         url: "https://www.saanich.ca/EN/main/community/agriculture-food-security/community-gardens.html",
         image: "food.jpg"
     });
-    /* incentivesRef.add({
+    incentivesRef.add({
         desc: "Rebates for natural gas and electric energy-efficient upgrades",
         org: "BC Hydro",
         random: Math.floor(Math.random() * 1000),
@@ -191,7 +191,7 @@ function writeNewIncentives() {
         type: "food",
         url: "http://www.nzwc.ca/#",
         image: "food.jpg"
-    }); */
+    });
 }
 //writeNewIncentives();
 
