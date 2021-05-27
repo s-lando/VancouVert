@@ -239,7 +239,7 @@ $(document).ready(function () {
                 home: scoreHome,
                 transport: scoreTransport,
                 food: scoreFood,
-                totalFootprint: totalScore,
+                totalFootprint: totalScore.toFixed(3),
                 time: timestamp
 
             }).then(() => {
@@ -257,7 +257,7 @@ $(document).ready(function () {
                 console.log("footprint updates completed");
                 $("#overview-tab").trigger('click');
                 grabCurrentFootprint();
-                //update charts
+                location.reload();
             });
         }
 
