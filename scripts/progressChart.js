@@ -11,10 +11,9 @@ function makeGraphs() {
             .then(function (snap) {
                 snap.forEach(function (doc) {
 
-                    // DateTime myDateTime = (snapshot.data.documents[index].data['timestamp']).toDate();
-
+                    var dd = new Date(doc.data().time.toDate().toLocaleDateString()) ;
                     barList[barList.length] = doc.data().totalFootprint;
-                    timeList[timeList.length] = doc.data().time.toDate;
+                    timeList[timeList.length] = dd;
                 })
                 $("#calc-goes-here").text(barList[barList.length - 1]);
                 console.log(barList[barList.length - 1]);
@@ -24,6 +23,7 @@ function makeGraphs() {
 
                     $("#chartContainer").html("");
                     $("#firstcalc").html("Please perform your first calculation in the calculation tab to see your progress!");
+
                 } else {
                     var chart = new CanvasJS.Chart("chartContainer", {
                         animationEnabled: true,
@@ -35,23 +35,23 @@ function makeGraphs() {
                             type: "line",
 
                             dataPoints: [{
-                                    x: new Date(2021, 05, 20),
+                                    x: timeList[4],
                                     y: barList[4]
                                 },
                                 {
-                                    x: new Date(2021, 05, 10),
+                                    x: timeList[3],
                                     y: barList[3]
                                 },
                                 {
-                                    x: new Date(2021, 05, 17),
+                                    x: timeList[2],
                                     y: barList[2]
                                 },
                                 {
-                                    x: new Date(2021, 05, 12),
+                                    x: timeList[1],
                                     y: barList[1]
                                 },
                                 {
-                                    x: new Date(2021, 05, 22),
+                                    x: timeList[0],
                                     y: barList[0]
                                 },
                                
