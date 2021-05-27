@@ -5,3 +5,107 @@
     color: crimson;
     font-size: 10pt;
 }
+
+#calculate-btn-group {
+    align-self: center;
+    justify-self: flex-start;
+}
+
+#homeButton {
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+
+#transportButton {
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+
+#foodButton {
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+
+#incentives {
+    display: flex;
+    flex-direction: column;
+    grid-area: incentive;
+    margin: 1.5rem 1.5rem;
+    padding: 1rem 1rem;
+    background-color: #d8f8d1;
+    border: 1px black solid;
+    border-radius: 2%;
+}
+
+#right-arrow {
+    width: 30px;
+    height: 30px;
+}
+
+#incent-desc {
+    padding: 0 auto;
+}
+
+#your-worst-cat {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: red;
+}
+
+#incentives p {
+    padding-top: 1rem;
+    margin: 0 auto;
+}
+
+#incentive-card-title {
+    margin: 0 auto;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.4rem;
+    flex-grow: 1;
+}
+
+#incentive-card-text {
+    font-size: 1.1rem;
+    margin: 0 2rem;
+}
+
+#incentive-card-text span {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #31a80d;
+}
+
+#incentive_url {
+    height: 50px;
+    background-color: rgb(186, 247, 106);
+    color: black;
+    border: 1px solid #035827;
+    border-radius: 3%;
+    width: 50px;
+    align-content: center;
+    justify-content: center;
+}
+
+#redirect-link {
+    width: 30px;
+}
+
+#target-icon {
+    width: 30px;
+    height: 30px;
+    align-self: center;
+}
+
+#personalized-msg {
+    border: 5px #076304;
+    margin: 0 auto;
+    border-radius: 3%;
+}
+
+#user-name {
+    font-family: 'Mate SC', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #037a21;
+}

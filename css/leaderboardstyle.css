@@ -14,6 +14,7 @@
 	display: flex;
 	flex-direction: column;
 	height: fit-content;
+	padding-top: 2.5rem;
 }
 
 .name_bar {
@@ -118,7 +119,8 @@ div.name_bar {
 #share-content p {
 	font-size: 1rem;
 	align-self: center;
-	word-wrap: normal;
+	margin-left: 2rem;
+	margin-right: 2rem;
 }
 
 #share-content iframe {

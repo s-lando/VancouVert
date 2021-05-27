@@ -1,5 +1,4 @@
-/* .tab-content {
-    background-color: #E8F7EE;
+.tab-content {
     height: auto;
     border: #488d3f 2px solid;
     font-family: 'Fira Sans', sans-serif;
@@ -8,9 +7,8 @@
     margin-left: 3em;
     margin-right: 3em;
     border-radius: 5%;
-    display: flex;
     flex-direction: column;
-} */
+}
 
 #userChart {
     text-align: center;
@@ -19,7 +17,7 @@
 }
 
 #vancouverComparison {
-    font-size: 0.8rem;
+    font-size: 10pt;
     margin: 0 1rem;
     display: flex;
     flex-direction: row;
@@ -29,12 +27,15 @@
 
 #vancouverComparison img {
     justify-content: flex-end;
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
 }
 
 #vancouverComparison p {
     margin-top: .5em;
     align-self: center;
-    font-size: 10pt;
+    font-size: 11pt;
     color: #020103;
     font-family: 'Noto Sans SC', sans-serif;
 }
@@ -61,21 +62,12 @@
     align-self: center;
 }
 
-#personalized-msg {
-    padding: 2rem 0 0 0;
-    border: 5px #076304;
-    margin: 0 auto;
-    border-radius: 3%;
-}
-
-#user-name {
-    font-family: 'Righteous', cursive;
+#yourNumber {
+    font-family: 'Noto Sans SC', sans-serif;
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #0bc533;
 }
 
-#your-worst-cat {
+#currentUserNumber {
     font-weight: bold;
 }
 
@@ -119,9 +111,8 @@
 #incentive_url {
     height: 50px;
     background-color: rgb(201, 252, 245);
-    color: black;
-    border: 1px solid #f70f0f;
     border-radius: 5%;
+    color: #33c40e;
 }
 
 .btn-outline-info {
