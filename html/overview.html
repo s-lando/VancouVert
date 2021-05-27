@@ -44,22 +44,28 @@
         <a id="nav-top" class="navbar-brand" href="../html/overview.html">
             <img class="logo" src="../img/leafMain.svg" alt="logo not displaying properly">
         </a>
+        <div>
+            <a href="#" type="button" style="display: inline;" class="btn btn-success btn-lg top-buttons"
+                id="profile-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
+                    class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+            </a>
+            <a href="../index.html" type="button" style="display: inline;" class="btn btn-success btn-lg top-buttons"
+                id="logout">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
+                    class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
+                    <path fill-rule="evenodd"
+                        d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+                </svg>
+            </a>
+        </div>
 
-        <a href="help.html" id="help-btn">
-            <img src="https://img.icons8.com/ios/50/26e07f/help.png" />
-
-        </a>
-        <a href="#" type="button" style="display: inline;" class="btn btn-success btn-lg" id="profile-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                class="bi bi-person-circle" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                <path fill-rule="evenodd"
-                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-            </svg>
-        </a>
-        <a href="../index.html" id="logout-btn">
-            <img src="https://img.icons8.com/ios/50/26e07f/logout-rounded-left.png" />
-        </a>
     </nav>
 
     <!--Tabs Nav Bar-->
@@ -98,12 +104,11 @@
 
                 <div id="vancouverComparison">
                     <img src="../img/goal.png" alt="Target" id="target-icon">
-                    <p>Vancouverites need a maximum of <b id="co2-number">~6.0 CO2 tonnes/yr</b> to meet the 2030
+                    <p>2030 Goal: <b id="co2-number">~6.0 </b> CO2 tonnes/yr to meet the 2030
                         target</p>
-
+                    <p id="yourNumber"> Your footprint: <span id="currentUserNumber"></span> CO2 tonnes/yr</p>
                 </div>
-
-                <p id="yourNumber"> Your footprint: <span id="currentUserNumber"></span> CO2 tonnes/yr</p>
+                <!-- incentives can also go here -->
 
             </div>
         </div>
@@ -137,7 +142,7 @@
                             d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z" />
                     </svg></button>
             </div>
-            
+
             <!--  FOR BUTTON LINK TO OVERVIEW:  data-toggle="tab" href="#overview" role="tab" -->
             <button type="button" id="calculateButton" class="btn btn-outline-info btn-lg" aria-selected="false">
                 Calculate <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -148,16 +153,15 @@
             </button>
             <p id="answerFirst">Please submit each category first before calculating.</p>
 
-            
 
-            <!------------------INCENTIVES at bottom ------------------------->
+
             <div id="incentives">
 
                 <div id="personalized-msg">
                     <span id="user-name"></span>
                 </div>
 
-                <p id="incent-desc">Your worst score: 
+                <p id="incent-desc">Your worst score:
                     <!-- <img src="../img/arrow.png" alt="right arrow" id="right-arrow"> -->
                     <span id="your-worst-cat"></span>
                 </p>
@@ -172,6 +176,7 @@
                     <img src="../img/link.png" alt="another page" id="redirect-link">
                 </a>
             </div>
+            <!------------------INCENTIVES at bottom ------------------------->
 
         </div>
 
@@ -180,7 +185,7 @@
 
             <div id="leaderboard-container">
                 <div id="add-leaderboard-here">
-                    <h3 id="lead-title">Pick your leaderboard!</h3>
+                    <h3 id="lead-title">Pick A Leaderboard</h3>
                     <div id="group-feature">
                         <!----------------------------- JOIN/LEAVE buttons and modals -------------------------->
                         <div class="form-floating">
@@ -218,6 +223,7 @@
                                                 </svg>
                                             </button>
                                         </div>
+
 
                                         <!---------- Type name of group user wants to join here -------------->
                                         <div class="modal-body">
@@ -272,22 +278,16 @@
                     <div class="lboard_item" id="leaderboard_ranks">
 
                     </div>
-                </div>
+                    <div id="share-content">
+                        <p>Congratulations <span id="user-name2"></span> ! Looks like you are currently ranked #<span
+                                id="your-rank"></span></p>
 
-                <div id="share-content">
-                    <p>Congratulations <span id="user-name2"></span>! Share your results with your friends!
-                        
-                    </p>
-
-                    <div id="fb-share">
                         <iframe
-                    src="https://www.facebook.com/plugins/share_button.php?href=https://chillyfacts.com/create-facebook-share-button-for-website-webpages/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId"
-                    scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                            src="https://www.facebook.com/plugins/share_button.php?href=https://vancouvert-dce8f.web.app/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId"
+                            scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                     </div>
 
-                    
                 </div>
-
             </div>
 
         </div>
@@ -556,9 +556,16 @@
 
     <!-- <a href="help.html" type="button" class="btn btn-success btn-lg" id="help-btn"></a> -->
     <footer>
-        <div id="footer-p">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
-            <br>
-            © 2021 Vancouvert <a href="../html/about-us.html">About Us</a></div>
+        <div id="footer-p">
+            <div class="designedBy">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
+                <br>
+                © 2021 Vancouvert</div>
+            <div class="moreInfo"> <a href="../html/about-us.html">About Us</a>
+                <br>
+                <a href="help.html" id="help-btn">
+                    Help
+            </div>
+        </div>
     </footer>
 
 </body>

@@ -51,53 +51,6 @@ body {
 
 
 
-/* //////////////////////////////// */
-
-/* *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body{
-    overflow: hidden;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-ul, li{
-    list-style: none;
-
-}
-a{
-    text-decoration: none;
-}
-
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    box-shadow: 0 0 4px rgba(0, 0, 0, .15), 0 4px 5px rgba(0, 0, 0, .3);
-    height: 69px;
-    z-index: 10;
-    position: relative;
-    top: 0;
-    left: 0;
-
-}
-
-header .logo{
-    padding: 15px 25px;
-}
-
-header .logo h1{
-    cursor: pointer;
-    text-transform: uppercase;
-}
- */
-
 @media (max-width: 770px) {
     .sidebar {
         /* display: none; */
