@@ -138,13 +138,13 @@ footer {
 
 
 #footer-p {
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: 12px;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 1em;
     text-align: center;
-    background-color: #e2ebf75d;
+    background-color: #333;
     position: fixed;
     bottom: 0;
     width: 100%;
