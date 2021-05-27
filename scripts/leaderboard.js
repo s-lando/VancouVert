@@ -1,4 +1,4 @@
-<script src="../scripts/leaderboard_groups.js"></script>
+
 // var firebaseConfig = {
 //     apiKey: "AIzaSyD5GLLJGTSl7Cj2c-Y4sR0RR731rHX4yQc",
 //     authDomain: "vancouvert-dce8f.firebaseapp.com",
