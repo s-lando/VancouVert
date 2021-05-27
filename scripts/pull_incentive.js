@@ -49,10 +49,12 @@ $("#overview").ready(function () {
             .then(function (doc) {
                 let worst = doc.data().worstCategory;
                 let name = doc.data().name;
+                let ftprint = doc.data().currentFootprint;
 
                 $("#your-worst-cat").append(worst);
                 $("#user-name").append(name);
                 $("#user-name2").append(name);
+                $("#currentUserNumber").append(ftprint);
 
                 genIncentiveByWorstCat(worst);
             })

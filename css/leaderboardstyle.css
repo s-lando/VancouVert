@@ -21,6 +21,7 @@
 	display: flex;
 	flex-direction: column;
 	height: fit-content;
+	padding-top: 2.5rem;
 }
 
 .name_bar {
@@ -116,19 +117,19 @@ div.name_bar {
 
 #share-content {
 	order: 2;
-	bottom: 0;
-	position: absolute;
-	bottom: 1rem;
-	word-wrap: normal;
+	padding: 2rem 0 0 0;
+	display: flex;
+	flex-direction: column;
 }
 
 #share-content p {
 	font-size: 1rem;
 	align-self: center;
-	word-wrap: normal;
+	margin-left: 2rem;
+	margin-right: 2rem;
 }
 
-#share-content iframe {
-	align-self: center;
-	align-content: center;
+#fb-share {
+	align-self: flex-end;
+	justify-self: center;
 }
