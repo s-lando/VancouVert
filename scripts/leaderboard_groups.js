@@ -1,19 +1,3 @@
-/* $("#floatingSelect").click("click", function() {
-    var selectedText = $("#floatingSelect option:selected").html();
-    console.log(selectedText);
-
-    if (selectedText == "Individual") {
-
-    } else if (selectedText == "Within Your Team") {
-
-    } else {
-
-    }
-
-    $("#leaderboard-container").append(selectedText);
-
-}) */
-
 const groups = db.collection("groups");
 const users = db.collection("users");
 
@@ -51,8 +35,6 @@ function joinGroup(groupName) {
 // Add the user to the group collection  (affects GROUPS collection)
 function addMemberToGroup(nameGroup) {
     firebase.auth().onAuthStateChanged((user) => {
-
-        //let userID = user.doc(user.uid).data().name;
 
         db.collection("groups")
             .doc(nameGroup)

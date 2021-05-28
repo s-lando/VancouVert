@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
 
-    <!--Bootstrap & CSS Imports-->
-
+    <!----------------------------------- Bootstrap & CSS Imports -------------------------------------->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
-    <link rel="stylesheet" href="../css/colourPalette1.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="../css/profile.css" /> -->
 
+    <!---------------------------------------  Our CSS sheets ------------------------------------------>
+    <link rel="stylesheet" href="../css/colourPalette1.css" />
+
+    <!----------------------------------------- Our Favicon ------------------------------------------>
     <link rel="shortcut icon" type="image/png" href="../img/PNGfavicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help</title>
@@ -21,7 +21,7 @@
 <body>
 
 
-    <!--Top Header-->
+    <!------------------------------------------ Top Header -------------------------------------------->
     <nav class="navbar brand-custom">
         <a id="nav-top" class="navbar-brand" href="overview.html">
             <img class="logo" src="../img/leafMain.svg" alt="logo not displaying properly">
@@ -39,7 +39,7 @@
             </a>
     </nav>
 
-    <!--collapsable options-->
+    <!---------------------------------------- FAQ section ----------------------------------------->
     <div class="accordion" id="accordionExample" style="margin-bottom: 5em;">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
@@ -137,15 +137,9 @@
                 </div>
             </div>
         </div>
-
     </div>
 
-
-
-
-    <!--pop up message-->
-
-    <!-- Modal -->
+    <!--------------------------------------- Modal for pop up message ----------------------------------->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -165,9 +159,7 @@
     </div>
 
 
-
-
-    <!--feedback for-->
+    <!----------------------------------- Additional Feedback section ----------------------------------->
     <div Style=" width: 50%; margin: 0 auto; margin-bottom: 100px;">
         <div class="mb-3">
             <h1 class="display-4" style="text-align: center;">Need more help? Send us a message!</h1>
@@ -188,6 +180,7 @@
     <br />
     <br />
 
+    <!---------------------------------------------- Footer --------------------------------------------->
     <footer>
         <div id="footer-p">
             <div class="designedBy">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
@@ -201,25 +194,24 @@
         </div>
     </footer>
 
-
-
+    <!---------------------------------  Bootstrap Bundle (includes Popper) -------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
 
 
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <!---------- Firebase App (the core Firebase SDK) is always required and must be listed first ----->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
+    <!-------------------------- Add Firebase products that you want to use --------------------------->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!----------------------------------------- Our own scripts --------------------------------------->
     <script src="../scripts/firebase_api.js"></script>
-
 
     <script>
         //submit feedback form. 
@@ -238,9 +230,6 @@
                             document.getElementById("submitButton")
                                 .addEventListener("click", function () {
 
-
-                                    // const parsedUrl = new URL(window.location.href);
-                                    // var userID = parsedUrl.searchParams.get("id");
 
                                     feedbackEmail = document.getElementById("emailForm").value;
                                     feedbackForm = document.getElementById("requestForm").value;
@@ -268,20 +257,9 @@
 
                                                 email: feedbackEmail,
                                                 request: feedbackForm
-
                                             })
 
-                                            // db.collection("feedback").set({
-
-                                            //     email: feedbackEmail,
-                                            //     request: feedbackForm
-
-                                            // })
-
-
                                         }
-
-
 
                                     } else {
 
@@ -292,15 +270,11 @@
 
                                 });
 
-
                             document.getElementById("understood")
                                 .addEventListener("click", function () {
                                     window.location.reload();
                                 });
                         })
-
-
-
 
                 } else {
                     // No user is signed in.
