@@ -5,13 +5,18 @@
     <title>Overview
     </title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-----------------------------------Bootstrap & CSS Imports---------------------------------------->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <!--------------------------------------- Our CSS pages -------------------------------------------->
-    <link rel="stylesheet" href="../css/universal.css" />
+    <link rel="stylesheet" href="../css/leaderboardstyle.css" />
+    <link rel="stylesheet" href="../css/colourPalette1.css" />
+    <link rel="stylesheet" href="../css/overviewTab.css">
+    <link rel="stylesheet" href="../css/calculatorTab.css">
+
     <!-- <link rel="stylesheet" type="text/css" href="../css/progress.css" /> -->
 
     <link rel="shortcut icon" type="image/png" href="../img/PNGfavicon.png">
@@ -20,6 +25,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
 
     </title>
 </head>
@@ -31,20 +44,34 @@
         <a id="nav-top" class="navbar-brand" href="../html/overview.html">
             <img class="logo" src="../img/leafMain.svg" alt="logo not displaying properly">
         </a>
-        <a href="#" type="button" class="btn btn-success btn-lg" id="profile-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                class="bi bi-person-circle" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                <path fill-rule="evenodd"
-                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-            </svg>
-        </a>
+        <div id="topButtons">
+            <a href="#" type="button" style="display: inline;" class="btn btn-success btn-lg top-buttons"
+                id="profile-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                    class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+            </a>
+            <a href="../index.html" type="button" style="display: inline;" class="btn btn-success btn-lg top-buttons"
+                id="logout">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                    class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
+                    <path fill-rule="evenodd"
+                        d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+                </svg>
+            </a>
+        </div>
+
     </nav>
 
     <!--Tabs Nav Bar-->
-    <ul class="nav nav-tabs" id="overview-tab" role="tablist">
+    <ul class="nav nav-tabs" id="tabs" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
+            <a class="nav-link overview active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
                 aria-controls="overview" aria-selected="true">Overview</a>
         </li>
         <li class="nav-item">
@@ -59,38 +86,63 @@
             <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history"
                 aria-selected="false">Progress</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link" id="incent-tab" data-toggle="tab" href="#incent" role="tab" aria-controls="incent"
                 aria-selected="false">Incentives</a>
-        </li>
+        </li> -->
 
     </ul>
     <div class="tab-content" id="myTabContent">
+
         <!-- overview tab -->
         <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-            <div id="userChart">
+            <div>
+                <!-----------------PIE CHART ------------------------------>
+                <div id="userChart">
+
+                </div>
+
+                <div id="vancouverComparison">
+                    <img src="../img/goal.png" alt="Target" id="target-icon">
+                    <p>2030 Target: <b id="co2-number"> &#60; 6.0 </b> CO2 tonnes/yr per Vancouverite</p>
+                </div>
+
+                <div id="incentives">
+
+                    <div id="personalized-msg">
+                        <span id="user-name"></span>
+                    </div>
+                    <p id="yourNumber"> Current Footprint: <span id="currentUserNumber"></span> CO2 tonnes/yr</p>
+                    <p id="incent-desc">Worst category:
+                        <!-- <img src="../img/arrow.png" alt="right arrow" id="right-arrow"> -->
+                        <span id="your-worst-cat"></span>
+                    </p>
+
+                    <!-- <p>
+                        <span id="incentive-card-title"></span>
+                    </p> -->
+
+                    <p class="card-text" id="incentive-card-text"><span>Personalized Incentive:</span> </p>
+                    <a type="button" id="learnMore" href="#" class="btn btn-outline-success"> Learn More</a>
+                </div>
 
             </div>
-
         </div>
 
-
-
-
-        <!-- calculator tab -->
+        <!------------------------------------ calculator tab ------------------------------------------>
         <div class="tab-pane fade" id="calculator" role="tabpanel" aria-labelledby="calculator-tab">
 
-            <div class="btn-group" role="group" aria-label="Basic example">
+            <div class="btn-group-vertical" role="group" id="calculate-btn-group" aria-label="Basic example">
 
-                <button type="button" id="homeButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
-                    data-target="#home">Home <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                <button type="button" id="homeButton" class="btn btn-outline-dark btn-lg" data-toggle="modal"
+                    data-target="#home">Home <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
+                        aria-pressed="false" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                         <path
                             d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
                     </svg> </button>
 
-                <button type="button" id="transportButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
-                    data-target="#transport">Transport <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                <button type="button" id="transportButton" class="btn btn-outline-dark btn-lg" data-toggle="modal"
+                    data-target="#transport">Transport <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
                         fill="currentColor" class="bi bi-signpost-fill" viewBox="0 0 16 16">
                         <path
                             d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
@@ -98,139 +150,158 @@
 
 
 
-                <button type="button" id="foodButton" class="btn btn-outline-info btn-lg" data-toggle="modal"
-                    data-target="#food">Food <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                <button type="button" id="foodButton" class="btn btn-outline-dark btn-lg" data-toggle="modal"
+                    data-target="#food">Food <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
                         fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
                         <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                         <path
                             d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z" />
                     </svg></button>
             </div>
-            <br>
-            <button type="button" id="calculateButton" class="btn btn-outline-info btn-lg" aria-selected="false"
-                data-toggle="tab" href="#overview" role="tab"> Calculate <svg xmlns="http://www.w3.org/2000/svg"
-                    width="16" height="16" fill="currentColor" class="bi bi-calculator-fill" viewBox="0 0 16 16">
+
+
+            <!--  FOR BUTTON LINK TO OVERVIEW:  data-toggle="tab" href="#overview" role="tab" -->
+            <button type="button" id="calculateButton" class="btn btn-outline-success btn-lg" aria-selected="false">
+                Calculate <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
+                    class="bi bi-calculator-fill" viewBox="0 0 16 16">
                     <path
                         d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5zm0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z" />
                 </svg>
             </button>
 
+            
+            <p id="answerFirst">Please submit each category first before calculating.</p> 
         </div>
 
-        <!-- Leaderboard Tab -->
+
+        <!------------------INCENTIVES at bottom ------------------------->
+
+        <!------------------------------------- Leaderboard Tab ------------------------------------------->
         <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">
 
-            <!---------------Select type of Leaderboard user wants to view ------------------>
-            <div class="form-floating">
-                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                    <option selected id="type-selected"></option>
-                    <option value="1" id="indiv-board">Individual</option>
-                    <option value="2" id="your-team-board">Within Your Team</option>
-                    <option value="3" id="all-teams-board">Team-based Leaderboard</option>
-                </select>
-
-                <div id="lead-btn-container">
-                    <!------------------------------ Button to Join Group -------------------------------->
-                    <button type="button" class="btn btn-primary" id="lead-btn" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal1">
-                        Join Group
-                    </button>
-
-                    <!---------------------------- Button to Delete Group --------------------------------->
-                    <button type="button" class="btn btn-danger" id="delete-group" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal2">
-                        Delete Group
-                    </button>
-                </div>
-
-
-                <!-------------------------------------- Modal for joining ----------------------------->
-                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Join a Group</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-x-lg" viewBox="0 0 16 16">
-                                        <path
-                                            d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <!---------- Input name of new group here -------------->
-                            <div class="modal-body">
-
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput"
-                                        placeholder="Type here...">
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-
-                                <button type="button" class="btn btn-primary" id="join-group">JOIN</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-------------------------------------- Modal for Deleting ----------------------------->
-                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Delete a Group</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-x-lg" viewBox="0 0 16 16">
-                                        <path
-                                            d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <!---------- User types name of group they want to delete -------------->
-                            <div class="modal-body">
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput2"
-                                        placeholder="Type here...">
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-
-                                <button type="button" class="btn btn-primary" id="delete-group-btn">DELETE</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
             <div id="leaderboard-container">
-
                 <div id="add-leaderboard-here">
+                    <h3 id="lead-title">Pick A Leaderboard</h3>
+                    <div id="group-feature">
+                        <!----------------------------- JOIN/LEAVE buttons and modals -------------------------->
+                        <div class="form-floating">
+
+                            <div id="lead-btn-container">
+
+                                <select id="groups" name="groups" onchange="report(this.value)"></select>
+
+                                <button type="button" class="btn btn-primary" id="lead-btn" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal1">
+                                    <img src="../img/add.png" alt="Add group" id="plus-group">
+
+                                </button>
+
+                                <button type="button" class="btn btn-danger" id="delete-group" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal2">
+                                    <img src="../img/negative.png" alt="Leave group" id="minus-group">
+
+                                </button>
+                            </div>
+
+                            <!----------------------- Modal for joining ----------------------------->
+                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Join a Group</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                                                </svg>
+                                            </button>
+                                        </div>
+
+
+                                        <!---------- Type name of group user wants to join here -------------->
+                                        <div class="modal-body">
+
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control" id="floatingInput"
+                                                    placeholder="Type here...">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+
+                                            <button type="button" class="btn btn-primary" id="join-group">JOIN</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!------------------------------- Modal for Leaving ----------------------------->
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Leave a Group</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                        <!---------- Type name of group user wants to leave here -------------->
+                                        <div class="modal-body">
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control" id="floatingInput2"
+                                                    placeholder="Type here...">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                id="delete-group-btn">DELETE</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lboard_item" id="leaderboard_ranks">
+
+                    </div>
+                    <div id="share-content">
+                        <p>Congratulations <span id="user-name2"></span> ! Looks like you are currently ranked
+                            #<span id="your-rank"></span></p>
+
+                        <iframe
+                            src="https://www.facebook.com/plugins/share_button.php?href=https://vancouvert-dce8f.web.app/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId"
+                            scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    </div>
 
                 </div>
-
             </div>
 
         </div>
 
         <!-- Progress tab -->
-        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">See how your footprint has
-            improved over time
+        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">Total footprint of -
+            "<span id="name-goes-here"></span>"
+            <div id="firstcalc">
+                Your First Caclulation - <span id="calc-goes-here"></span> tonnes/Year
+            </div>
             <div id="chartContainer" style="height: 370px; width: 80%;"></div>
+            
+
             <br />
         </div>
 
-
-
-
         <!-- incentive tab -->
-        <div class="tab-pane fade" id="incent" role="tabpanel" aria-labelledby="incent-tab">
+        <!-- <div class="tab-pane fade" id="incent" role="tabpanel" aria-labelledby="incent-tab">
             <div id="read-data-here" class="container">
                 <div class="card text-center" id="incent-card-container">
                     <div id="incent-img-cont">
@@ -244,186 +315,151 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!--  <div id="tips">
-
-        <div>
-            <p>Tips Go here <button type="button" id="seeMore" class="btn btn-success" data-toggle="modal"
-                    data-target="#ecoTipsFull">
-                    See More
-                </button></p> -->
+        </div> -->
 
 
-        <!-- Modals -->
-        <!-- Modals -->
-        <!-- Modals -->
-        <!--            <div class="modal fade" id="ecoTipsFull" tabindex="-1" role="dialog" aria-labelledby="ecoTipsFull"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Full List</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            -shorter showers<br>
-                            -carpool<br>
-                            -etc
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Calculator Forms
+        Calculator Forms
+        Calculator Forms -->
+
+        <!---------------------------- Home Form -------------------------->
     </div>
+    <div class="modal fade" id="home" tabindex="-1" role="dialog" aria-labelledby="home" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLongTitle">Home <svg xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" class="bi bi-house-door-fill"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+                        </svg></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
-
-    <!- Home Form -->
-
-        <div class="modal fade" id="home" tabindex="-1" role="dialog" aria-labelledby="home" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLongTitle">Home <svg xmlns="http://www.w3.org/2000/svg"
-                                width="16" height="16" fill="currentColor" class="bi bi-house-door-fill"
-                                viewBox="0 0 16 16">
-                                <path
-                                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
-                            </svg></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                        <form id="homeForm">
-                            <div class="form-group" id="houseValue">
-                                <label for="question">Select which best describes your household:</label>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="detached-home" name="houseType" value="detachedHome"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="detached-home">Detached Family Home
-                                    </label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="appartment-condo" name="houseType" value="appartmentCondo"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="appartment-condo">Appartment/Condo </label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="numberPeople">How many people live in your household?</label>
-                                <input type="number" class="form-control" name="householdNum" id="numberPeople"
-                                    placeholder="Enter a whole number greater than 0">
-                            </div>
-                            <div class="form-group">
-                                <label for="numGarbage">How many full 20L garbage bags does your household fill every
-                                    week?
-                                    <p style="font-size: smaller;">A full garbage bin holds on average 8 bags</p>
+                    <form id="homeForm">
+                        <div class="form-group" id="houseValue">
+                            <label for="question">Select which best describes your household:</label>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="detached-home" name="houseType" value="detachedHome"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="detached-home">Detached Family Home
                                 </label>
-                                <input type="number" class="form-control" name="garbageNum" id="numGarbage"
-                                    placeholder="Enter a positive whole number">
                             </div>
-                            <div class="form-group">
-                                <label for="question">Select which best describes the energy source that heats your
-                                    household:</label>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="electric" name="energyType" value="electric"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="electric">Electric</label> </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="gas" name="energyType" value="gas"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="gas">Natural Gas</label>
-                                </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="appartment-condo" name="houseType" value="appartmentCondo"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="appartment-condo">Appartment/Condo </label>
                             </div>
-
-
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success submit"
-                                    data-dismiss="modal">Submit</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="numberPeople">How many people live in your household?</label>
+                            <input type="number" class="form-control" name="householdNum" id="numberPeople"
+                                placeholder="Enter a whole number greater than 0" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="numGarbage">How many full 20L garbage bags does your household fill every
+                                week?
+                                <p style="font-size: smaller;">A full garbage bin holds on average 8 bags</p>
+                            </label>
+                            <input type="number" class="form-control" name="garbageNum" id="numGarbage"
+                                placeholder="Enter a positive whole number">
+                        </div>
+                        <div class="form-group">
+                            <label for="question">Select which best describes the energy source that heats your
+                                household:</label>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="electric" name="energyType" value="electric"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="electric">Electric</label> </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="gas" name="energyType" value="gas" class="custom-control-input">
+                                <label class="custom-control-label" for="gas">Natural Gas</label>
                             </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        </div>
 
-        <!-- Transport Form -->
 
-        <div class="modal fade" id="transport" tabindex="-1" role="dialog" aria-labelledby="transport"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLongTitle">Transport <svg
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-signpost-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
-                            </svg></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                        <form id="transportForm">
-                            <div class="form-group" id="transportForm">
-                                <label for="question">Select which best describes your regular mode of
-                                    transportation:</label>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="gas-car" name="vehicleType" value="gasCar"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="gas-car">Gas Car</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="gas-truck" name="vehicleType" value="gasTruck"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="gas-truck">Gas Truck/Van</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="electric-vehicle" name="vehicleType" value="ev"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="electric-vehicle">Electric
-                                        Vehicle</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="transit" name="vehicleType" value="publicTransit"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="transit">Public Transit</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="non-motor" name="vehicleType" value="nonMotor"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="non-motor">Non-Motor Vehicle (e.g.
-                                        Bike)</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="flightNum">Approximately how many hours have you spent flying in the
-                                    past
-                                    year?</label>
-                                <input type="number" class="form-control" id="FlightNum" name="flightNum"
-                                    placeholder="Enter a whole number">
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success submit"
-                                    data-dismiss="modal">Submit</button>
-                        </form>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success submit" data-dismiss="modal">Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Food Form -->
+    <!--------------------------------- Transport Form ------------------------->
+
+    <div class="modal fade" id="transport" tabindex="-1" role="dialog" aria-labelledby="transport" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLongTitle">Transport <svg xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" class="bi bi-signpost-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
+                        </svg></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form id="transportForm">
+                        <div class="form-group" id="transportForm">
+                            <label for="question">Select which best describes your regular mode of
+                                transportation:</label>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="gas-car" name="vehicleType" value="gasCar"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="gas-car">Gas Car</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="gas-truck" name="vehicleType" value="gasTruck"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="gas-truck">Gas Truck/Van</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="electric-vehicle" name="vehicleType" value="ev"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="electric-vehicle">Electric
+                                    Vehicle</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="transit" name="vehicleType" value="publicTransit"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="transit">Public Transit</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="non-motor" name="vehicleType" value="nonMotor"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="non-motor">Non-Motor Vehicle (e.g.
+                                    Bike)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="flightNum">Approximately how many hours have you spent flying in the
+                                past
+                                year?</label>
+                            <input type="number" pattern="[0-9]" title="Must be a whole, positive" class="form-control"
+                                id="FlightNum" name="flightNum" placeholder="Enter a whole number">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" form="transportForm" class="btn btn-success submit"
+                                data-dismiss="modal">Submit</button>
+                                </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!---------------------------------- Food Form --------------------------->
 
     <div class="modal fade" id="food" tabindex="-1" role="dialog" aria-labelledby="food" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -501,15 +537,34 @@
                 </div>
             </div>
         </div>
+
+
     </div>
     </div>
 
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <a href="https://icons8.com/icon/26215/logout-rounded-left"></a>
     <!--Footer-->
 
+    <!-- <a href="help.html" type="button" class="btn btn-success btn-lg" id="help-btn"></a> -->
     <footer>
-        <div id="footer-p">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
-            <br>
-            © 2021 Vancouvert <a href="../html/about-us.html">About Us</a></div>
+        <div id="footer-p">
+            <div class="designedBy">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
+                <br>
+                © 2021 Vancouvert</div>
+            <div class="moreInfo"> <a href="../html/about-us.html">About Us</a>
+                <br>
+                <a href="help.html" id="help-btn">
+                    Help
+            </div>
+        </div>
     </footer>
 
 </body>
@@ -538,12 +593,20 @@
 <script src="../scripts/pull_incentive.js"></script>
 <script src="../scripts/calculator_scripts.js"></script>
 <script src="../scripts/functions-madhav.js"></script>
-<script src="../scripts/leaderboard_team_JR.js"></script>
-<script src="../scripts/canvasScript.js"></script>
+<script src="../scripts/customName.js"></script>
+<script src="../scripts/progressChart.js"></script>
+<script src="../scripts/leaderboard_groups.js"></script>
+<script src="../scripts/leaderboard.js"></script>
+<script src="../scripts/write_collection_incentive.js"></script>
 
-
+<!---------------------------- CanvasJS ------------------------->
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js" charset="UTF-8"></script>
 
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 
+<script>
+    customName();
+</script>
 
 </html>

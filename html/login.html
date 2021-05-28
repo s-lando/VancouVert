@@ -10,7 +10,7 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
     <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <link rel="stylesheet" href="../css/universal.css" />
+    <link rel="stylesheet" href="../css/colourPalette1.css" />
     <link rel="shortcut icon" type="image/png" href="../img/PNGfavicon.png">
 </head>
 
@@ -32,9 +32,15 @@
 
 
     <footer>
-        <div id="footer-p">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
-            <br>
-            © 2021 Vancouvert, All Rights Reserved.</div>
+        <div id="footer-p">
+            <div class="designedBy">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
+                <br>
+                © 2021 Vancouvert</div>
+            <div class="moreInfo"> <a href="../html/about-us.html">About Us</a>
+                <br>
+                
+            </div>
+        </div>
     </footer>
 
 
@@ -57,16 +63,16 @@
         var uiConfig = {
             callbacks: {
 
-                
+
                 signInSuccessWithAuthResult: function (authResult, redirectUrl) {
                     var user = authResult.user;
                     if (authResult.additionalUserInfo.isNewUser) {
                         db.collection("users").doc(user.uid).set({
                                 name: user.displayName,
                                 email: user.email,
-                                currentFootprint: 0,
-                                worstCategory: "null"
-                                // groups: null,
+                                currentFootprint: null,
+                                worstCategory: "null",
+                                groups: [],
                             }).then(function () {
 
 
@@ -94,7 +100,7 @@
             signInSuccessUrl: 'overview.html',
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
-                //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                 //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
                 //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
                 //firebase.auth.GithubAuthProvider.PROVIDER_ID,
@@ -109,6 +115,7 @@
 
         // The start method will wait until the DOM is loaded.
         ui.start('#firebaseui-auth-container', uiConfig);
+        
     </script>
 </body>
 

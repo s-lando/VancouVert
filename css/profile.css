@@ -1,5 +1,4 @@
 body {
-    margin-top: 20px;
     background-color: mintcream;
 
 }
@@ -47,7 +46,9 @@ body {
 
 .content {
     background-color: #E8F7EE;
-}
+} 
+
+
 
 @media (max-width: 770px) {
     .sidebar {

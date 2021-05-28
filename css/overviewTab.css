@@ -1,0 +1,180 @@
+.tab-content {
+    height: auto;
+    border: #488d3f 2px solid;
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+    margin-top: 6vh;
+    margin-left: 3em;
+    margin-right: 3em;
+    border-radius: 5%;
+}
+
+/* #userChart {
+    text-align: center;
+    height: 25vh;
+    margin-top: 1em;
+} */
+
+#vancouverComparison {
+    font-size: 10pt;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    padding-top: .5rem;
+    text-align: center;
+}
+
+#vancouverComparison img {
+    width: 30px;
+    height: auto;
+    margin-right: 8px;
+}
+
+#vancouverComparison p {
+    margin-top: 1.5em;
+    font-size: 12pt;
+    color: #020103;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+#co2-number {
+    color: #36702e;
+    font-size: 12pt;
+
+}
+
+#currentUserNumber {
+    color: #36702e;
+    font-size: 11pt;
+
+}
+
+
+#target-icon {
+    width: 30px;
+    height: 30px;
+    align-self: center;
+}
+
+#yourNumber {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 12pt;
+}
+
+#currentUserNumber {
+    font-weight: bold;
+}
+
+#incentives {
+    display: flex;
+    flex-direction: column;
+    grid-area: incentive;
+    margin: 0rem 2rem;
+    border-top: #309e46 2px solid;
+    
+}
+
+#right-arrow {
+    width: 30px;
+    height: 30px;
+}
+
+#incentives p {
+    padding-top: 1rem;
+    margin: 0 auto;
+}
+
+#incentive-card-title {
+    margin: 0 auto;
+    font-family: 'Play', sans-serif;
+    font-size: 2rem;
+    flex-grow: 1;
+}
+
+#incentive-card-text {
+    font-size: 1.1rem;
+    margin: 0 2rem;
+}
+
+#incentive-card-text span {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #11531c;
+}
+
+/* #incentive_url {
+    height: 50px;
+    background-color: rgb(201, 252, 245);
+    border-radius: 5%;
+    color: #33c40e;
+} */
+
+/* INCENTIVES */
+
+#right-arrow {
+    width: 30px;
+    height: 30px;
+}
+
+#incent-desc {
+    padding: 0 auto;
+}
+
+#your-worst-cat {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: red;
+}
+
+#incentives p {
+    padding-top: 1rem;
+    margin: 0 auto;
+}
+
+#incentive-card-title {
+    margin: 0 auto;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.4rem;
+    flex-grow: 1;
+}
+
+#incentive-card-text {
+    font-size: 1.1rem;
+    margin: 0 2rem;
+}
+
+#incentive-card-text span {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #31a80d;
+}
+
+
+#redirect-link {
+    width: auto;
+}
+
+#target-icon {
+    width: 30px;
+    height: 30px;
+    align-self: center;
+}
+
+#personalized-msg {
+    border: 5px #076304;
+    margin: 0 auto;
+    border-radius: 3%;
+}
+
+#user-name {
+    font-family: 'Mate SC', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #037a21;
+}
+
+#learnMore {
+    margin-top: 1em;
+}

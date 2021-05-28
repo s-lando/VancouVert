@@ -1,0 +1,299 @@
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+
+a {
+    color: #0083c9;
+}
+
+#page-container {
+    height: 100vh;
+    position: relative;
+}
+
+.logo {
+
+    height: 4.5em;
+    margin-left: -1.5em;
+}
+
+#nav-top {
+
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#seeMore {
+
+    float: right;
+}
+
+.navbar {
+
+    background-color: mintcream;
+    border-bottom: #309e46 4px solid;
+    background-image: url(../img/2.jpg);
+    background-position: top;
+    background-size: cover;
+
+}
+
+.card {
+    background-color: inherit;
+}
+
+.nav {
+
+    margin-top: 1em;
+}
+
+#topButtons {
+    margin-right: -1em;
+}
+
+#profile-btn {
+    float: right;
+    border: 1px rgba(204, 204, 204, 0) solid;
+    margin-bottom: .5em;
+    margin-top: 1em;
+    margin-left: -20px;
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+    transition: 500ms ease;
+    background-color: #46774000;
+    opacity: .9;
+}
+
+#profile-btn:hover {
+    color: #309e46
+}
+
+#logout {
+    float: right;
+    border: 1px rgba(204, 204, 204, 0) solid;
+    margin-bottom: .5em;
+    margin-top: 1em;
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+    transition: 500ms ease;
+    min-height: 40px;
+    background-color: #46774000;
+    opacity: .9;
+
+}
+
+#logout:hover {
+    color: #309e46
+}
+
+@media (max-width:395px ) {
+    .logo {
+        height: 3.8em;
+    }
+}
+
+
+#home-btn {
+    float: right;
+    border: 1px rgba(204, 204, 204, 0) solid;
+    margin-bottom: .5em;
+    margin-top: 1em;
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+    transition: 500ms ease;
+    min-height: 60px;
+    background-color: #46774000;
+
+}
+
+#home-btn:hover {
+    color: #309e46
+}
+
+.nav {
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+
+.nav-tabs {
+    background-color: #e2ebf75d;
+
+}
+
+#tabs {
+    background-color: #e2ebf75d;
+    margin-top: 0;
+}
+
+.tab-content {
+    background-color: #e2ebf75d;
+    height: auto;
+    border: #309e46 1px solid;
+    text-align: center;
+    margin-top: 1vh;
+    margin-left: 3em;
+    margin-right: 3em;
+    border-radius: 5%;
+    min-height: 40vh;
+    padding-bottom: .5em;
+    max-height: 70vh;
+}
+
+#myTabContent {
+    width: 80vw;
+}
+
+
+.nav-link {
+    color: #309e46;
+}
+
+@media (max-width: 850px) {
+    .nav-link {
+        color: #309e46;
+        font-size: 3vw;
+    }
+}
+
+
+#type-picture {
+
+    max-width: 200px;
+    max-height: 200px;
+    margin: auto;
+    margin-top: 1em;
+}
+
+
+#calculateButton {
+
+    margin-top: 2em;
+}
+
+/* #food-follow-up{
+
+    display: none;
+} */
+
+
+
+#chartContainer {
+
+    height: 30vh;
+    text-align: center;
+    margin-left: 2em;
+}
+
+#name-goes-here, #firstcalc {
+    margin-top: 5px;
+    font-size: 10pt;
+ 
+}
+
+/*------------------------------------- LEADERBOARD Styling-----------------------------------------*/
+#leaderboard {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.5rem;
+}
+
+#lead-btn {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+#delete-group {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.btn-close {
+    float: right;
+    width: 6.7%;
+    height: 30px;
+    background-color: #bbf881;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+.btn-close svg {
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+}
+
+#lead-btn-container {
+    font-size: 15ft;
+}
+
+/* CSS to fix image in Incentives */
+#incent-card-container {
+    border: none;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card-img-top {
+    object-fit: fill;
+    width: 100%;
+
+}
+
+#incent-img-cont {
+    width: 300px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* FOOTER */
+
+#footer-p {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-left: 1em;
+    text-align: left;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: #309e46 6px solid;
+    /* background-image: url(../img/vancouver-footer.jpg); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    line-height: 22px;
+    background-color: #0083c9;
+    box-shadow: 4px -15px 8px -15px rgb(0 0 0 / 20%), 10px -15px 40px -15px rgb(0 0 0 / 19%);
+    /* border-top: 4px solid green; */
+    /* position: fixed;
+  left: 0;
+  bottom: 0; */
+    width: 100%;
+}
+    
+    .designedBy { grid-area: 1 / 1 / 2 / 6; }
+    .moreInfo { grid-area: 1 / 6 / 2 / 7; 
+    margin-left: .5em;}
+    
