@@ -218,6 +218,7 @@ $(document).ready(function () {
             let scoreFood = calculateFood(foodData);
 
             let totalScore = scoreHome + scoreTransport + scoreFood;
+            let stringScore = totalScore.toFixed(3);
             let worst;
 
             if (scoreHome >= scoreTransport && scoreHome >= scoreFood) {
@@ -239,7 +240,7 @@ $(document).ready(function () {
                 home: scoreHome,
                 transport: scoreTransport,
                 food: scoreFood,
-                totalFootprint: totalScore.toFixed(3),
+                totalFootprint: parseFloat(stringScore),
                 time: timestamp
 
             }).then(() => {
@@ -251,12 +252,12 @@ $(document).ready(function () {
             users.doc(userDoc).update({
 
                 worstCategory: worst,
-                currentFootprint: totalScore
+                currentFootprint: parseFloat(stringScore)
 
             }).then(() => {
                 console.log("footprint updates completed");
                 $("#overview-tab").trigger('click');
-                grabCurrentFootprint();
+                // grabCurrentFootprint();
                 location.reload();
             });
         }

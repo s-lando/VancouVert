@@ -37,23 +37,23 @@ function makeGraphs() {
                             type: "line",
 
                             dataPoints: [{
-                                    x: timeList[4],
+                                    x: 1,
                                     y: barList[4]
                                 },
                                 {
-                                    x: timeList[3],
+                                    x: 2,
                                     y: barList[3]
                                 },
                                 {
-                                    x: timeList[2],
+                                    x: 3,
                                     y: barList[2]
                                 },
                                 {
-                                    x: timeList[1],
+                                    x: 4,
                                     y: barList[1]
                                 },
                                 {
-                                    x: timeList[0],
+                                    x: 5,
                                     y: barList[0]
                                 },
                                

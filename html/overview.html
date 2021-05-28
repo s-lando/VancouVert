@@ -17,19 +17,15 @@
     <link rel="stylesheet" href="../css/overviewTab.css">
     <link rel="stylesheet" href="../css/calculatorTab.css">
 
-    <!-- <link rel="stylesheet" type="text/css" href="../css/progress.css" /> -->
-
+    <!------------------------------------------- Our Favicon ------------------------------------------>
     <link rel="shortcut icon" type="image/png" href="../img/PNGfavicon.png">
 
-    <!-- Google Font -->
+    <!----------------------------------------- Google Font -------------------------------------------->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
@@ -39,7 +35,7 @@
 
 <body>
 
-    <!--Top Header-->
+    <!------------------------------------------- Top Header --------------------------------------->
     <nav class="navbar brand-custom">
         <a id="nav-top" class="navbar-brand" href="../html/overview.html">
             <img class="logo" src="../img/leafMain.svg" alt="logo not displaying properly">
@@ -68,7 +64,7 @@
 
     </nav>
 
-    <!--Tabs Nav Bar-->
+    <!--------------------------------------- Tabs Nav Bar ------------------------------------------>
     <ul class="nav nav-tabs" id="tabs" role="tablist">
         <li class="nav-item">
             <a class="nav-link overview active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
@@ -86,27 +82,21 @@
             <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history"
                 aria-selected="false">Progress</a>
         </li>
-        <!-- <li class="nav-item">
-            <a class="nav-link" id="incent-tab" data-toggle="tab" href="#incent" role="tab" aria-controls="incent"
-                aria-selected="false">Incentives</a>
-        </li> -->
+
 
     </ul>
     <div class="tab-content" id="myTabContent">
 
-        <!-- overview tab -->
+        <!--------------------------------------- overview tab ---------------------------------->
         <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
             <div>
-                <!-----------------PIE CHART ------------------------------>
-                <div id="userChart">
-
-                </div>
 
                 <div id="vancouverComparison">
                     <img src="../img/goal.png" alt="Target" id="target-icon">
                     <p>2030 Target: <b id="co2-number"> &#60; 6.0 </b> CO2 tonnes/yr per Vancouverite</p>
                 </div>
 
+                <!---------------------------------- INCENTIVES  -------------------------------------->
                 <div id="incentives">
 
                     <div id="personalized-msg">
@@ -114,13 +104,8 @@
                     </div>
                     <p id="yourNumber"> Current Footprint: <span id="currentUserNumber"></span> CO2 tonnes/yr</p>
                     <p id="incent-desc">Worst category:
-                        <!-- <img src="../img/arrow.png" alt="right arrow" id="right-arrow"> -->
                         <span id="your-worst-cat"></span>
                     </p>
-
-                    <!-- <p>
-                        <span id="incentive-card-title"></span>
-                    </p> -->
 
                     <p class="card-text" id="incentive-card-text"><span>Personalized Incentive:</span> </p>
                     <a type="button" id="learnMore" href="#" class="btn btn-outline-success"> Learn More</a>
@@ -159,8 +144,7 @@
                     </svg></button>
             </div>
 
-
-            <!--  FOR BUTTON LINK TO OVERVIEW:  data-toggle="tab" href="#overview" role="tab" -->
+            <!---------  FOR BUTTON LINK TO OVERVIEW:  data-toggle="tab" href="#overview" role="tab" -->
             <button type="button" id="calculateButton" class="btn btn-outline-success btn-lg" aria-selected="false">
                 Calculate <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
                     class="bi bi-calculator-fill" viewBox="0 0 16 16">
@@ -169,12 +153,8 @@
                 </svg>
             </button>
 
-            
-            <p id="answerFirst">Please submit each category first before calculating.</p> 
+            <p id="answerFirst">Please submit each category first before calculating.</p>
         </div>
-
-
-        <!------------------INCENTIVES at bottom ------------------------->
 
         <!------------------------------------- Leaderboard Tab ------------------------------------------->
         <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">
@@ -183,7 +163,7 @@
                 <div id="add-leaderboard-here">
                     <h3 id="lead-title">Pick A Leaderboard</h3>
                     <div id="group-feature">
-                        <!----------------------------- JOIN/LEAVE buttons and modals -------------------------->
+                        <!----------------------- JOIN/LEAVE buttons and modals -------------------------->
                         <div class="form-floating">
 
                             <div id="lead-btn-container">
@@ -220,7 +200,6 @@
                                             </button>
                                         </div>
 
-
                                         <!---------- Type name of group user wants to join here -------------->
                                         <div class="modal-body">
 
@@ -254,7 +233,7 @@
                                             </button>
                                         </div>
 
-                                        <!---------- Type name of group user wants to leave here -------------->
+                                        <!------- Type name of group user wants to leave here -------------->
                                         <div class="modal-body">
                                             <div class="form-floating mb-3">
                                                 <input type="email" class="form-control" id="floatingInput2"
@@ -275,8 +254,7 @@
 
                     </div>
                     <div id="share-content">
-                        <p>Congratulations <span id="user-name2"></span> ! Looks like you are currently ranked
-                            #<span id="your-rank"></span></p>
+                        <p>Congratulations <span id="user-name2"></span>!</p>
 
                         <iframe
                             src="https://www.facebook.com/plugins/share_button.php?href=https://vancouvert-dce8f.web.app/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId"
@@ -288,42 +266,22 @@
 
         </div>
 
-        <!-- Progress tab -->
+        <!----------------------------------------- Progress tab ------------------------------------------>
         <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">Total footprint of -
             "<span id="name-goes-here"></span>"
             <div id="firstcalc">
                 Your First Caclulation - <span id="calc-goes-here"></span> tonnes/Year
             </div>
             <div id="chartContainer" style="height: 370px; width: 80%;"></div>
-            
 
             <br />
         </div>
 
-        <!-- incentive tab -->
-        <!-- <div class="tab-pane fade" id="incent" role="tabpanel" aria-labelledby="incent-tab">
-            <div id="read-data-here" class="container">
-                <div class="card text-center" id="incent-card-container">
-                    <div id="incent-img-cont">
-                        <img class="card-img-top" id="type-picture" src="../img/" alt="Card image cap">
-                    </div>
-
-                    <div class="card-body">
-                        <h5 class="card-title" id="incentive-card-title"></h5>
-                        <p class="card-text" id="incentive-card-text"></p>
-                        <a href="#" class="btn btn-primary" id="incentive_url">See their Website</a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-
-        <!-- Calculator Forms
-        Calculator Forms
-        Calculator Forms -->
-
-        <!---------------------------- Home Form -------------------------->
     </div>
+
+    <!----------------------------------------- Calculator Forms ----------------------------------------->
+
+    <!-------------------------------------------- Home Form -------------------------------------------->
     <div class="modal fade" id="home" tabindex="-1" role="dialog" aria-labelledby="home" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -391,7 +349,7 @@
         </div>
     </div>
 
-    <!--------------------------------- Transport Form ------------------------->
+    <!------------------------------------- Transport Form --------------------------------------->
 
     <div class="modal fade" id="transport" tabindex="-1" role="dialog" aria-labelledby="transport" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -451,7 +409,7 @@
                         <div class="modal-footer">
                             <button type="submit" form="transportForm" class="btn btn-success submit"
                                 data-dismiss="modal">Submit</button>
-                                </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -459,7 +417,7 @@
     </div>
     </div>
 
-    <!---------------------------------- Food Form --------------------------->
+    <!-------------------------------------  Food Form ------------------------------------->
 
     <div class="modal fade" id="food" tabindex="-1" role="dialog" aria-labelledby="food" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -551,9 +509,9 @@
     <br />
     <br />
     <a href="https://icons8.com/icon/26215/logout-rounded-left"></a>
-    <!--Footer-->
 
-    <!-- <a href="help.html" type="button" class="btn btn-success btn-lg" id="help-btn"></a> -->
+    <!----------------------------------------------- Footer ----------------------------------------->
+
     <footer>
         <div id="footer-p">
             <div class="designedBy">Website designed by Team 9 for <a href="http://bcit.ca">BCIT</a> COMP 2800
@@ -569,17 +527,17 @@
 
 </body>
 
-<!--script imports-->
+<!------------------------------------------- script imports ------------------------------------------->
 <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-app.js"></script>
 
-<!---------------------- Firebase and FireStore libraries ------------------------->
+<!----------------------------------- Firebase and FireStore libraries --------------------------------->
 <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
 
-<!---------------------- Your own Firebase API key information -------------------->
+<!--------------------------------- Your own Firebase API key information ------------------------------>
 <script src="../scripts/firebase_api.js"> </script>
 
-<!----------------- jQuery and Bootstrap Bundle (includes Popper) ----------------->
+<!----------------------------- jQuery and Bootstrap Bundle (includes Popper) -------------------------->
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
@@ -589,7 +547,7 @@
     integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
 </script>
 
-<!-- Our scripts -->
+<!-------------------------------------------- Our scripts ---------------------------------------------->
 <script src="../scripts/pull_incentive.js"></script>
 <script src="../scripts/calculator_scripts.js"></script>
 <script src="../scripts/functions-madhav.js"></script>
@@ -599,12 +557,12 @@
 <script src="../scripts/leaderboard.js"></script>
 <script src="../scripts/write_collection_incentive.js"></script>
 
-<!---------------------------- CanvasJS ------------------------->
+<!----------------------------------------------- CanvasJS --------------------------------------------->
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js" charset="UTF-8"></script>
-
 <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 
+<!-----------------------------------------  Script for the Progress Tab ------------------------------->
 <script>
     customName();
 </script>
