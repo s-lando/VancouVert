@@ -27,29 +27,29 @@ The root folder also contains various files related to the deployment of the app
 
 https://docs.google.com/spreadsheets/d/1RkjUhDA9tHl78bA-W7ypazD28Q2PNoa9xLtgrKDJyUk/edit#gid=0
 
-## Setup
+## Developer Setup
 
-1. DEVELOPMENT ENVIRONMENT
-..a. Clone the repo from this link: https://github.com/s-lando/COMP-2800-Team-BBY-09-VancouVert
-..b. Checkout to the **dev** branch
-..c. Create a new branch for any new features
-..d. Test and debug that branch before merging it to the **dev** branch.
-..e. On the **dev** branch, developers combine his/her branch for integrated testing.
-..f. At the start of each sprint, developers can pull the latest changes to the **dev** branch, and create a different feature branch.
-..g. The **dev** branch is only merged to the **main** branch after all the app's features are finalized and ready to host/deploy.  This requires a pull request approval from the repository owner.
+1. Gitflow Workflow Policy
+a. Clone the repo from this link: https://github.com/s-lando/COMP-2800-Team-BBY-09-VancouVert
+b. Checkout to the **dev** branch
+c. Create a new branch for any new features
+d. Test and debug that branch before merging it to the **dev** branch.
+e. On the **dev** branch, developers combine his/her branch for integrated testing.
+f. At the start of each sprint, developers can pull the latest changes to the **dev** branch, and create a different feature branch.
+g. The **dev** branch is only merged to the **main** branch after all the app's features are finalized and ready to host/deploy.  This requires a pull request approval from the repository owner.
 
 2. List of 3rd party APIs
-..a. Twitter - contact **vancouvert@bcit.ca** to request API keys
-..b. Facebook - currently only an embedded link is used, no API key required
-..c. CanvasJS
+a. Twitter - contact **vancouvert@bcit.ca** to request API keys
+b. Facebook - currently only an embedded link is used, no API key required
+c. CanvasJS
 ..* Link: https://canvasjs.com/
 ..* Sign up for a free license. CanvasJS will email you a download link.  Canvasjs is already set up within the repository files, no further installation required.
-..d 
+
 3. CONFIGURATIONS
-..a. Login authentication for test user:
+a. Login authentication for test user:
 ..* Email: **madhav@hotmail.com**
 ..* Password: **password**
-..b. Firebase privileges for *VancouVert*:
+b. Firebase privileges for *VancouVert*:
 ..* To request access to the Firebase database console, contact **vancouvert@bcit.ca**
 
 
